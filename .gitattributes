@@ -1,0 +1,4 @@
+data/data100k_raw_combined_atlas_cut_scan_latent_auc_edge.pkl filter=lfs diff=lfs merge=lfs -text
+data/data50k_raw_combined_atlas_cut_small.pkl filter=lfs diff=lfs merge=lfs -text
+data/data50k_raw_combined_atlas_cut_small_scan_latent_auc_edge.pkl filter=lfs diff=lfs merge=lfs -text
+data/data100k_raw_combined_atlas_cut.pkl filter=lfs diff=lfs merge=lfs -text
