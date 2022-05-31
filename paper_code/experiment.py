@@ -292,7 +292,7 @@ class Experimenter:
         fpr, tpr, thresholds, auc = self.get_ROC(classifier_key, params, ideal=ideal)
 
         if(ax != None):
-            ax.plot(tpr, 1/fpr, label=r'AUC: %.3f for %s'%(auc, classifiers_name[classifier_key]))
+            ax.plot(tpr, 1/fpr, label=r'%s'%(classifiers_name[classifier_key]))
             ax.set_yscale('log')
             return
 

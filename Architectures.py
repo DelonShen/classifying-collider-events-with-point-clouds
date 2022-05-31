@@ -18,16 +18,19 @@ class adder(tf.keras.layers.Layer):
     def __init__(self, mean=False):
         super(adder, self).__init__()
         self.mean = mean
+        self.supports_masking = True
+
     def call(self, inputs, mask=None):  
+        mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,tf.shape(inputs)[-1]))
         if(self.mean):
-            return tf.keras.layers.Lambda(lambda x: K.mean(x, axis=1), output_shape=(lambda shape: (shape[0], shape[2])), mask=mask)(inputs)
-        else:
-            return tf.keras.layers.Lambda(lambda x: K.sum(x, axis=1), output_shape=(lambda shape: (shape[0], shape[2])), mask=mask)(inputs)
+            return tf.reduce_sum(mask_expanded*inputs, axis= 1 )/tf.reduce_sum(mask_expanded, axis= 1 )
+
+        return tf.reduce_sum(mask_expanded*inputs, axis= 1 )
 
     def compute_mask(self, inputs, mask=None):
         if mask is None:
             return None
-        return tf.ones([tf.shape(inputs)[0], tf.shape(inputs)[2]])
+        return None
 
 class concat_special(tf.keras.layers.Layer):
     """custom layer to pool while maintaing mask"""
@@ -49,7 +52,7 @@ class pool_concat(tf.keras.layers.Layer):
 
     def call(self, inputs, mask=None):
         if(mask is not None):
-            mean_pool = tf.math.reduce_mean(tf.ragged.boolean_mask(inputs, mask=mask), axis=1, keepdims=True)
+            mean_pool = tf.math.reduce_mean(tf.ragged.boolean_mask(inputs, mask=mask), axis=1)
         else:
             mean_pool = tf.math.reduce_mean(inputs, axis=1, keepdims=True)
 
@@ -259,6 +262,8 @@ class EdgeConvLayer(tf.keras.layers.Layer):
         self.depth = len(widths)
         self.widths = widths
         self.centered = centered
+        self.supports_masking = True
+
         self.idxs = [[j for j in range(num_particles)] for i in range(num_particles)]
 
         self.linears = [tf.keras.layers.Conv2D(widths[i], kernel_size=(1, 1), strides=1, data_format='channels_last',
@@ -281,10 +286,20 @@ class EdgeConvLayer(tf.keras.layers.Layer):
         for idx in range(self.depth):
             x = self.linears[idx](x)
 
-        fts = tf.math.reduce_mean(x, axis=2)
+        mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,tf.shape(x)[-1]))
+        mask_fts = adj(self.num_particles, mask_expanded, idxs = self.idxs)
+        mask_fts_centered = tf.tile(tf.expand_dims(mask_expanded, axis=2), (1, 1, self.K, 1))        
+        mask_fts = mask_fts * mask_fts_centered
+        
+        fts = tf.math.multiply_no_nan(1/tf.reduce_sum(mask_fts, axis=2), tf.reduce_sum(mask_fts*x, axis= 2))
         ret = fts
         
         return tf.keras.layers.Activation(tf.nn.leaky_relu)(ret)
+
+    def compute_mask(self, inputs, mask=None):
+        if mask is None:
+            return None
+        return mask
 
 class Pairwise(tf.keras.Model):
     """constructs edgeconv sequentially combined with deep set"""
@@ -327,7 +342,6 @@ class IteratedPiPairwise(tf.keras.Model):
             ec_widths = np.array([ec_widths])
         N = len(ec_widths)
         
-        print(ec_widths)
         self.edge_convs = [EdgeConvLayer(ec_width, num_particles, depth=len(ec_width), centered=centered, shortcut=shortcut) for ec_width in ec_widths]
         self.Phi = [[tf.keras.layers.Dense(width, activation=Sigma) for _ in range(3)] for idx in range(N)]
         self.Phi[-1].append(tf.keras.layers.Dense(latent_dim))
@@ -395,7 +409,16 @@ class ExtendedEdgeConvLayer(tf.keras.layers.Layer):
         for idx in range(self.depth):
             x = self.linears[idx](x)
 
-        x = tf.math.reduce_mean(x, axis=3)
+        mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,tf.shape(x)[-1]))
+        mask_fts = adj(self.num_particles, mask_expanded, idxs = self.idxs)
+        mask_fts_centered = tf.tile(tf.expand_dims(mask_expanded, axis=2), (1, 1, self.K, 1))     
+        
+        mask_fts = tf.tile(tf.expand_dims(mask_fts, axis=1), (1, self.K, 1, 1, 1))
+        mask_fts_centered = tf.tile(tf.expand_dims(tf.expand_dims(mask_expanded, axis=2), axis=2), (1, 1, self.K, self.K, 1))
+
+        mask_fts = mask_fts * mask_fts_centered            
+            
+        x = tf.reduce_sum(mask_fts*x, axis= 3)/ tf.reduce_sum(mask_fts, axis=3)
         x = tf.math.reduce_mean(x, axis=2)
         
         return tf.keras.layers.Activation(tf.nn.leaky_relu)(x)
@@ -470,7 +493,6 @@ class DNN_Flatten(tf.keras.Model):
     
 class RaggedGetter(tf.keras.layers.Layer):
     def call(self, inputs, mask=None):
-        print(mask[0])
         return tf.ragged.boolean_mask(inputs, mask=mask)
 
 
@@ -493,6 +515,7 @@ class LatentGetter(tf.keras.Model):
     
     
 model_params_dict = {'particlewise':{'width':128, 'depth':4, 'latent_dim':64}, 
+                     'particlewise_mean':{'width':128, 'depth':4, 'latent_dim':64,'mean':True}, 
         'nested_concat':{'width':70, 'depth':4, 'latent_dim':64, 'L':3},
         'pairwise': {'depth':5, 'ec_widths':(64,128,256,128,64), 'width':64},
         'pairwise_nl': {'depth':5, 'ec_widths':((64,128,256,128,64)), 'width':32, 'latent_dim':64},
@@ -511,6 +534,7 @@ classifiers_name = {'particlewise':r'Particlewise',
                     'naivednn':'dNN + Naive Features'}
 
 classifiers = {'particlewise':DeepSet, 
+               'particlewise_mean':DeepSet,
             'nested_concat':NestedConcat,
             'pairwise':Pairwise,
             'tripletwise':Tripletwise,
