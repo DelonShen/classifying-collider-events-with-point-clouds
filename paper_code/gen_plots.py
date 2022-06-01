@@ -28,41 +28,36 @@ random.seed(42)
 filename = '../data/data100k_raw_combined_atlas_cut.pkl'
 num_round = None
 
+train_bst = True
+
 #TESTING
-#EPOCHS = 1
+#EPOCHS = 2
 #filename = '../data/data50k_raw_combined_atlas_cut_small.pkl'
 #num_round = 1
 ######
 
 
+# In[3]:
+def human_format(num):
+    magnitude = 0
+    while abs(num) >= 1000:
+        magnitude += 1
+        num /= 1000.0
+    # add more suffixes if you need them
+    return '%.0f%s' % (num, ['', 'K', 'M', 'G', 'T', 'P'][magnitude])
 
 
-SUFFIX = ''
 PI = experiment.Experimenter(filename)
-
-to_train = ['particlewise',
-            'pairwise',
-            'tripletwise',
-            'pairwise_nl',
-            'pairwise_nl_iter',
-            'nested_concat',
-            'naivednn']
-
-for nm in to_train:
-    print('RIGHT NOW: %s'%nm)
-    PI.data_loader(nm, gen_multijet_to_inv_dataset, class_weight_invariant, tf.constant, aux_params=dict(dR_keep=False, multijet_n=1))
-    PI.train_classifier(nm, model_params_dict[nm], epochs=EPOCHS)
-    print('###')
-
-print('DNN Classifier')
-PI.data_loader('dnn', gen_dataset_high_level, class_weight_invariant, tf.constant)
-PI.train_classifier('dnn', model_params_dict[nm] , use_weights_during_fit = True, epochs=EPOCHS)
-print('###')
+PI.fromSaved()
 
 
 
 
-##### Generating graphs
+# # Now we're gonna generate some graphs and get the performance of the archictures
+
+# In[4]:
+
+
 import seaborn as sns
 
 matplotlib.rcParams['text.usetex'] = True
@@ -77,8 +72,6 @@ matplotlib.rcParams['text.latex.preamble'] = [
 suppress_warnings()
 EPOCHS = 64
 
-filename = 'data/data100k_raw_combined_atlas_cut.pkl'
-
 def human_format(num):
     magnitude = 0
     while abs(num) >= 1000:
@@ -88,6 +81,7 @@ def human_format(num):
     return '%.0f%s' % (num, ['', 'K', 'M', 'G', 'T', 'P'][magnitude])
 
 
+# In[5]:
 
 
 import xgboost as xgb
@@ -115,23 +109,29 @@ if(num_round == None):
     num_round = param['n_estimators']
 
 
-bst_filename = 'models/'+filename.split('.')[0].split('/')[-1]+'BDT.json'
+
+bst_filename = 'models/'+filename.split('/')[-1].split('.')[0]+'BDT.json'
 bst = None
 import pickle
-bst = xgb.train(param, xg_train, num_round)
+if(train_bst):
+    bst = xgb.train(param, xg_train, num_round)
+    pickle.dump(bst, open(bst_filename, 'wb'))
+else:
+    bst = pickle.load(open(bst_filename, 'rb'))
 
 
 yhat_test = bst.predict(xg_test).reshape(yo_test.shape[0], 2)
 yhat_test = np.array([true for (true, false) in yhat_test])
 yop_test  = np.array([true for (true, false) in y_test])
 
+
+# In[6]:
+
+
 from sklearn import metrics
 
 fpr, tpr, thresholds = metrics.roc_curve(yop_test, yhat_test)
 auc = metrics.auc(fpr, tpr)
-
-print(auc)
-
 
 import bisect 
 
@@ -139,7 +139,14 @@ location = bisect.bisect_left(list(reversed(thresholds)), 0.5)
 print('At 0.5 threshold we have BDT signal efficiency %.3f'%list(reversed(tpr))[location-1])
 
 
+# In[7]:
 
+
+import matplotlib.pyplot as plt
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.size'] = 20
+plt.rcParams['figure.autolayout'] = False
+plt.rcParams['text.usetex'] = True
 
 models_to_plot = [PI.model_name_to_model(model_name) for model_name in list(PI.models.keys())]
 model_params_to_plot = [model_params_dict[PI.model_name_to_model(model_name)] for model_name in list(PI.models.keys())]
@@ -148,7 +155,7 @@ model_params_to_plot
 
 fig, ax = PI.plot_multiple_sorted_by_AUC(models_to_plot, model_params_to_plot)
 colormap = sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True)
-ax.plot(tpr, 1/fpr, label=r'AUC: %.3f for %s'%(auc, 'BDT + ATLAS Features'), color=colormap(0.33))                                         
+ax.plot(tpr, 1/fpr, label=r'%s'%('BDT + ATLAS Features'), color='lightgrey')                                         
 
 
 ax.get_legend().remove()
@@ -168,10 +175,18 @@ annotation_string += r'\textsc{MadGraph 5}+\textsc{Pythia} 8+\textsc{Delphes}'
 annotation_string += '\n'
 annotation_string += r'Anti-Kt with $R=0.4$, $\sqrt{s} = 14$'
 ax.text(.05,1, annotation_string)
-plt.gcf().set_size_inches(8.5, 8.5)
-fig.savefig('figures/roc_curves.pdf')
+plt.gcf().set_size_inches(10, 10)
+
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.size'] = 20
+plt.rcParams['figure.autolayout'] = False
+plt.rcParams['text.usetex'] = True
 
 
+fig.savefig('figures/roc_curves.pdf', bbox_inches='tight')
+
+
+# In[8]:
 
 
 #generate table of data for performance at signal efficiency
@@ -187,8 +202,9 @@ for (fpr, tpr, thresholds, auc), key, params in zip(table_data, models_to_plot, 
     location = bisect.bisect_left(tpr, 0.3)
     c_model = PI.models['%s_%s'%(key, PI.get_tail_string(params))]
     NPARAMS = human_format(c_model.count_params())
-    table_file.write('%s & %.3f & %s & %.3f & %.3f\\\\\n'%(c_names[key], auc, NPARAMS,
-                                              1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
+    table_file.write('%s & %.3f & %s &%.1f & %.1f & %.1f & %.1f\\\\\n'%(c_names[key], auc, NPARAMS,
+                                                           1/fpr[location-1], (tpr)[location-1]/fpr[location-1],
+                                                           1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
     
 yhat_test = bst.predict(xg_test).reshape(yo_test.shape[0], 2)
 yhat_test = np.array([true for (true, false) in yhat_test])
@@ -198,11 +214,14 @@ fpr, tpr, thresholds = metrics.roc_curve(yop_test, yhat_test)
 auc = metrics.auc(fpr, tpr)
 location_0 = bisect.bisect_left(tpr, 0.7)
 location = bisect.bisect_left(tpr, 0.3)
-table_file.write('%s & %.3f & -  & %.3f & %.3f\\\\\n'%('BDT + ATLAS Features', auc, 1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
+table_file.write('%s & %.3f & %s &%.1f & %.1f & %.1f & %.1f\\\\\n'%('BDT + ATLAS Features', auc, '-',
+                                                       1/fpr[location-1], (tpr)[location-1]/fpr[location-1],
+                                                       1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
 
 table_file.close()
 
 
+# In[9]:
 
 
 ####GENERATING TSNE PLOT
@@ -213,7 +232,8 @@ from scipy.stats import kendalltau
 import seaborn as sns
 
 tail_string = PI.get_tail_string(model_params_dict['pairwise'])
-pairwise_model = PI.models['%s_%s'%('pairwise', tail_string)]
+pairwise_model = PI.load_model_special('pairwise',  model_params_dict['pairwise'])
+
 latent_getter = LatentGetter(pairwise_model.layers[0:3], condensed=True)
 
 X_test, y_test = PI.get_test_dataset('pairwise')
@@ -235,6 +255,7 @@ latent_reps_embedded_tsne = TSNE(metric="precomputed", n_components=2, learning_
 latent_reps_embedded = latent_reps_embedded_tsne.fit_transform(distance_matrix)
 
 
+# In[10]:
 
 
 c_cut = 5
@@ -267,7 +288,7 @@ import matplotlib.lines as  mlines
 
 handles = [mpatches.Patch(facecolor=cmap(100), label=r'$tt(H\rightarrow\tau\tau)$ Events'),
            mlines.Line2D([], [], color=COL2, label=r'$t\overline{t}$ Events', lw=linew)]
-legend = ax.legend(loc='upper left', handles=handles, frameon=False, title=r'\textbf{Latent Representation} in Pairwise Architecture')
+legend = ax.legend(loc='upper left', handles=handles, frameon=False, title=r'\textbf{Latent Representation} in $\ell=2^6$ Pairwise Architecture')
 legend._legend_box.align = 'left'
 plt.setp(legend.get_texts(), color=cmap(0.98))
 plt.rcParams['font.family'] = 'serif'

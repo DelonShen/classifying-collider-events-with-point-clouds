@@ -1,0 +1,360 @@
+nohup: ignoring input
+2022-06-01 00:49:47.026691: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-01 00:51:23.936010: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-06-01 00:51:23.951651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-01 00:51:23.952676: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-01 00:51:23.952709: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-01 00:51:23.956523: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-01 00:51:23.956584: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-06-01 00:51:23.958203: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-06-01 00:51:23.958514: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-06-01 00:51:23.962813: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-06-01 00:51:23.963672: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-06-01 00:51:23.963905: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-01 00:51:23.967728: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-01 00:51:23.968640: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-06-01 00:51:24.111212: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-01 00:51:24.112413: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-01 00:51:24.116871: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-01 00:51:24.117031: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-01 00:51:25.596840: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-06-01 00:51:25.596902: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-06-01 00:51:25.596920: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-06-01 00:51:25.596928: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-06-01 00:51:25.601931: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-06-01 00:51:25.603890: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-06-01 00:51:26.045636: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-06-01 00:51:26.046446: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-06-01 00:51:27.746522: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-01 00:51:28.147381: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8201
+2022-06-01 00:51:28.983880: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-01 00:51:29.268737: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+RIGHT NOW: tripletwise
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/512
+3063/3063 - 304s - loss: 0.3940 - val_loss: 0.3617
+Epoch 2/512
+3063/3063 - 301s - loss: 0.3580 - val_loss: 0.3762
+Epoch 3/512
+3063/3063 - 301s - loss: 0.3495 - val_loss: 0.3431
+Epoch 4/512
+3063/3063 - 301s - loss: 0.3415 - val_loss: 0.3423
+Epoch 5/512
+3063/3063 - 300s - loss: 0.3345 - val_loss: 0.3249
+Epoch 6/512
+3063/3063 - 300s - loss: 0.3284 - val_loss: 0.3221
+Epoch 7/512
+3063/3063 - 300s - loss: 0.3226 - val_loss: 0.3228
+Epoch 8/512
+3063/3063 - 300s - loss: 0.3173 - val_loss: 0.3247
+Epoch 9/512
+3063/3063 - 300s - loss: 0.3144 - val_loss: 0.3262
+Epoch 10/512
+3063/3063 - 300s - loss: 0.3093 - val_loss: 0.3337
+Epoch 11/512
+3063/3063 - 300s - loss: 0.3037 - val_loss: 0.3017
+Epoch 12/512
+3063/3063 - 300s - loss: 0.2995 - val_loss: 0.2994
+Epoch 13/512
+3063/3063 - 300s - loss: 0.2941 - val_loss: 0.2954
+Epoch 14/512
+3063/3063 - 300s - loss: 0.2871 - val_loss: 0.2963
+Epoch 15/512
+3063/3063 - 300s - loss: 0.2821 - val_loss: 0.3018
+Epoch 16/512
+3063/3063 - 300s - loss: 0.2759 - val_loss: 0.2758
+Epoch 17/512
+3063/3063 - 300s - loss: 0.2724 - val_loss: 0.2669
+Epoch 18/512
+3063/3063 - 300s - loss: 0.2670 - val_loss: 0.2692
+Epoch 19/512
+3063/3063 - 298s - loss: 0.2640 - val_loss: 0.2813
+Epoch 20/512
+3063/3063 - 298s - loss: 0.2620 - val_loss: 0.2686
+Epoch 21/512
+3063/3063 - 298s - loss: 0.2589 - val_loss: 0.2687
+Epoch 22/512
+3063/3063 - 298s - loss: 0.2571 - val_loss: 0.3065
+Epoch 23/512
+3063/3063 - 298s - loss: 0.2529 - val_loss: 0.2584
+Epoch 24/512
+3063/3063 - 298s - loss: 0.2508 - val_loss: 0.2560
+Epoch 25/512
+3063/3063 - 298s - loss: 0.2498 - val_loss: 0.2566
+Epoch 26/512
+3063/3063 - 298s - loss: 0.2471 - val_loss: 0.2519
+Epoch 27/512
+3063/3063 - 298s - loss: 0.2447 - val_loss: 0.2591
+Epoch 28/512
+3063/3063 - 298s - loss: 0.2437 - val_loss: 0.2469
+Epoch 29/512
+3063/3063 - 298s - loss: 0.2417 - val_loss: 0.2434
+Epoch 30/512
+3063/3063 - 298s - loss: 0.2400 - val_loss: 0.2526
+Epoch 31/512
+3063/3063 - 298s - loss: 0.2393 - val_loss: 0.2507
+Epoch 32/512
+3063/3063 - 298s - loss: 0.2377 - val_loss: 0.2778
+Epoch 33/512
+3063/3063 - 298s - loss: 0.2359 - val_loss: 0.2415
+Epoch 34/512
+3063/3063 - 298s - loss: 0.2341 - val_loss: 0.2540
+Epoch 35/512
+3063/3063 - 298s - loss: 0.2331 - val_loss: 0.2657
+Epoch 36/512
+3063/3063 - 298s - loss: 0.2310 - val_loss: 0.2532
+Epoch 37/512
+3063/3063 - 298s - loss: 0.2298 - val_loss: 0.2425
+Epoch 38/512
+3063/3063 - 298s - loss: 0.2290 - val_loss: 0.2528
+Epoch 39/512
+3063/3063 - 298s - loss: 0.2277 - val_loss: 0.2480
+Epoch 40/512
+3063/3063 - 298s - loss: 0.2259 - val_loss: 0.2478
+Epoch 41/512
+3063/3063 - 298s - loss: 0.2261 - val_loss: 0.2383
+Epoch 42/512
+3063/3063 - 299s - loss: 0.2253 - val_loss: 0.2472
+Epoch 43/512
+3063/3063 - 299s - loss: 0.2239 - val_loss: 0.2375
+Epoch 44/512
+3063/3063 - 298s - loss: 0.2218 - val_loss: 0.2401
+Epoch 45/512
+3063/3063 - 298s - loss: 0.2207 - val_loss: 0.2429
+Epoch 46/512
+3063/3063 - 298s - loss: 0.2197 - val_loss: 0.2499
+Epoch 47/512
+3063/3063 - 298s - loss: 0.2192 - val_loss: 0.2540
+Epoch 48/512
+3063/3063 - 298s - loss: 0.2182 - val_loss: 0.2461
+Epoch 49/512
+3063/3063 - 298s - loss: 0.2171 - val_loss: 0.2448
+Epoch 50/512
+3063/3063 - 298s - loss: 0.2150 - val_loss: 0.2445
+Epoch 51/512
+3063/3063 - 299s - loss: 0.2154 - val_loss: 0.2653
+Epoch 52/512
+3063/3063 - 298s - loss: 0.2139 - val_loss: 0.2562
+Epoch 53/512
+3063/3063 - 298s - loss: 0.2130 - val_loss: 0.2469
+Epoch 54/512
+3063/3063 - 298s - loss: 0.2125 - val_loss: 0.2347
+Epoch 55/512
+3063/3063 - 309s - loss: 0.2118 - val_loss: 0.2432
+Epoch 56/512
+3063/3063 - 309s - loss: 0.2102 - val_loss: 0.2333
+Epoch 57/512
+3063/3063 - 309s - loss: 0.2097 - val_loss: 0.2356
+Epoch 58/512
+3063/3063 - 309s - loss: 0.2080 - val_loss: 0.2431
+Epoch 59/512
+3063/3063 - 309s - loss: 0.2082 - val_loss: 0.2497
+Epoch 60/512
+3063/3063 - 309s - loss: 0.2079 - val_loss: 0.2440
+Epoch 61/512
+3063/3063 - 308s - loss: 0.2062 - val_loss: 0.2582
+Epoch 62/512
+3063/3063 - 309s - loss: 0.2049 - val_loss: 0.2499
+Epoch 63/512
+3063/3063 - 309s - loss: 0.2046 - val_loss: 0.2529
+Epoch 64/512
+3063/3063 - 309s - loss: 0.2038 - val_loss: 0.2430
+Epoch 65/512
+3063/3063 - 309s - loss: 0.2025 - val_loss: 0.2489
+Epoch 66/512
+3063/3063 - 309s - loss: 0.2028 - val_loss: 0.2480
+Epoch 67/512
+3063/3063 - 309s - loss: 0.2012 - val_loss: 0.2355
+Epoch 68/512
+3063/3063 - 309s - loss: 0.1999 - val_loss: 0.2370
+Epoch 69/512
+3063/3063 - 308s - loss: 0.1986 - val_loss: 0.2378
+Epoch 70/512
+3063/3063 - 308s - loss: 0.1981 - val_loss: 0.2441
+Epoch 71/512
+3063/3063 - 308s - loss: 0.1981 - val_loss: 0.2542
+Epoch 72/512
+3063/3063 - 308s - loss: 0.1986 - val_loss: 0.2485
+Epoch 73/512
+3063/3063 - 308s - loss: 0.1959 - val_loss: 0.2420
+Epoch 74/512
+3063/3063 - 308s - loss: 0.1950 - val_loss: 0.2465
+Epoch 75/512
+3063/3063 - 308s - loss: 0.1956 - val_loss: 0.2420
+Epoch 76/512
+3063/3063 - 308s - loss: 0.1945 - val_loss: 0.2518
+Epoch 77/512
+3063/3063 - 308s - loss: 0.1930 - val_loss: 0.2373
+Epoch 78/512
+3063/3063 - 308s - loss: 0.1914 - val_loss: 0.2427
+Epoch 79/512
+3063/3063 - 308s - loss: 0.1916 - val_loss: 0.2435
+Epoch 80/512
+3063/3063 - 308s - loss: 0.1900 - val_loss: 0.2508
+Epoch 81/512
+3063/3063 - 308s - loss: 0.1893 - val_loss: 0.2468
+Epoch 82/512
+3063/3063 - 309s - loss: 0.1886 - val_loss: 0.3058
+Epoch 83/512
+3063/3063 - 309s - loss: 0.1884 - val_loss: 0.2519
+Epoch 84/512
+3063/3063 - 298s - loss: 0.1878 - val_loss: 0.2399
+Epoch 85/512
+3063/3063 - 298s - loss: 0.1870 - val_loss: 0.2476
+Epoch 86/512
+3063/3063 - 297s - loss: 0.1861 - val_loss: 0.2563
+Epoch 87/512
+3063/3063 - 297s - loss: 0.1851 - val_loss: 0.2419
+Epoch 88/512
+3063/3063 - 297s - loss: 0.1838 - val_loss: 0.2563
+2022-06-01 08:14:16.853261: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+WARNING:absl:Found untraced functions such as conv3d_layer_call_fn, conv3d_layer_call_and_return_conditional_losses, conv3d_1_layer_call_fn, conv3d_1_layer_call_and_return_conditional_losses, conv3d_2_layer_call_fn while saving (showing 5 of 50). These functions will not be directly callable after loading.
+###
+first saving models
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+tripletwise_5_(64, 128, 256, 128, 64)_64 is saved in models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+RIGHT NOW: pairwise
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/512
+Traceback (most recent call last):
+  File "gen_models.py", line 67, in <module>
+    PI.train_classifier(nm, model_params_dict[nm], epochs=EPOCHS)
+  File "/code/delon/pc_ec/paper_code/experiment.py", line 210, in train_classifier
+    classifier.fit(X_train, y_train, verbose=2,
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/keras/engine/training.py", line 1183, in fit
+    tmp_logs = self.train_function(iterator)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/eager/def_function.py", line 889, in __call__
+    result = self._call(*args, **kwds)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/eager/def_function.py", line 933, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/eager/def_function.py", line 763, in _initialize
+    self._stateful_fn._get_concrete_function_internal_garbage_collected(  # pylint: disable=protected-access
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/eager/function.py", line 3050, in _get_concrete_function_internal_garbage_collected
+    graph_function, _ = self._maybe_define_function(args, kwargs)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/eager/function.py", line 3444, in _maybe_define_function
+    graph_function = self._create_graph_function(args, kwargs)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/eager/function.py", line 3279, in _create_graph_function
+    func_graph_module.func_graph_from_py_func(
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/framework/func_graph.py", line 999, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/eager/def_function.py", line 672, in wrapped_fn
+    out = weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/framework/func_graph.py", line 986, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+TypeError: in user code:
+
+    /home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/keras/engine/training.py:855 train_function  *
+        return step_function(self, iterator)
+
+    TypeError: tf____init__() missing 2 required positional arguments: 'ec_widths' and 'width'
+
+2022-06-01 08:15:52.305293: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-01 08:16:19.814906: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-06-01 08:16:19.830648: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-01 08:16:19.831673: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-01 08:16:19.831707: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-01 08:16:19.835762: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-01 08:16:19.835819: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-06-01 08:16:19.837430: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-06-01 08:16:19.837850: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-06-01 08:16:19.842139: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-06-01 08:16:19.843014: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-06-01 08:16:19.843244: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-01 08:16:19.847057: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-01 08:16:19.847644: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-06-01 08:16:19.968509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-01 08:16:19.969645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-01 08:16:19.973968: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-01 08:16:19.974169: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-01 08:16:21.664567: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-06-01 08:16:21.664678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-06-01 08:16:21.664703: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-06-01 08:16:21.664718: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-06-01 08:16:21.671506: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-06-01 08:16:21.673485: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-06-01 08:21:30.575868: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-06-01 08:21:30.576532: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-06-01 08:21:30.778760: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-01 08:21:31.147608: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8201
+2022-06-01 08:21:31.840700: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-01 08:21:32.200069: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+Loaded tripletwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+[08:17:11] WARNING: ../src/learner.cc:627: 
+Parameters: { "n_estimators" } might not be used.
+
+  This could be a false alarm, with some parameters getting used by language bindings but
+  then being mistakenly passed down to XGBoost core, or some parameter actually being used
+  but getting flagged wrongly here. Please open an issue if you find any such cases.
+
+
+At 0.5 threshold we have BDT signal efficiency 0.860
+alright we're gonna start look at ['tripletwise']
+getting ROC for tripletwise
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+getting ROC for tripletwise
+pog
+getting ROC for tripletwise
+pog
+{'depth': 5, 'ec_widths': (64, 128, 256, 128, 64), 'width': 64}
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/py_checkpoint_reader.py", line 95, in NewCheckpointReader
+    return CheckpointReader(compat.as_bytes(filepattern))
+RuntimeError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64/variables/variables
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "gen_plots.py", line 235, in <module>
+    pairwise_model = PI.load_model_special('pairwise',  model_params_dict['pairwise'])
+  File "/code/delon/pc_ec/paper_code/experiment.py", line 440, in load_model_special
+    model.load_weights(model_filename+'/variables/variables')
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/keras/engine/training.py", line 2295, in load_weights
+    filepath, save_format = _detect_save_format(filepath)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/keras/engine/training.py", line 2918, in _detect_save_format
+    if _is_readable_tf_checkpoint(filepath):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/keras/engine/training.py", line 2939, in _is_readable_tf_checkpoint
+    py_checkpoint_reader.NewCheckpointReader(filepath)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/py_checkpoint_reader.py", line 99, in NewCheckpointReader
+    error_translator(e)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/py_checkpoint_reader.py", line 35, in error_translator
+    raise errors_impl.NotFoundError(None, None, error_message)
+tensorflow.python.framework.errors_impl.NotFoundError: Unsuccessful TensorSliceReader constructor: Failed to find any matching files for models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64/variables/variables

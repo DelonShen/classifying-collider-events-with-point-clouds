@@ -1,0 +1,2 @@
+python gen_models.py
+python gen_plots.py

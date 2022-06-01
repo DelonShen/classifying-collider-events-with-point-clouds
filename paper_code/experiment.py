@@ -11,7 +11,7 @@ BATCH_SIZE = 32
 
 matplotlib.rcParams['text.usetex'] = False
 plt.rcParams['font.family'] = 'serif'
-plt.rcParams['font.size'] = 16
+plt.rcParams['font.size'] = 20
 plt.rcParams['figure.autolayout'] = True
 
 
@@ -54,7 +54,8 @@ class Experimenter:
         _, _, _, _, _, _, _, self.model_directories = pickle.load(experimenter_file)
 
     def fromSaved(self, suffix=''):
-        experimenter_filename  ='/data/delon/experimenter/'+self.filename.split('.')[0].split('/')[-1]+suffix
+
+        experimenter_filename  ='/data/delon/experimenter/'+self.filename.split('/')[-1].split('.')[0]+suffix
         print('Loading Experimenter from Saved Experimenter at',experimenter_filename)
         experimenter_file = open(experimenter_filename, 'rb')
         self.filename, self.events, self.events_oup, self.events_tag, self.training_idx, self.test_idx, self.datasets, self.model_directories = pickle.load(experimenter_file)
@@ -66,7 +67,7 @@ class Experimenter:
         self.events_tag_train, self.events_tag_test = self.get_split(self.events_tag)
         self.models = dict()
         print('Split Stored')
-        base_filename = self.filename.split('.')[0].split('/')[-1] 
+        base_filename = self.filename.split('/')[-1].split('.')[0]
         print('Loading models')
         for model_name in self.model_directories.keys():
             model_filename = self.model_directories[model_name]
@@ -290,9 +291,11 @@ class Experimenter:
         '''plots ROC and AUC for EVENT CLASSIFICATION'''
 
         fpr, tpr, thresholds, auc = self.get_ROC(classifier_key, params, ideal=ideal)
+        plt.rcParams['font.family'] = 'serif'
+        plt.rcParams['font.size'] = 20
 
         if(ax != None):
-            ax.plot(tpr, 1/fpr, label=r'%s'%(classifiers_name[classifier_key]))
+            ax.plot(tpr, 1/fpr, **lstyle[classifier_key], label=r'%s'%(classifiers_name[classifier_key]))
             ax.set_yscale('log')
             return
 
@@ -313,22 +316,23 @@ class Experimenter:
 
         models = zip(classifier_keys, params)
 
-
+        plt.rcParams['font.family'] = 'serif'
+        plt.rcParams['font.size'] = 20
+    
         fig, ax = plt.subplots(figsize=(7,7), dpi=80)
         for (classifier_key, param) in models:
             self.plot_ROC(classifier_key, param, ax=ax, ideal=ideal)
 
         colormap = sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True)
         colors = [colormap(i) for i in np.linspace(.3, .98,len(ax.lines))]
-        for i,j in enumerate(ax.lines):
-            j.set_color(colors[i])
+#         for i,j in enumerate(ax.lines):
+#             j.set_color(colors[i])
 
 
         ax.set_xlim([0,1])
         ax.set_xlabel(r'$\epsilon_s$')
         ax.set_ylabel(r'$1/\epsilon_b$')
         ax.legend(loc='lower right', frameon=False)
-        ax.set_facecolor(colormap(5))
         handles, labels = ax.get_legend_handles_labels()
         ax.legend(handles[::-1], labels[::-1], loc='lower right', frameon=False)
 
@@ -343,20 +347,23 @@ class Experimenter:
         models = zip(classifier_keys, params)
         AUCs = [self.get_ROC(*model, ideal=ideal)[-1] for model in models]
         AUCs, classifier_keys, params = list(zip(*sorted(zip(AUCs, classifier_keys, params))))
+        plt.rcParams['font.family'] = 'serif'
+        plt.rcParams['font.size'] = 20
+
         return self.plot_multiple(classifier_keys, params, ideal=ideal)
 
     def save_experimenter(self, suffix=''):
         print('first saving models')
         self.save_models(suffix=suffix)
         print('now saving paramters of experimenter')
-        experimenter_filename  ='/data/delon/experimenter/'+self.filename.split('.')[0].split('/')[-1]+suffix
+        experimenter_filename  ='/data/delon/experimenter/'+self.filename.split('/')[-1].split('.')[0]+suffix
         experimenter_file = open(experimenter_filename, 'wb')
         pickle.dump((self.filename, self.events, self.events_oup, self.events_tag, self.training_idx, self.test_idx, self.datasets, self.model_directories), experimenter_file)
         experimenter_file.close()
         print('saved experimenter at', experimenter_filename)
 
     def save_models(self, suffix=''):
-        base_filename = self.filename.split('.')[0].split('/')[-1] 
+        base_filename = self.filename.split('/')[-1].split('.')[0]
         for model_name in self.models.keys():
             print('currently on', model_name)
             model = self.models[model_name]
@@ -369,7 +376,7 @@ class Experimenter:
             print('%s is saved in %s'%(model_name, model_filename))
 
     def load_saved_model(self, classifier_key, params):
-        base_filename = self.filename.split('.')[0].split('/')[-1] 
+        base_filename = self.filename.split('/')[-1].split('.')[0]
 
         tail_string = self.get_tail_string(params)
         model_name = '%s_%s'%(classifier_key, tail_string)
@@ -424,7 +431,7 @@ class Experimenter:
 
     def load_model_special(self, classifier_key, params, suffix=''):
         '''Special function to load model cause tensorflow hates ragged tensors'''
-        base_filename = self.filename.split('.')[0].split('/')[-1] 
+        base_filename = self.filename.split('/')[-1].split('.')[0]
         tail_string = self.get_tail_string(params)
         model_name = '%s_%s'%(classifier_key, tail_string)
         model_filename = 'models/'+base_filename+'_'+model_name+suffix

@@ -20,8 +20,11 @@ class adder(tf.keras.layers.Layer):
         self.mean = mean
         self.supports_masking = True
 
-    def call(self, inputs, mask=None):  
+    def call(self, inputs, mask=None, l1=False):
         mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,tf.shape(inputs)[-1]))
+        if(l1==True):
+            mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,1))
+            return tf.reduce_sum(mask_expanded*inputs, axis= 1 )
         if(self.mean):
             return tf.reduce_sum(mask_expanded*inputs, axis= 1 )/tf.reduce_sum(mask_expanded, axis= 1 )
 
@@ -271,29 +274,20 @@ class EdgeConvLayer(tf.keras.layers.Layer):
        
 
 
-    def call(self, features, mask=None):
-        fts = features
+    def call(self, fts, mask=None):
 
-        adj_fts = adj(self.num_particles, fts, idxs = self.idxs)
-        adj_fts_center = tf.tile(tf.expand_dims(fts, axis=2), (1, 1, self.K, 1))
-        
-        if(self.centered):
-            adj_fts = tf.subtract(adj_fts, adj_fts_center)
-            
-        adj_fts = tf.concat([adj_fts_center, adj_fts], axis=-1)
-        x = adj_fts
+        x = adj(self.num_particles, fts, idxs = self.idxs)     
+        x = tf.concat([tf.tile(tf.expand_dims(fts, axis=2), (1, 1, self.K, 1)), x], axis=-1)
         for idx in range(self.depth):
             x = self.linears[idx](x)
-
         mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,tf.shape(x)[-1]))
-        mask_fts = adj(self.num_particles, mask_expanded, idxs = self.idxs)
-        mask_fts_centered = tf.tile(tf.expand_dims(mask_expanded, axis=2), (1, 1, self.K, 1))        
-        mask_fts = mask_fts * mask_fts_centered
-        
-        fts = tf.math.multiply_no_nan(1/tf.reduce_sum(mask_fts, axis=2), tf.reduce_sum(mask_fts*x, axis= 2))
-        ret = fts
-        
-        return tf.keras.layers.Activation(tf.nn.leaky_relu)(ret)
+
+        if(self.widths[-1] == 1):
+            mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,1))
+        mask_expanded = adj(self.num_particles, mask_expanded, idxs = self.idxs)* tf.tile(tf.expand_dims(mask_expanded, axis=2), (1, 1, self.K, 1))        
+
+        fts = tf.math.divide_no_nan(tf.reduce_sum(mask_expanded*x, axis= 2), tf.reduce_sum(mask_expanded, axis=2))
+        return tf.keras.layers.Activation(tf.nn.leaky_relu)(fts)
 
     def compute_mask(self, inputs, mask=None):
         if mask is None:
@@ -306,7 +300,7 @@ class Pairwise(tf.keras.Model):
         super(Pairwise, self).__init__()
         self.depth = depth
         self.edge_convs = EdgeConvLayer(ec_widths, num_particles, depth=len(ec_widths), centered=centered, shortcut=shortcut)
-
+        self.ec_widths = ec_widths
         self.Sigma = MyActivation(Sigma)
         self.final_Sigma = final_Sigma
 
@@ -319,13 +313,12 @@ class Pairwise(tf.keras.Model):
     def call(self, inputs):
         x = inputs
         if(self.initial_mask==True):
-            x = tf.keras.layers.Masking()(inputs)
+            x = tf.keras.layers.Masking()(x)
         x = self.edge_convs(x)
-        x = self.Adder(x)
+        x = self.Adder(x, l1=self.ec_widths[-1]==1)
        #Apply F
         for i in range(self.depth):
             x = self.Sigma.activation(self.F[i](x))
-
         #Softmax Activation for classification or some other final activation (sigma)
         x = self.final_Sigma(self.F[-1](x))
         return x
@@ -409,14 +402,14 @@ class ExtendedEdgeConvLayer(tf.keras.layers.Layer):
         mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,tf.shape(x)[-1]))
         mask_fts = adj(self.num_particles, mask_expanded, idxs = self.idxs)
         mask_fts_centered = tf.tile(tf.expand_dims(mask_expanded, axis=2), (1, 1, self.K, 1))     
+        mask_fts_2d = mask_fts * mask_fts_centered
         
         mask_fts = tf.tile(tf.expand_dims(mask_fts, axis=1), (1, self.K, 1, 1, 1))
         mask_fts_centered = tf.tile(tf.expand_dims(tf.expand_dims(mask_expanded, axis=2), axis=2), (1, 1, self.K, self.K, 1))
-
         mask_fts = mask_fts * mask_fts_centered            
-            
-        x = tf.reduce_sum(mask_fts*x, axis= 3)/ tf.reduce_sum(mask_fts, axis=3)
-        x = tf.math.reduce_mean(x, axis=2)
+
+        x = tf.math.multiply_no_nan(1/tf.reduce_sum(mask_fts, axis=3), tf.reduce_sum(mask_fts*x, axis= 3))
+        x = tf.math.multiply_no_nan(1/tf.reduce_sum(mask_fts_2d, axis=2), tf.reduce_sum(mask_fts_2d*x, axis= 2))
         
         return tf.keras.layers.Activation(tf.nn.leaky_relu)(x)
     
@@ -529,6 +522,14 @@ classifiers_name = {'particlewise':r'Particlewise',
                     'pairwise_nl_iter':r'Iterated Nonlinear Pairwise' ,
                     'dnn':'dNN + ATLAS Features', 
                     'naivednn':'dNN + Naive Features'}
+lstyle = {'particlewise':{'linestyle':'dashed', 'color':'#1982c4','linewidth':3}, 
+                    'nested_concat':{'linestyle':'dashdot', 'color':'#38b000', 'linewidth':2},
+                    'pairwise':{'linestyle':'solid', 'color':'Black', 'linewidth':3}, 
+                    'tripletwise':{'linestyle':'dashdot', 'color':'#6a4c93', 'linewidth':3}, 
+                    'pairwise_nl':{'linestyle':'dashed', 'color':'#fb8b24', 'linewidth':2},
+                    'pairwise_nl_iter':{'linestyle':'solid', 'color':'#d90368', 'linewidth':2},
+                    'dnn':{'linestyle':'dashed', 'color':'lightgrey'}, 
+                    'naivednn':{'linestyle':'dashdot', 'color':'#f8ad9d'}}
 
 classifiers = {'particlewise':DeepSet, 
                'particlewise_mean':DeepSet,
