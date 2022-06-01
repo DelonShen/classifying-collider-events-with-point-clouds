@@ -27,7 +27,11 @@ def test_padding(model, model2=None):
             yhat2 = model.predict(data2)
         else:
             yhat2 = model2.predict(data2)
+            model2.set_weights(model.get_weights())
+            yhat2 = model2.predict(data2)
 
+
+        
         for i in range(2):
             if(abs(yhat1[0][i] - yhat2[0][i])>1e-5 or np.isnan(yhat1[0][i]) or np.isnan(yhat2[0][i])):
                 print(yhat1[0][i],  yhat2[0][i])
@@ -95,7 +99,6 @@ class test_pairwise(unittest.TestCase):
         self.name = name
         self.model = classifiers[name](**model_params_dict[name], num_particles=5)
         self.model2 = classifiers[name](**model_params_dict[name], num_particles=25)
-        self.model2.set_weights(self.model.get_weights())
 
     def test_padding(self):
         self.assertEqual(test_padding(self.model, model2=self.model2), True)
@@ -112,7 +115,6 @@ class test_pairwise_nl(unittest.TestCase):
         self.name = name
         self.model = classifiers[name](**model_params_dict[name], num_particles=5)
         self.model2 = classifiers[name](**model_params_dict[name], num_particles=25)
-        self.model2.set_weights(self.model.get_weights())
 
     def test_padding(self):
         self.assertEqual(test_padding(self.model, model2=self.model2), True)
@@ -128,7 +130,6 @@ class test_pairwise_nl_iter(unittest.TestCase):
         self.name = name
         self.model = classifiers[name](**model_params_dict[name], num_particles=5)
         self.model2 = classifiers[name](**model_params_dict[name], num_particles=25)
-        self.model2.set_weights(self.model.get_weights())
 
     def test_padding(self):
         self.assertEqual(test_padding(self.model, model2=self.model2), True)
@@ -146,7 +147,6 @@ class test_tripletwise(unittest.TestCase):
         self.name = name
         self.model = classifiers[name](**model_params_dict[name], num_particles=5)
         self.model2 = classifiers[name](**model_params_dict[name], num_particles=25)
-        self.model2.set_weights(self.model.get_weights())
 
     def test_padding(self):
         self.assertEqual(test_padding(self.model, model2=self.model2), True)

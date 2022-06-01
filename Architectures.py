@@ -266,7 +266,7 @@ class EdgeConvLayer(tf.keras.layers.Layer):
 
         self.idxs = [[j for j in range(num_particles)] for i in range(num_particles)]
 
-        self.linears = [tf.keras.layers.Conv2D(widths[i], kernel_size=(1, 1), strides=1, data_format='channels_last',
+        self.linears = [tf.keras.layers.Conv2D(widths[i], kernel_size=1, data_format='channels_last',
                                use_bias=True, kernel_initializer='glorot_normal', activation=MyActivation(tf.nn.leaky_relu)) for i in range(depth)]
        
 
@@ -282,7 +282,6 @@ class EdgeConvLayer(tf.keras.layers.Layer):
             
         adj_fts = tf.concat([adj_fts_center, adj_fts], axis=-1)
         x = adj_fts
-        
         for idx in range(self.depth):
             x = self.linears[idx](x)
 
@@ -321,10 +320,8 @@ class Pairwise(tf.keras.Model):
         x = inputs
         if(self.initial_mask==True):
             x = tf.keras.layers.Masking()(inputs)
-
         x = self.edge_convs(x)
         x = self.Adder(x)
-
        #Apply F
         for i in range(self.depth):
             x = self.Sigma.activation(self.F[i](x))
