@@ -11,6 +11,10 @@ from sklearn.metrics import roc_curve, auc
 import matplotlib.pyplot as plt
 import matplotlib
 
+import sys
+sys.path.insert(1, '../')
+
+from Architectures import *
 
 import random
 
@@ -410,5 +414,168 @@ def weightedLoss(originalLossFunc, weightsList):
         return loss
     return lossFunc
 
+
+import seaborn as sns
+from scipy.optimize import linear_sum_assignment
+from scipy.spatial.distance import cdist
+
+def earth_movers_distance(x,y,N=1300):
+    d = cdist(x[:N],y[:N])
+    assignment = linear_sum_assignment(d)
+    return (d[assignment].sum()/N)
+
+
+import numpy as np
+
+#https://mail.python.org/pipermail/scipy-user/2011-May/029521.html
+def KLdivergence(x, y):
+    """Compute the Kullback-Leibler divergence between two multivariate samples.
+
+    Parameters
+    ----------
+    x : 2D array (n,d)
+      Samples from distribution P, which typically represents the true
+      distribution.
+    y : 2D array (m,d)
+      Samples from distribution Q, which typically represents the approximate
+      distribution.
+
+    Returns
+    -------
+    out : float
+      The estimated Kullback-Leibler divergence D(P||Q).
+
+    References
+    ----------
+    Pérez-Cruz, F. Kullback-Leibler divergence estimation of
+continuous distributions IEEE International Symposium on Information
+Theory, 2008.
+    """
+    from scipy.spatial import cKDTree as KDTree
+
+    # Check the dimensions are consistent
+    x = np.atleast_2d(x)
+    y = np.atleast_2d(y)
+
+    n,d = x.shape
+    m,dy = y.shape
+
+    assert(d == dy)
+
+
+    # Build a KD tree representation of the samples and find the nearest neighbour
+    # of each point in x.
+    xtree = KDTree(x)
+    ytree = KDTree(y)
+
+    # Get the first two nearest neighbours for x, since the closest one is the
+    # sample itself.
+    r = xtree.query(x, k=2, eps=.01, p=2)[0][:,1]
+    s = ytree.query(x, k=1, eps=.01, p=2)[0]
+
+    # There is a mistake in the paper. In Eq. 14, the right side misses a negative sign
+    # on the first term of the right hand side.
+    return -np.log(r/s).sum() * d / n + np.log(m / (n - 1.))
+
+
+import math
+def rotate(p, origin=(0, 0), angle=0):
+    #ANGLE IN RADS
+    R = np.array([[np.cos(angle), -np.sin(angle)],
+                  [np.sin(angle),  np.cos(angle)]])
+    o = np.atleast_2d(origin)
+    p = np.atleast_2d(p)
+    p = p - o
+    p = [R@pnt for pnt in p]
+    
+    return p + o
+
+from sklearn.manifold import TSNE
+from sklearn.metrics import pairwise_distances
+def compute_tsne_embedded(latent_reps, perplexity=50):
+    distance_matrix = pairwise_distances(latent_reps, latent_reps, metric='cosine', n_jobs=-1)
+    latent_reps_embedded_tsne = TSNE(metric="precomputed", n_components=2, learning_rate='auto', 
+                                      verbose=2, perplexity=perplexity, 
+                                     n_iter=2000, n_jobs=-1)
+    latent_reps_embedded = latent_reps_embedded_tsne.fit_transform(distance_matrix)
+    return latent_reps_embedded
+
+def compute_tsne(model, cut, X_test, perplexity=50):
+    latent_getter = LatentGetter(model.layers[0:3], condensed=True)
+    latent_reps = latent_getter.predict(X_test.numpy()[cut])
+    return compute_tsne_embedded(latent_reps, perplexity=perplexity)
+
+def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True):
+    c_cut = 5
+    cmap = sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True)
+
+    plt.rcParams['font.family'] = 'serif'
+    plt.rcParams['font.size'] = 19
+    plt.rcParams['figure.autolayout'] = False
+    plt.rcParams['text.usetex'] = True
+
+    ttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
+    nttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
+
+    if(rotated):
+        cntr      = np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
+        ttH_cntr  = np.array([np.mean(ttH_loc[:,0]), np.mean(ttH_loc[:, 1])])
+        nttH_cntr = np.array([np.mean(nttH_loc[:,0]), np.mean(nttH_loc[:, 1])])
+        tmp = ttH_cntr - cntr
+        tmp = tmp / np.linalg.norm(tmp)
+        angl = -np.arctan(tmp[1]/tmp[0])
+        print(ttH_loc[0])
+        ttH_loc = rotate(ttH_loc, origin=cntr, angle=angl)
+        print(ttH_loc[0])
+        nttH_loc = rotate(nttH_loc, origin=cntr, angle=angl)
+    
+    
+    distance = KLdivergence(ttH_loc, nttH_loc)
+    print('KL Divergence', distance)
+       
+    g = sns.jointplot(x=ttH_loc[:,0], y = ttH_loc[:,1], color=cmap(100), space=0, label='ttH jets',
+                      cmap=cmap, kind='kde', height=10, fill=True, cut=c_cut,
+                     marginal_kws={'linewidth': 0.0, 'alpha':1.0})
+
+    linew = 1
+    bgrey = sns.dark_palette('#d495f4', reverse=True, as_cmap=True)
+    COL2 = bgrey(.8)
+    sns.kdeplot(x=nttH_loc[:,0], y = nttH_loc[:,1], shade=False, label=r'ttbar jets',cmap=bgrey, linewidths=linew, cut=c_cut, 
+                levels=10, ax=g.ax_joint)
+
+    sns.kdeplot(nttH_loc[:,0], ax=g.ax_marg_x, color=COL2, lw=linew)
+    sns.kdeplot(y=nttH_loc[:,1], ax=g.ax_marg_y, color=COL2, lw=linew)
+
+    ax = g.ax_joint
+
+    import matplotlib.patches as  mpatches
+    import matplotlib.lines as  mlines
+    
+    handles = [mpatches.Patch(facecolor=cmap(100), label=r'$tt(H\rightarrow\tau\tau)$ Events'),
+               mlines.Line2D([], [], color=COL2, label=r'$t\overline{t}$ Events', lw=linew)]
+    legend = ax.legend(loc='upper left', handles=handles, frameon=False, title=text)
+    legend._legend_box.align = 'left'
+
+    plt.setp(legend.get_texts(), color=cmap(0.98))
+    plt.rcParams['font.family'] = 'serif'
+    plt.rcParams['font.size'] = 19
+    plt.rcParams['figure.autolayout'] = True
+
+
+
+    ax.set_facecolor(cmap(c_cut))
+    ax.get_xaxis().set_visible(False)
+    ax.get_yaxis().set_visible(False)
+    g.ax_marg_y.get_yaxis().set_visible(False)
+    g.ax_marg_x.get_xaxis().set_visible(False)
+    
+
+    ax.text(.98, .02,
+            s=r"{KL Divergence:} $\mathbf{%.3f}$"%distance, 
+            transform=ax.transAxes,
+            horizontalalignment='right',
+            verticalalignment='bottom',)
+    
+    return g
 
 

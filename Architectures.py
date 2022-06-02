@@ -512,7 +512,9 @@ model_params_dict = {'particlewise':{'width':128, 'depth':4, 'latent_dim':64},
         'pairwise_nl_iter': {'depth':5, 'ec_widths':((64,64,116,64,64),(64,64,116,64,64),(64,64,116,64,64)), 'width':32, 'latent_dim':64},
         'tripletwise': {'depth':5, 'ec_widths':(64,128,256,128,64), 'width':64},
         'dnn': {'width':256,'depth':3,'num_classes':2},
-        'naivednn':{'width':256,'depth':3,'num_classes':2}
+        'naivednn':{'width':256,'depth':3,'num_classes':2},
+        'latent_two': {'depth':5, 'ec_widths':(64,128,256,128,2), 'width':64},
+        'latent_eight': {'depth':5, 'ec_widths':(64,128,256,128,2**3), 'width':64},
         }
 classifiers_name = {'particlewise':r'Particlewise', 
                     'nested_concat':r'Nested Concatenation',
@@ -532,12 +534,15 @@ lstyle = {'particlewise':{'linestyle':'dashed', 'color':'#1982c4','linewidth':3}
                     'naivednn':{'linestyle':'dashdot', 'color':'#f8ad9d'}}
 
 classifiers = {'particlewise':DeepSet, 
-               'particlewise_mean':DeepSet,
             'nested_concat':NestedConcat,
             'pairwise':Pairwise,
             'tripletwise':Tripletwise,
             'dnn':DNN_Classifier,
             'naivednn':DNN_Flatten,
             'pairwise_nl':IteratedPiPairwise,
-            'pairwise_nl_iter':IteratedPiPairwise}
+            'pairwise_nl_iter':IteratedPiPairwise,
+            #AUX ARCHS
+            'latent_two': Pairwise,
+            'latent_eight': Pairwise,
+            }
 

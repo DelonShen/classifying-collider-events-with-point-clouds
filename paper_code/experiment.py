@@ -69,6 +69,7 @@ class Experimenter:
         print('Split Stored')
         base_filename = self.filename.split('/')[-1].split('.')[0]
         print('Loading models')
+        print(self.model_directories)
         for model_name in self.model_directories.keys():
             model_filename = self.model_directories[model_name]
             weights = np.array([*self.datasets[self.model_name_to_model(model_name)+'_weight']])
@@ -77,7 +78,7 @@ class Experimenter:
             tmp['['] = '('
             tmp[']'] = ')'
             model_filename = ''.join([a if (a not in ['[',']']) else tmp[a] for a in model_filename])
-            self.models[model_name] = tf.keras.models.load_model(model_filename)#, custom_objects={"_my_ragged_tensor_lossFunc":loss})
+            self.models[model_name] = self.load_model_weights(model_name, self.model_name_to_model(model_name), suffix=suffix)#, custom_objects={"_my_ragged_tensor_lossFunc":loss})
             print('Loaded %s from %s'%(model_name, model_filename))
 
     
@@ -267,8 +268,7 @@ class Experimenter:
 
 
         print('currently on', classifier_name)
-        if('otth' in classifier_key):
-            classifier = self.load_model_special(classifier_key, params)
+#        classifier = self.load_model_special(classifier_key, params)
 
         yhat_test = classifier.predict(X_test)
         y_test = y_test.numpy()
@@ -295,12 +295,12 @@ class Experimenter:
         plt.rcParams['font.size'] = 20
 
         if(ax != None):
-            ax.plot(tpr, 1/fpr, **lstyle[classifier_key], label=r'%s'%(classifiers_name[classifier_key]))
+            ax.plot(tpr, 1/fpr, **lstyle[classifier_key], label=r'%.5f %s'%(auc, classifiers_name[classifier_key]))
             ax.set_yscale('log')
             return
 
         plt.figure(figsize=(8, 8), dpi=80)
-        plt.plot(tpr, 1/fpr, color='black', label=r'AUC: %.3f'%(auc))
+        plt.plot(tpr, 1/fpr, color='black', label=r'AUC: %.5f'%(auc))
         plt.xlim([0.0, 1.0])
         ax.set_xlabel(r'$\epsilon_s$')
         ax.set_ylabel(r'$1/\epsilon_b$')
@@ -333,8 +333,8 @@ class Experimenter:
         ax.set_xlabel(r'$\epsilon_s$')
         ax.set_ylabel(r'$1/\epsilon_b$')
         ax.legend(loc='lower right', frameon=False)
-        handles, labels = ax.get_legend_handles_labels()
-        ax.legend(handles[::-1], labels[::-1], loc='lower right', frameon=False)
+#        handles, labels = ax.get_legend_handles_labels()
+#        ax.legend(handles[::-1], labels[::-1], loc='lower right', frameon=False)
 
         return fig, ax
 
@@ -375,13 +375,13 @@ class Experimenter:
             self.model_directories[model_name] = model_filename
             print('%s is saved in %s'%(model_name, model_filename))
 
-    def load_saved_model(self, classifier_key, params):
+    def load_saved_model(self, classifier_key, params, suffix=''):
         base_filename = self.filename.split('/')[-1].split('.')[0]
 
         tail_string = self.get_tail_string(params)
         model_name = '%s_%s'%(classifier_key, tail_string)
 
-        model_filename = 'models/'+base_filename+'_'+model_name
+        model_filename = 'models/'+base_filename+'_'+model_name+suffix
 
         weights = np.array([*self.datasets[classifier_key+'_weight']])
         loss = weightedLoss(tf.keras.losses.categorical_crossentropy, weights)
@@ -429,13 +429,17 @@ class Experimenter:
     def get_test_dataset(self, classifier_key):
         return self.datasets[classifier_key + '_test']
 
-    def load_model_special(self, classifier_key, params, suffix=''):
-        '''Special function to load model cause tensorflow hates ragged tensors'''
+    
+    def load_model_weights(self, model_name, classifier_key, suffix=''):
         base_filename = self.filename.split('/')[-1].split('.')[0]
-        tail_string = self.get_tail_string(params)
-        model_name = '%s_%s'%(classifier_key, tail_string)
-        model_filename = 'models/'+base_filename+'_'+model_name+suffix
-        print(params)
-        model = self.classifiers[classifier_key](**params)
+        model_filename = './models/'+base_filename+'_'+model_name+suffix
+        model = self.classifiers[classifier_key](**model_params_dict[classifier_key])
         model.load_weights(model_filename+'/variables/variables')
         return model
+
+    def load_model_special(self, classifier_key, params, suffix=''):
+        '''Special function to load model cause tensorflow hates ragged tensors'''
+        tail_string = self.get_tail_string(params)
+        model_name = '%s_%s'%(classifier_key, tail_string)
+        return self.load_model_weights(model_name, classifier_key, suffix=suffix)
+

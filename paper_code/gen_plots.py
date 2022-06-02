@@ -1,5 +1,8 @@
 import os
 
+#TEMP
+#os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+
 #to get latex to work 
 os.environ['PATH'] = "%s:/usr/local/cuda-11.2/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/anaconda/bin:/home/delon/texlive/bin/x86_64-linux:/home/delon/.local/bin:/home/delon/bin"%os.environ['PATH']
 
@@ -28,7 +31,7 @@ random.seed(42)
 filename = '../data/data100k_raw_combined_atlas_cut.pkl'
 num_round = None
 
-train_bst = True
+train_bst = False
 
 #TESTING
 #EPOCHS = 2
@@ -155,13 +158,19 @@ model_params_to_plot
 
 fig, ax = PI.plot_multiple_sorted_by_AUC(models_to_plot, model_params_to_plot)
 colormap = sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True)
-ax.plot(tpr, 1/fpr, label=r'%s'%('BDT + ATLAS Features'), color='lightgrey')                                         
+ax.plot(tpr, 1/fpr, label=r'%.3f %s'%(auc, 'BDT + ATLAS Features'), color='lightgrey')                                         
 
 
 ax.get_legend().remove()
 ax.legend(loc='upper right', frameon=False, labelspacing=2.0)
 handles, labels = ax.get_legend_handles_labels()
-labels, handles = list(zip(*reversed(sorted(zip(labels, handles)))))
+
+idxs = np.argsort(labels)
+
+labels = [' '.join(label.split(' ')[1:]) for label in labels]
+labels = list(reversed(np.array(labels)[idxs]))
+handles = list(reversed(np.array(handles)[idxs]))
+
 ax.legend(handles, labels, loc='upper right', frameon=False)
 
 for txt in ax.texts:
@@ -302,7 +311,5 @@ ax.get_xaxis().set_visible(False)
 ax.get_yaxis().set_visible(False)
 g.ax_marg_y.get_yaxis().set_visible(False)
 g.ax_marg_x.get_xaxis().set_visible(False)
-
-
-plt.savefig('figures/tsne_densities.pdf')
+g.savefig('figures/tsne_densities.pdf')
 
