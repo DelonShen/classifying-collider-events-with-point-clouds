@@ -338,7 +338,7 @@ def plot_ROC(oup, true, filename, category_names, is_tensor=True,
 
   #plot roc curves
   plt.rcParams['font.family'] = 'serif'
-  plt.rcParams['font.size'] = 16
+  plt.rcParams['font.size'] = 25
   plt.rcParams['figure.autolayout'] = True
   plt.figure(figsize=(8, 8), dpi=80)
 
@@ -427,7 +427,24 @@ def earth_movers_distance(x,y,N=1300):
 
 import numpy as np
 
-#https://mail.python.org/pipermail/scipy-user/2011-May/029521.html
+def compute_kde_estimate(events):
+    from scipy.stats import gaussian_kde
+    estimator = gaussian_kde(events)
+    return estimator
+import math
+def rotate(p, origin=(0, 0), angle=0):
+    #ANGLE IN RADS
+    R = np.array([[np.cos(angle), -np.sin(angle)],
+                  [np.sin(angle),  np.cos(angle)]])
+    o = np.atleast_2d(origin)
+    p = np.atleast_2d(p)
+    p = p - o
+    p = [R@pnt for pnt in p]
+    
+    return p + o
+
+#FROM https://mail.python.org/pipermail/scipy-user/2011-May/029521.html
+#With modificiation to handle singularities 
 def KLdivergence(x, y):
     """Compute the Kullback-Leibler divergence between two multivariate samples.
 
@@ -473,95 +490,150 @@ Theory, 2008.
     r = xtree.query(x, k=2, eps=.01, p=2)[0][:,1]
     s = ytree.query(x, k=1, eps=.01, p=2)[0]
 
+    lg = np.log(r/s)
+    #get rid of singularities
+    lg = lg[np.abs(lg) != float('inf')]
+    
     # There is a mistake in the paper. In Eq. 14, the right side misses a negative sign
     # on the first term of the right hand side.
-    return -np.log(r/s).sum() * d / n + np.log(m / (n - 1.))
-
-
-import math
-def rotate(p, origin=(0, 0), angle=0):
-    #ANGLE IN RADS
-    R = np.array([[np.cos(angle), -np.sin(angle)],
-                  [np.sin(angle),  np.cos(angle)]])
-    o = np.atleast_2d(origin)
-    p = np.atleast_2d(p)
-    p = p - o
-    p = [R@pnt for pnt in p]
-    
-    return p + o
+    return -lg.sum() * d / n + np.log(m / (n - 1.))
 
 from sklearn.manifold import TSNE
 from sklearn.metrics import pairwise_distances
+import openTSNE
 def compute_tsne_embedded(latent_reps, perplexity=50):
-    distance_matrix = pairwise_distances(latent_reps, latent_reps, metric='cosine', n_jobs=-1)
-    latent_reps_embedded_tsne = TSNE(metric="precomputed", n_components=2, learning_rate='auto', 
-                                      verbose=2, perplexity=perplexity, 
-                                     n_iter=2000, n_jobs=-1)
-    latent_reps_embedded = latent_reps_embedded_tsne.fit_transform(distance_matrix)
-    return latent_reps_embedded
+    x = latent_reps
+    print('computing tsne')
+    affinities_multiscale_mixture = openTSNE.affinity.Multiscale(
+        x,
+        perplexities=[50, 1998],
+        metric="cosine",
+        n_jobs=-1,
+        random_state=42,
+    )
+    init = openTSNE.initialization.pca(x, random_state=42)
 
-def compute_tsne(model, cut, X_test, perplexity=50):
+    latent_reps_embedded_tsne = openTSNE.TSNE(n_jobs=-1, verbose=True).fit(affinities=affinities_multiscale_mixture,
+                                                             initialization=init,)
+    
+
+    return latent_reps_embedded_tsne
+
+def compute_tsne(model, cut, X_test, perplexity=100):
     latent_getter = LatentGetter(model.layers[0:3], condensed=True)
     latent_reps = latent_getter.predict(X_test.numpy()[cut])
     return compute_tsne_embedded(latent_reps, perplexity=perplexity)
 
-def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True):
+def emd(events, latent_label):
+    ttH_loc = np.array([events[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
+    nttH_loc = np.array([events[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
+    return earth_movers_distance(ttH_loc, nttH_loc)
+
+
+def kldiv(events, latent_label):
+    ttH_loc = np.array([events[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
+    nttH_loc = np.array([events[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
+    return KLdivergence(ttH_loc, nttH_loc)
+
+def TEMP_gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, standardized=False):
     c_cut = 5
     cmap = sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True)
 
     plt.rcParams['font.family'] = 'serif'
-    plt.rcParams['font.size'] = 19
+    plt.rcParams['font.size'] = 25
     plt.rcParams['figure.autolayout'] = False
     plt.rcParams['text.usetex'] = True
+    
 
     ttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
     nttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
 
     if(rotated):
-        cntr      = np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
         ttH_cntr  = np.array([np.mean(ttH_loc[:,0]), np.mean(ttH_loc[:, 1])])
         nttH_cntr = np.array([np.mean(nttH_loc[:,0]), np.mean(nttH_loc[:, 1])])
         tmp = ttH_cntr - cntr
         tmp = tmp / np.linalg.norm(tmp)
         angl = -np.arctan(tmp[1]/tmp[0])
-        print(ttH_loc[0])
         ttH_loc = rotate(ttH_loc, origin=cntr, angle=angl)
-        print(ttH_loc[0])
         nttH_loc = rotate(nttH_loc, origin=cntr, angle=angl)
     
     
     distance = KLdivergence(ttH_loc, nttH_loc)
-    print('KL Divergence', distance)
+    print('distance', distance)
+    
+
+def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4'):
+    c_cut = 5
+
+    plt.rcParams['font.family'] = 'serif'
+    plt.rcParams['font.size'] = 25
+    plt.rcParams['figure.autolayout'] = False
+    plt.rcParams['text.usetex'] = True
+
+  
+
+    
+    
+    ttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
+    nttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
+
+    if(rotated):
+        cntr      = np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
+        print(cntr, np.array([np.std(curr_event[:,0]), np.std(curr_event[:, 1])]))
+        ttH_cntr  = np.array([np.mean(ttH_loc[:,0]), np.mean(ttH_loc[:, 1])])
+        nttH_cntr = np.array([np.mean(nttH_loc[:,0]), np.mean(nttH_loc[:, 1])])
+        tmp = ttH_cntr - cntr
+        tmp = tmp / np.linalg.norm(tmp)
+        angl = -np.arctan(tmp[1]/tmp[0])
+        ttH_loc = rotate(ttH_loc, origin=cntr, angle=angl)
+        nttH_loc = rotate(nttH_loc, origin=cntr, angle=angl)
+        curr_event = rotate(curr_event, origin=cntr, angle=angl)
+        
+        ttH_cntr  = np.array([np.mean(ttH_loc[:,0]), np.mean(ttH_loc[:, 1])])
+        nttH_cntr = np.array([np.mean(nttH_loc[:,0]), np.mean(nttH_loc[:, 1])])
+        if(ttH_cntr[0] < nttH_cntr[0]):
+            ttH_loc = np.array([[-x0,x1] for x0,x1 in ttH_loc])
+            nttH_loc = np.array([[-x0, x1] for x0, x1 in nttH_loc])
+
+    
+    distance = KLdivergence(ttH_loc, nttH_loc)
+    print('KL div', distance)
        
     g = sns.jointplot(x=ttH_loc[:,0], y = ttH_loc[:,1], color=cmap(100), space=0, label='ttH jets',
                       cmap=cmap, kind='kde', height=10, fill=True, cut=c_cut,
-                     marginal_kws={'linewidth': 0.0, 'alpha':1.0})
+                     marginal_kws={'linewidth': 0.0, 'alpha':1.0, 'log_scale':log},
+                     joint_kws={'log_scale':log})
 
     linew = 1
-    bgrey = sns.dark_palette('#d495f4', reverse=True, as_cmap=True)
+    bgrey = sns.dark_palette(col_aux, reverse=True, as_cmap=True)
     COL2 = bgrey(.8)
     sns.kdeplot(x=nttH_loc[:,0], y = nttH_loc[:,1], shade=False, label=r'ttbar jets',cmap=bgrey, linewidths=linew, cut=c_cut, 
-                levels=10, ax=g.ax_joint)
+                levels=10, ax=g.ax_joint, log_scale=log)
 
-    sns.kdeplot(nttH_loc[:,0], ax=g.ax_marg_x, color=COL2, lw=linew)
-    sns.kdeplot(y=nttH_loc[:,1], ax=g.ax_marg_y, color=COL2, lw=linew)
+    sns.kdeplot(nttH_loc[:,0], ax=g.ax_marg_x, color=COL2, lw=linew, log_scale=log)
+    sns.kdeplot(y=nttH_loc[:,1], ax=g.ax_marg_y, color=COL2, lw=linew, log_scale=log)
 
     ax = g.ax_joint
 
     import matplotlib.patches as  mpatches
     import matplotlib.lines as  mlines
     
-    handles = [mpatches.Patch(facecolor=cmap(100), label=r'$tt(H\rightarrow\tau\tau)$ Events'),
+    handles = [mpatches.Patch(facecolor=cmap(100), label=r'$ttH$ Events'),
                mlines.Line2D([], [], color=COL2, label=r'$t\overline{t}$ Events', lw=linew)]
-    legend = ax.legend(loc='upper left', handles=handles, frameon=False, title=text)
-    legend._legend_box.align = 'left'
+    legend = ax.legend(loc='upper right', handles=handles, frameon=False, title=text)
+    legend._legend_box.align = 'right'
 
     plt.setp(legend.get_texts(), color=cmap(0.98))
     plt.rcParams['font.family'] = 'serif'
-    plt.rcParams['font.size'] = 19
+    plt.rcParams['font.size'] = 25
     plt.rcParams['figure.autolayout'] = True
 
-
+    if(bnds):
+        cntr  =  np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
+        cntr_std =  np.array([np.std(curr_event[:,0]), np.std(curr_event[:, 1])])
+        std = max(cntr_std)
+        ax.set_xlim(cntr[0]-2*std**2, cntr[0]+10*std**2)
+        ax.set_ylim(cntr[1]-std**(1/2), cntr[1]+std)
 
     ax.set_facecolor(cmap(c_cut))
     ax.get_xaxis().set_visible(False)
@@ -571,10 +643,18 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
     
 
     ax.text(.98, .02,
-            s=r"{KL Divergence:} $\mathbf{%.3f}$"%distance, 
+            s=r"$D_{\rm KL}(ttH \parallel t\overline{t})$: $\mathbf{%.3f}$"%distance, 
             transform=ax.transAxes,
             horizontalalignment='right',
             verticalalignment='bottom',)
+
+
+
+#     ax.text(-.005 , 0.5, s=r'\textbf{t-SNE Embedding} of Latent Representations',
+#             horizontalalignment='right',
+#             verticalalignment='center',
+#             rotation='vertical',
+#             transform=ax.transAxes)
     
     return g
 

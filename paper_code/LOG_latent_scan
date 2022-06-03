@@ -4967,3 +4967,1438 @@ Epoch 30/256
 3063/3063 - 38s - loss: 0.2372 - val_loss: 0.2511
 Epoch 31/256
 3063/3063 - 37s - loss: 0.2364 - val_loss: 0.2492
+Epoch 32/256
+3063/3063 - 38s - loss: 0.2345 - val_loss: 0.2615
+Epoch 33/256
+3063/3063 - 37s - loss: 0.2330 - val_loss: 0.2452
+Epoch 34/256
+3063/3063 - 38s - loss: 0.2312 - val_loss: 0.2527
+Epoch 35/256
+3063/3063 - 37s - loss: 0.2309 - val_loss: 0.2515
+Epoch 36/256
+3063/3063 - 38s - loss: 0.2277 - val_loss: 0.2513
+Epoch 37/256
+3063/3063 - 39s - loss: 0.2269 - val_loss: 0.2561
+Epoch 38/256
+3063/3063 - 38s - loss: 0.2259 - val_loss: 0.2480
+Epoch 39/256
+3063/3063 - 38s - loss: 0.2239 - val_loss: 0.2528
+Epoch 40/256
+3063/3063 - 38s - loss: 0.2231 - val_loss: 0.2543
+Epoch 41/256
+3063/3063 - 38s - loss: 0.2230 - val_loss: 0.2515
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 32)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 40s - loss: 0.3889 - val_loss: 0.3802
+Epoch 2/256
+3063/3063 - 38s - loss: 0.3557 - val_loss: 0.3418
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3470 - val_loss: 0.3705
+Epoch 4/256
+3063/3063 - 38s - loss: 0.3413 - val_loss: 0.3553
+Epoch 5/256
+3063/3063 - 39s - loss: 0.3342 - val_loss: 0.3398
+Epoch 6/256
+3063/3063 - 38s - loss: 0.3266 - val_loss: 0.3218
+Epoch 7/256
+3063/3063 - 38s - loss: 0.3168 - val_loss: 0.3061
+Epoch 8/256
+3063/3063 - 38s - loss: 0.3104 - val_loss: 0.3135
+Epoch 9/256
+3063/3063 - 39s - loss: 0.3044 - val_loss: 0.2995
+Epoch 10/256
+3063/3063 - 38s - loss: 0.2961 - val_loss: 0.2931
+Epoch 11/256
+3063/3063 - 39s - loss: 0.2911 - val_loss: 0.2860
+Epoch 12/256
+3063/3063 - 38s - loss: 0.2868 - val_loss: 0.2834
+Epoch 13/256
+3063/3063 - 39s - loss: 0.2814 - val_loss: 0.2831
+Epoch 14/256
+3063/3063 - 38s - loss: 0.2775 - val_loss: 0.2821
+Epoch 15/256
+3063/3063 - 39s - loss: 0.2717 - val_loss: 0.2817
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2679 - val_loss: 0.2759
+Epoch 17/256
+3063/3063 - 40s - loss: 0.2649 - val_loss: 0.2809
+Epoch 18/256
+3063/3063 - 38s - loss: 0.2618 - val_loss: 0.2953
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2584 - val_loss: 0.2821
+Epoch 20/256
+3063/3063 - 38s - loss: 0.2554 - val_loss: 0.2629
+Epoch 21/256
+3063/3063 - 39s - loss: 0.2536 - val_loss: 0.2655
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2522 - val_loss: 0.2540
+Epoch 23/256
+3063/3063 - 39s - loss: 0.2493 - val_loss: 0.2514
+Epoch 24/256
+3063/3063 - 38s - loss: 0.2475 - val_loss: 0.2629
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2467 - val_loss: 0.2554
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2440 - val_loss: 0.2702
+Epoch 27/256
+3063/3063 - 39s - loss: 0.2423 - val_loss: 0.2530
+Epoch 28/256
+3063/3063 - 38s - loss: 0.2411 - val_loss: 0.2701
+Epoch 29/256
+3063/3063 - 38s - loss: 0.2387 - val_loss: 0.2504
+Epoch 30/256
+3063/3063 - 38s - loss: 0.2370 - val_loss: 0.2474
+Epoch 31/256
+3063/3063 - 39s - loss: 0.2353 - val_loss: 0.2599
+Epoch 32/256
+3063/3063 - 38s - loss: 0.2348 - val_loss: 0.2488
+Epoch 33/256
+3063/3063 - 39s - loss: 0.2340 - val_loss: 0.2487
+Epoch 34/256
+3063/3063 - 38s - loss: 0.2312 - val_loss: 0.2505
+Epoch 35/256
+3063/3063 - 38s - loss: 0.2303 - val_loss: 0.2500
+Epoch 36/256
+3063/3063 - 38s - loss: 0.2289 - val_loss: 0.2436
+Epoch 37/256
+3063/3063 - 39s - loss: 0.2271 - val_loss: 0.2539
+Epoch 38/256
+3063/3063 - 38s - loss: 0.2269 - val_loss: 0.2442
+Epoch 39/256
+3063/3063 - 39s - loss: 0.2259 - val_loss: 0.2505
+Epoch 40/256
+3063/3063 - 38s - loss: 0.2238 - val_loss: 0.2423
+Epoch 41/256
+3063/3063 - 39s - loss: 0.2230 - val_loss: 0.2529
+Epoch 42/256
+3063/3063 - 39s - loss: 0.2221 - val_loss: 0.2479
+Epoch 43/256
+3063/3063 - 39s - loss: 0.2206 - val_loss: 0.2422
+Epoch 44/256
+3063/3063 - 38s - loss: 0.2206 - val_loss: 0.2444
+Epoch 45/256
+3063/3063 - 39s - loss: 0.2184 - val_loss: 0.2463
+Epoch 46/256
+3063/3063 - 39s - loss: 0.2177 - val_loss: 0.2489
+Epoch 47/256
+3063/3063 - 39s - loss: 0.2170 - val_loss: 0.2464
+Epoch 48/256
+3063/3063 - 39s - loss: 0.2159 - val_loss: 0.2418
+Epoch 49/256
+3063/3063 - 39s - loss: 0.2153 - val_loss: 0.2475
+Epoch 50/256
+3063/3063 - 39s - loss: 0.2138 - val_loss: 0.2410
+Epoch 51/256
+3063/3063 - 39s - loss: 0.2135 - val_loss: 0.2489
+Epoch 52/256
+3063/3063 - 38s - loss: 0.2123 - val_loss: 0.2675
+Epoch 53/256
+3063/3063 - 39s - loss: 0.2115 - val_loss: 0.2446
+Epoch 54/256
+3063/3063 - 38s - loss: 0.2106 - val_loss: 0.2484
+Epoch 55/256
+3063/3063 - 40s - loss: 0.2094 - val_loss: 0.2564
+Epoch 56/256
+3063/3063 - 38s - loss: 0.2090 - val_loss: 0.2458
+Epoch 57/256
+3063/3063 - 39s - loss: 0.2080 - val_loss: 0.2463
+Epoch 58/256
+3063/3063 - 38s - loss: 0.2065 - val_loss: 0.2426
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 32)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3896 - val_loss: 0.3627
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3562 - val_loss: 0.3565
+Epoch 3/256
+3063/3063 - 38s - loss: 0.3448 - val_loss: 0.3330
+Epoch 4/256
+3063/3063 - 39s - loss: 0.3378 - val_loss: 0.3278
+Epoch 5/256
+3063/3063 - 38s - loss: 0.3288 - val_loss: 0.3266
+Epoch 6/256
+3063/3063 - 38s - loss: 0.3216 - val_loss: 0.3213
+Epoch 7/256
+3063/3063 - 38s - loss: 0.3130 - val_loss: 0.3025
+Epoch 8/256
+3063/3063 - 38s - loss: 0.3041 - val_loss: 0.2928
+Epoch 9/256
+3063/3063 - 38s - loss: 0.2965 - val_loss: 0.2981
+Epoch 10/256
+3063/3063 - 39s - loss: 0.2884 - val_loss: 0.2889
+Epoch 11/256
+3063/3063 - 38s - loss: 0.2842 - val_loss: 0.3041
+Epoch 12/256
+3063/3063 - 39s - loss: 0.2800 - val_loss: 0.2856
+Epoch 13/256
+3063/3063 - 39s - loss: 0.2749 - val_loss: 0.2724
+Epoch 14/256
+3063/3063 - 38s - loss: 0.2717 - val_loss: 0.2827
+Epoch 15/256
+3063/3063 - 38s - loss: 0.2679 - val_loss: 0.2733
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2646 - val_loss: 0.2752
+Epoch 17/256
+3063/3063 - 38s - loss: 0.2621 - val_loss: 0.2676
+Epoch 18/256
+3063/3063 - 39s - loss: 0.2603 - val_loss: 0.2920
+Epoch 19/256
+3063/3063 - 38s - loss: 0.2571 - val_loss: 0.2738
+Epoch 20/256
+3063/3063 - 38s - loss: 0.2545 - val_loss: 0.2738
+Epoch 21/256
+3063/3063 - 38s - loss: 0.2528 - val_loss: 0.2669
+Epoch 22/256
+3063/3063 - 38s - loss: 0.2501 - val_loss: 0.3026
+Epoch 23/256
+3063/3063 - 38s - loss: 0.2477 - val_loss: 0.2626
+Epoch 24/256
+3063/3063 - 38s - loss: 0.2467 - val_loss: 0.2540
+Epoch 25/256
+3063/3063 - 38s - loss: 0.2449 - val_loss: 0.2450
+Epoch 26/256
+3063/3063 - 38s - loss: 0.2435 - val_loss: 0.2576
+Epoch 27/256
+3063/3063 - 38s - loss: 0.2418 - val_loss: 0.2709
+Epoch 28/256
+3063/3063 - 38s - loss: 0.2390 - val_loss: 0.2522
+Epoch 29/256
+3063/3063 - 39s - loss: 0.2385 - val_loss: 0.2566
+Epoch 30/256
+3063/3063 - 38s - loss: 0.2376 - val_loss: 0.2539
+Epoch 31/256
+3063/3063 - 38s - loss: 0.2356 - val_loss: 0.2542
+Epoch 32/256
+3063/3063 - 38s - loss: 0.2337 - val_loss: 0.2658
+Epoch 33/256
+3063/3063 - 38s - loss: 0.2324 - val_loss: 0.2473
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 32)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 39s - loss: 0.3914 - val_loss: 0.3626
+Epoch 2/256
+3063/3063 - 38s - loss: 0.3564 - val_loss: 0.3491
+Epoch 3/256
+3063/3063 - 38s - loss: 0.3467 - val_loss: 0.3626
+Epoch 4/256
+3063/3063 - 37s - loss: 0.3385 - val_loss: 0.3370
+Epoch 5/256
+3063/3063 - 38s - loss: 0.3323 - val_loss: 0.3333
+Epoch 6/256
+3063/3063 - 38s - loss: 0.3229 - val_loss: 0.3113
+Epoch 7/256
+3063/3063 - 38s - loss: 0.3119 - val_loss: 0.3363
+Epoch 8/256
+3063/3063 - 38s - loss: 0.3027 - val_loss: 0.3029
+Epoch 9/256
+3063/3063 - 38s - loss: 0.2945 - val_loss: 0.3019
+Epoch 10/256
+3063/3063 - 37s - loss: 0.2885 - val_loss: 0.2927
+Epoch 11/256
+3063/3063 - 37s - loss: 0.2840 - val_loss: 0.2987
+Epoch 12/256
+3063/3063 - 37s - loss: 0.2775 - val_loss: 0.2772
+Epoch 13/256
+3063/3063 - 38s - loss: 0.2743 - val_loss: 0.3248
+Epoch 14/256
+3063/3063 - 37s - loss: 0.2713 - val_loss: 0.2696
+Epoch 15/256
+3063/3063 - 38s - loss: 0.2686 - val_loss: 0.2740
+Epoch 16/256
+3063/3063 - 38s - loss: 0.2652 - val_loss: 0.2878
+Epoch 17/256
+3063/3063 - 38s - loss: 0.2624 - val_loss: 0.2868
+Epoch 18/256
+3063/3063 - 37s - loss: 0.2597 - val_loss: 0.2698
+Epoch 19/256
+3063/3063 - 37s - loss: 0.2575 - val_loss: 0.2575
+Epoch 20/256
+3063/3063 - 37s - loss: 0.2545 - val_loss: 0.2622
+Epoch 21/256
+3063/3063 - 37s - loss: 0.2544 - val_loss: 0.2626
+Epoch 22/256
+3063/3063 - 38s - loss: 0.2501 - val_loss: 0.2590
+Epoch 23/256
+3063/3063 - 38s - loss: 0.2484 - val_loss: 0.2652
+Epoch 24/256
+3063/3063 - 38s - loss: 0.2459 - val_loss: 0.2575
+Epoch 25/256
+3063/3063 - 38s - loss: 0.2437 - val_loss: 0.2702
+Epoch 26/256
+3063/3063 - 37s - loss: 0.2428 - val_loss: 0.2570
+Epoch 27/256
+3063/3063 - 38s - loss: 0.2416 - val_loss: 0.2764
+Epoch 28/256
+3063/3063 - 37s - loss: 0.2396 - val_loss: 0.2545
+Epoch 29/256
+3063/3063 - 38s - loss: 0.2374 - val_loss: 0.2525
+Epoch 30/256
+3063/3063 - 37s - loss: 0.2366 - val_loss: 0.2465
+Epoch 31/256
+3063/3063 - 38s - loss: 0.2345 - val_loss: 0.2496
+Epoch 32/256
+3063/3063 - 37s - loss: 0.2343 - val_loss: 0.2460
+Epoch 33/256
+3063/3063 - 38s - loss: 0.2332 - val_loss: 0.2591
+Epoch 34/256
+3063/3063 - 37s - loss: 0.2308 - val_loss: 0.2496
+Epoch 35/256
+3063/3063 - 37s - loss: 0.2303 - val_loss: 0.2454
+Epoch 36/256
+3063/3063 - 37s - loss: 0.2276 - val_loss: 0.2532
+Epoch 37/256
+3063/3063 - 37s - loss: 0.2277 - val_loss: 0.2522
+Epoch 38/256
+3063/3063 - 38s - loss: 0.2273 - val_loss: 0.2659
+Epoch 39/256
+3063/3063 - 38s - loss: 0.2252 - val_loss: 0.2492
+Epoch 40/256
+3063/3063 - 38s - loss: 0.2251 - val_loss: 0.2402
+Epoch 41/256
+3063/3063 - 37s - loss: 0.2229 - val_loss: 0.2641
+Epoch 42/256
+3063/3063 - 37s - loss: 0.2230 - val_loss: 0.2375
+Epoch 43/256
+3063/3063 - 38s - loss: 0.2211 - val_loss: 0.2396
+Epoch 44/256
+3063/3063 - 37s - loss: 0.2206 - val_loss: 0.2494
+Epoch 45/256
+3063/3063 - 38s - loss: 0.2204 - val_loss: 0.2477
+Epoch 46/256
+3063/3063 - 37s - loss: 0.2182 - val_loss: 0.2375
+Epoch 47/256
+3063/3063 - 38s - loss: 0.2180 - val_loss: 0.2610
+Epoch 48/256
+3063/3063 - 38s - loss: 0.2171 - val_loss: 0.2444
+Epoch 49/256
+3063/3063 - 39s - loss: 0.2157 - val_loss: 0.2405
+Epoch 50/256
+3063/3063 - 38s - loss: 0.2142 - val_loss: 0.2688
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 32)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3895 - val_loss: 0.3538
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3557 - val_loss: 0.3461
+Epoch 3/256
+3063/3063 - 40s - loss: 0.3453 - val_loss: 0.3402
+Epoch 4/256
+3063/3063 - 39s - loss: 0.3358 - val_loss: 0.3325
+Epoch 5/256
+3063/3063 - 39s - loss: 0.3304 - val_loss: 0.3290
+Epoch 6/256
+3063/3063 - 38s - loss: 0.3233 - val_loss: 0.3329
+Epoch 7/256
+3063/3063 - 39s - loss: 0.3169 - val_loss: 0.3200
+Epoch 8/256
+3063/3063 - 39s - loss: 0.3103 - val_loss: 0.3128
+Epoch 9/256
+3063/3063 - 39s - loss: 0.3028 - val_loss: 0.3078
+Epoch 10/256
+3063/3063 - 39s - loss: 0.2966 - val_loss: 0.3060
+Epoch 11/256
+3063/3063 - 39s - loss: 0.2903 - val_loss: 0.3002
+Epoch 12/256
+3063/3063 - 38s - loss: 0.2850 - val_loss: 0.2799
+Epoch 13/256
+3063/3063 - 39s - loss: 0.2800 - val_loss: 0.2871
+Epoch 14/256
+3063/3063 - 39s - loss: 0.2752 - val_loss: 0.2866
+Epoch 15/256
+3063/3063 - 39s - loss: 0.2727 - val_loss: 0.2796
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2685 - val_loss: 0.2789
+Epoch 17/256
+3063/3063 - 40s - loss: 0.2655 - val_loss: 0.2657
+Epoch 18/256
+3063/3063 - 39s - loss: 0.2613 - val_loss: 0.2670
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2592 - val_loss: 0.3070
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2577 - val_loss: 0.2600
+Epoch 21/256
+3063/3063 - 40s - loss: 0.2547 - val_loss: 0.2573
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2517 - val_loss: 0.2602
+Epoch 23/256
+3063/3063 - 39s - loss: 0.2497 - val_loss: 0.2541
+Epoch 24/256
+3063/3063 - 39s - loss: 0.2475 - val_loss: 0.2735
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2454 - val_loss: 0.2583
+Epoch 26/256
+3063/3063 - 38s - loss: 0.2446 - val_loss: 0.2534
+Epoch 27/256
+3063/3063 - 38s - loss: 0.2427 - val_loss: 0.2578
+Epoch 28/256
+3063/3063 - 38s - loss: 0.2399 - val_loss: 0.2625
+Epoch 29/256
+3063/3063 - 38s - loss: 0.2373 - val_loss: 0.2510
+Epoch 30/256
+3063/3063 - 38s - loss: 0.2373 - val_loss: 0.2654
+Epoch 31/256
+3063/3063 - 38s - loss: 0.2358 - val_loss: 0.2487
+Epoch 32/256
+3063/3063 - 38s - loss: 0.2338 - val_loss: 0.2620
+Epoch 33/256
+3063/3063 - 39s - loss: 0.2331 - val_loss: 0.2467
+Epoch 34/256
+3063/3063 - 38s - loss: 0.2309 - val_loss: 0.2489
+Epoch 35/256
+3063/3063 - 39s - loss: 0.2303 - val_loss: 0.2477
+Epoch 36/256
+3063/3063 - 38s - loss: 0.2291 - val_loss: 0.2533
+Epoch 37/256
+3063/3063 - 39s - loss: 0.2284 - val_loss: 0.2746
+Epoch 38/256
+3063/3063 - 38s - loss: 0.2262 - val_loss: 0.2453
+Epoch 39/256
+3063/3063 - 39s - loss: 0.2256 - val_loss: 0.2698
+Epoch 40/256
+3063/3063 - 38s - loss: 0.2250 - val_loss: 0.2515
+Epoch 41/256
+3063/3063 - 39s - loss: 0.2238 - val_loss: 0.2421
+Epoch 42/256
+3063/3063 - 38s - loss: 0.2219 - val_loss: 0.2482
+Epoch 43/256
+3063/3063 - 39s - loss: 0.2212 - val_loss: 0.2513
+Epoch 44/256
+3063/3063 - 38s - loss: 0.2196 - val_loss: 0.2643
+Epoch 45/256
+3063/3063 - 39s - loss: 0.2203 - val_loss: 0.2598
+Epoch 46/256
+3063/3063 - 38s - loss: 0.2186 - val_loss: 0.2476
+Epoch 47/256
+3063/3063 - 38s - loss: 0.2179 - val_loss: 0.2499
+Epoch 48/256
+3063/3063 - 38s - loss: 0.2162 - val_loss: 0.2738
+Epoch 49/256
+3063/3063 - 39s - loss: 0.2157 - val_loss: 0.2494
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 32)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3913 - val_loss: 0.3599
+Epoch 2/256
+3063/3063 - 38s - loss: 0.3554 - val_loss: 0.3546
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3466 - val_loss: 0.3472
+Epoch 4/256
+3063/3063 - 38s - loss: 0.3406 - val_loss: 0.3338
+Epoch 5/256
+3063/3063 - 39s - loss: 0.3339 - val_loss: 0.3275
+Epoch 6/256
+3063/3063 - 39s - loss: 0.3279 - val_loss: 0.3219
+Epoch 7/256
+3063/3063 - 39s - loss: 0.3193 - val_loss: 0.3380
+Epoch 8/256
+3063/3063 - 38s - loss: 0.3104 - val_loss: 0.3066
+Epoch 9/256
+3063/3063 - 40s - loss: 0.3010 - val_loss: 0.3024
+Epoch 10/256
+3063/3063 - 39s - loss: 0.2929 - val_loss: 0.2885
+Epoch 11/256
+3063/3063 - 40s - loss: 0.2863 - val_loss: 0.3168
+Epoch 12/256
+3063/3063 - 39s - loss: 0.2801 - val_loss: 0.2845
+Epoch 13/256
+3063/3063 - 39s - loss: 0.2752 - val_loss: 0.2798
+Epoch 14/256
+3063/3063 - 39s - loss: 0.2710 - val_loss: 0.2686
+Epoch 15/256
+3063/3063 - 39s - loss: 0.2667 - val_loss: 0.2840
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2627 - val_loss: 0.3190
+Epoch 17/256
+3063/3063 - 40s - loss: 0.2601 - val_loss: 0.2655
+Epoch 18/256
+3063/3063 - 39s - loss: 0.2584 - val_loss: 0.2603
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2547 - val_loss: 0.2593
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2530 - val_loss: 0.2635
+Epoch 21/256
+3063/3063 - 39s - loss: 0.2504 - val_loss: 0.2544
+Epoch 22/256
+3063/3063 - 38s - loss: 0.2480 - val_loss: 0.2664
+Epoch 23/256
+3063/3063 - 39s - loss: 0.2468 - val_loss: 0.2568
+Epoch 24/256
+3063/3063 - 38s - loss: 0.2454 - val_loss: 0.2566
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2428 - val_loss: 0.2609
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2419 - val_loss: 0.2618
+Epoch 27/256
+3063/3063 - 39s - loss: 0.2392 - val_loss: 0.2559
+Epoch 28/256
+3063/3063 - 38s - loss: 0.2390 - val_loss: 0.2506
+Epoch 29/256
+3063/3063 - 38s - loss: 0.2357 - val_loss: 0.2469
+Epoch 30/256
+3063/3063 - 38s - loss: 0.2348 - val_loss: 0.2504
+Epoch 31/256
+3063/3063 - 38s - loss: 0.2330 - val_loss: 0.2590
+Epoch 32/256
+3063/3063 - 37s - loss: 0.2322 - val_loss: 0.2561
+Epoch 33/256
+3063/3063 - 38s - loss: 0.2311 - val_loss: 0.2488
+Epoch 34/256
+3063/3063 - 38s - loss: 0.2306 - val_loss: 0.2454
+Epoch 35/256
+3063/3063 - 38s - loss: 0.2274 - val_loss: 0.2537
+Epoch 36/256
+3063/3063 - 38s - loss: 0.2291 - val_loss: 0.2464
+Epoch 37/256
+3063/3063 - 38s - loss: 0.2259 - val_loss: 0.2490
+Epoch 38/256
+3063/3063 - 38s - loss: 0.2242 - val_loss: 0.2458
+Epoch 39/256
+3063/3063 - 38s - loss: 0.2246 - val_loss: 0.2542
+Epoch 40/256
+3063/3063 - 38s - loss: 0.2238 - val_loss: 0.2519
+Epoch 41/256
+3063/3063 - 38s - loss: 0.2215 - val_loss: 0.2531
+Epoch 42/256
+3063/3063 - 38s - loss: 0.2204 - val_loss: 0.2442
+Epoch 43/256
+3063/3063 - 38s - loss: 0.2194 - val_loss: 0.2405
+Epoch 44/256
+3063/3063 - 38s - loss: 0.2186 - val_loss: 0.2586
+Epoch 45/256
+3063/3063 - 38s - loss: 0.2181 - val_loss: 0.2438
+Epoch 46/256
+3063/3063 - 38s - loss: 0.2171 - val_loss: 0.2467
+Epoch 47/256
+3063/3063 - 38s - loss: 0.2164 - val_loss: 0.2444
+Epoch 48/256
+3063/3063 - 38s - loss: 0.2137 - val_loss: 0.2517
+Epoch 49/256
+3063/3063 - 39s - loss: 0.2151 - val_loss: 0.2456
+Epoch 50/256
+3063/3063 - 39s - loss: 0.2135 - val_loss: 0.2426
+Epoch 51/256
+3063/3063 - 39s - loss: 0.2123 - val_loss: 0.2395
+Epoch 52/256
+3063/3063 - 38s - loss: 0.2124 - val_loss: 0.2501
+Epoch 53/256
+3063/3063 - 38s - loss: 0.2113 - val_loss: 0.2567
+Epoch 54/256
+3063/3063 - 38s - loss: 0.2100 - val_loss: 0.2414
+Epoch 55/256
+3063/3063 - 39s - loss: 0.2095 - val_loss: 0.2405
+Epoch 56/256
+3063/3063 - 38s - loss: 0.2081 - val_loss: 0.2552
+Epoch 57/256
+3063/3063 - 38s - loss: 0.2077 - val_loss: 0.2494
+Epoch 58/256
+3063/3063 - 38s - loss: 0.2070 - val_loss: 0.2595
+Epoch 59/256
+3063/3063 - 38s - loss: 0.2058 - val_loss: 0.2487
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 32)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 42s - loss: 0.3912 - val_loss: 0.3573
+Epoch 2/256
+3063/3063 - 38s - loss: 0.3566 - val_loss: 0.3464
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3473 - val_loss: 0.3410
+Epoch 4/256
+3063/3063 - 38s - loss: 0.3422 - val_loss: 0.3328
+Epoch 5/256
+3063/3063 - 39s - loss: 0.3320 - val_loss: 0.3198
+Epoch 6/256
+3063/3063 - 38s - loss: 0.3206 - val_loss: 0.3186
+Epoch 7/256
+3063/3063 - 39s - loss: 0.3103 - val_loss: 0.3088
+Epoch 8/256
+3063/3063 - 38s - loss: 0.2999 - val_loss: 0.2946
+Epoch 9/256
+3063/3063 - 38s - loss: 0.2906 - val_loss: 0.2960
+Epoch 10/256
+3063/3063 - 37s - loss: 0.2830 - val_loss: 0.2782
+Epoch 11/256
+3063/3063 - 38s - loss: 0.2788 - val_loss: 0.2684
+Epoch 12/256
+3063/3063 - 38s - loss: 0.2743 - val_loss: 0.2756
+Epoch 13/256
+3063/3063 - 39s - loss: 0.2701 - val_loss: 0.2796
+Epoch 14/256
+3063/3063 - 38s - loss: 0.2666 - val_loss: 0.2711
+Epoch 15/256
+3063/3063 - 39s - loss: 0.2635 - val_loss: 0.2678
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2595 - val_loss: 0.2982
+Epoch 17/256
+3063/3063 - 39s - loss: 0.2577 - val_loss: 0.2654
+Epoch 18/256
+3063/3063 - 38s - loss: 0.2557 - val_loss: 0.2992
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2532 - val_loss: 0.2572
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2513 - val_loss: 0.3063
+Epoch 21/256
+3063/3063 - 39s - loss: 0.2484 - val_loss: 0.2736
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2484 - val_loss: 0.2562
+Epoch 23/256
+3063/3063 - 39s - loss: 0.2461 - val_loss: 0.2595
+Epoch 24/256
+3063/3063 - 38s - loss: 0.2443 - val_loss: 0.2550
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2420 - val_loss: 0.2672
+Epoch 26/256
+3063/3063 - 38s - loss: 0.2412 - val_loss: 0.2546
+Epoch 27/256
+3063/3063 - 38s - loss: 0.2385 - val_loss: 0.2571
+Epoch 28/256
+3063/3063 - 38s - loss: 0.2389 - val_loss: 0.2562
+Epoch 29/256
+3063/3063 - 38s - loss: 0.2366 - val_loss: 0.2498
+Epoch 30/256
+3063/3063 - 38s - loss: 0.2349 - val_loss: 0.2546
+Epoch 31/256
+3063/3063 - 38s - loss: 0.2342 - val_loss: 0.2562
+Epoch 32/256
+3063/3063 - 38s - loss: 0.2329 - val_loss: 0.2525
+Epoch 33/256
+3063/3063 - 39s - loss: 0.2320 - val_loss: 0.2460
+Epoch 34/256
+3063/3063 - 38s - loss: 0.2303 - val_loss: 0.2548
+Epoch 35/256
+3063/3063 - 39s - loss: 0.2296 - val_loss: 0.2590
+Epoch 36/256
+3063/3063 - 38s - loss: 0.2274 - val_loss: 0.2467
+Epoch 37/256
+3063/3063 - 39s - loss: 0.2260 - val_loss: 0.2449
+Epoch 38/256
+3063/3063 - 38s - loss: 0.2253 - val_loss: 0.2431
+Epoch 39/256
+3063/3063 - 39s - loss: 0.2248 - val_loss: 0.2499
+Epoch 40/256
+3063/3063 - 39s - loss: 0.2250 - val_loss: 0.2480
+Epoch 41/256
+3063/3063 - 39s - loss: 0.2228 - val_loss: 0.2503
+Epoch 42/256
+3063/3063 - 39s - loss: 0.2210 - val_loss: 0.2420
+Epoch 43/256
+3063/3063 - 39s - loss: 0.2202 - val_loss: 0.2499
+Epoch 44/256
+3063/3063 - 38s - loss: 0.2197 - val_loss: 0.2414
+Epoch 45/256
+3063/3063 - 38s - loss: 0.2180 - val_loss: 0.2440
+Epoch 46/256
+3063/3063 - 38s - loss: 0.2175 - val_loss: 0.2487
+Epoch 47/256
+3063/3063 - 38s - loss: 0.2170 - val_loss: 0.2408
+Epoch 48/256
+3063/3063 - 38s - loss: 0.2149 - val_loss: 0.2544
+Epoch 49/256
+3063/3063 - 39s - loss: 0.2143 - val_loss: 0.2557
+Epoch 50/256
+3063/3063 - 39s - loss: 0.2135 - val_loss: 0.2416
+Epoch 51/256
+3063/3063 - 39s - loss: 0.2137 - val_loss: 0.2431
+Epoch 52/256
+3063/3063 - 38s - loss: 0.2129 - val_loss: 0.2626
+Epoch 53/256
+3063/3063 - 38s - loss: 0.2118 - val_loss: 0.2510
+Epoch 54/256
+3063/3063 - 38s - loss: 0.2098 - val_loss: 0.2499
+Epoch 55/256
+3063/3063 - 38s - loss: 0.2093 - val_loss: 0.2374
+Epoch 56/256
+3063/3063 - 38s - loss: 0.2089 - val_loss: 0.2531
+Epoch 57/256
+3063/3063 - 38s - loss: 0.2076 - val_loss: 0.2466
+Epoch 58/256
+3063/3063 - 38s - loss: 0.2066 - val_loss: 0.2575
+Epoch 59/256
+3063/3063 - 39s - loss: 0.2071 - val_loss: 0.2506
+Epoch 60/256
+3063/3063 - 39s - loss: 0.2064 - val_loss: 0.2495
+Epoch 61/256
+3063/3063 - 39s - loss: 0.2050 - val_loss: 0.2481
+Epoch 62/256
+3063/3063 - 38s - loss: 0.2034 - val_loss: 0.2464
+Epoch 63/256
+3063/3063 - 39s - loss: 0.2044 - val_loss: 0.2481
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 32)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 40s - loss: 0.3898 - val_loss: 0.3531
+Epoch 2/256
+3063/3063 - 38s - loss: 0.3571 - val_loss: 0.3428
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3466 - val_loss: 0.3360
+Epoch 4/256
+3063/3063 - 38s - loss: 0.3384 - val_loss: 0.3386
+Epoch 5/256
+3063/3063 - 38s - loss: 0.3322 - val_loss: 0.3216
+Epoch 6/256
+3063/3063 - 38s - loss: 0.3225 - val_loss: 0.3227
+Epoch 7/256
+3063/3063 - 38s - loss: 0.3130 - val_loss: 0.3057
+Epoch 8/256
+3063/3063 - 37s - loss: 0.3024 - val_loss: 0.2950
+Epoch 9/256
+3063/3063 - 38s - loss: 0.2962 - val_loss: 0.2977
+Epoch 10/256
+3063/3063 - 38s - loss: 0.2904 - val_loss: 0.2888
+Epoch 11/256
+3063/3063 - 38s - loss: 0.2846 - val_loss: 0.2787
+Epoch 12/256
+3063/3063 - 38s - loss: 0.2796 - val_loss: 0.2867
+Epoch 13/256
+3063/3063 - 38s - loss: 0.2736 - val_loss: 0.2699
+Epoch 14/256
+3063/3063 - 38s - loss: 0.2705 - val_loss: 0.2745
+Epoch 15/256
+3063/3063 - 38s - loss: 0.2662 - val_loss: 0.2812
+Epoch 16/256
+3063/3063 - 38s - loss: 0.2623 - val_loss: 0.2781
+Epoch 17/256
+3063/3063 - 38s - loss: 0.2587 - val_loss: 0.2698
+Epoch 18/256
+3063/3063 - 38s - loss: 0.2571 - val_loss: 0.2587
+Epoch 19/256
+3063/3063 - 38s - loss: 0.2536 - val_loss: 0.2834
+Epoch 20/256
+3063/3063 - 37s - loss: 0.2515 - val_loss: 0.2844
+Epoch 21/256
+3063/3063 - 38s - loss: 0.2496 - val_loss: 0.2533
+Epoch 22/256
+3063/3063 - 37s - loss: 0.2466 - val_loss: 0.2591
+Epoch 23/256
+3063/3063 - 39s - loss: 0.2450 - val_loss: 0.2637
+Epoch 24/256
+3063/3063 - 38s - loss: 0.2435 - val_loss: 0.2554
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2408 - val_loss: 0.2493
+Epoch 26/256
+3063/3063 - 38s - loss: 0.2392 - val_loss: 0.2505
+Epoch 27/256
+3063/3063 - 38s - loss: 0.2379 - val_loss: 0.2772
+Epoch 28/256
+3063/3063 - 38s - loss: 0.2359 - val_loss: 0.2578
+Epoch 29/256
+3063/3063 - 38s - loss: 0.2354 - val_loss: 0.2558
+Epoch 30/256
+3063/3063 - 38s - loss: 0.2331 - val_loss: 0.2579
+Epoch 31/256
+3063/3063 - 38s - loss: 0.2309 - val_loss: 0.2506
+Epoch 32/256
+3063/3063 - 38s - loss: 0.2318 - val_loss: 0.2449
+Epoch 33/256
+3063/3063 - 38s - loss: 0.2302 - val_loss: 0.2483
+Epoch 34/256
+3063/3063 - 38s - loss: 0.2280 - val_loss: 0.2509
+Epoch 35/256
+3063/3063 - 38s - loss: 0.2264 - val_loss: 0.2537
+Epoch 36/256
+3063/3063 - 38s - loss: 0.2246 - val_loss: 0.2518
+Epoch 37/256
+3063/3063 - 38s - loss: 0.2247 - val_loss: 0.2431
+Epoch 38/256
+3063/3063 - 37s - loss: 0.2240 - val_loss: 0.2461
+Epoch 39/256
+3063/3063 - 38s - loss: 0.2220 - val_loss: 0.2458
+Epoch 40/256
+3063/3063 - 38s - loss: 0.2209 - val_loss: 0.2521
+Epoch 41/256
+3063/3063 - 39s - loss: 0.2198 - val_loss: 0.2884
+Epoch 42/256
+3063/3063 - 38s - loss: 0.2195 - val_loss: 0.2436
+Epoch 43/256
+3063/3063 - 38s - loss: 0.2176 - val_loss: 0.2493
+Epoch 44/256
+3063/3063 - 37s - loss: 0.2162 - val_loss: 0.2561
+Epoch 45/256
+3063/3063 - 38s - loss: 0.2172 - val_loss: 0.2474
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 32)_64
+			 32 [0.9649198995355885, 0.9644749609067436, 0.9632040683991498, 0.9660240249192744, 0.9636228584487487, 0.9666075348513055, 0.9656966518405123, 0.9644195914971359]
+		LATENT DIM 64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 42s - loss: 0.3939 - val_loss: 0.3526
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3533 - val_loss: 0.3685
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3424 - val_loss: 0.3318
+Epoch 4/256
+3063/3063 - 39s - loss: 0.3306 - val_loss: 0.3331
+Epoch 5/256
+3063/3063 - 40s - loss: 0.3203 - val_loss: 0.3033
+Epoch 6/256
+3063/3063 - 39s - loss: 0.3087 - val_loss: 0.3096
+Epoch 7/256
+3063/3063 - 40s - loss: 0.2988 - val_loss: 0.3000
+Epoch 8/256
+3063/3063 - 39s - loss: 0.2881 - val_loss: 0.2892
+Epoch 9/256
+3063/3063 - 39s - loss: 0.2819 - val_loss: 0.2819
+Epoch 10/256
+3063/3063 - 40s - loss: 0.2758 - val_loss: 0.2761
+Epoch 11/256
+3063/3063 - 40s - loss: 0.2701 - val_loss: 0.2679
+Epoch 12/256
+3063/3063 - 39s - loss: 0.2659 - val_loss: 0.2680
+Epoch 13/256
+3063/3063 - 40s - loss: 0.2618 - val_loss: 0.2658
+Epoch 14/256
+3063/3063 - 39s - loss: 0.2573 - val_loss: 0.2803
+Epoch 15/256
+3063/3063 - 40s - loss: 0.2538 - val_loss: 0.2858
+Epoch 16/256
+3063/3063 - 40s - loss: 0.2510 - val_loss: 0.2586
+Epoch 17/256
+3063/3063 - 39s - loss: 0.2496 - val_loss: 0.2509
+Epoch 18/256
+3063/3063 - 39s - loss: 0.2464 - val_loss: 0.2630
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2442 - val_loss: 0.2571
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2435 - val_loss: 0.2580
+Epoch 21/256
+3063/3063 - 40s - loss: 0.2404 - val_loss: 0.2562
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2403 - val_loss: 0.2926
+Epoch 23/256
+3063/3063 - 40s - loss: 0.2369 - val_loss: 0.2560
+Epoch 24/256
+3063/3063 - 39s - loss: 0.2352 - val_loss: 0.2591
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2342 - val_loss: 0.2486
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2324 - val_loss: 0.2421
+Epoch 27/256
+3063/3063 - 40s - loss: 0.2305 - val_loss: 0.2482
+Epoch 28/256
+3063/3063 - 40s - loss: 0.2295 - val_loss: 0.2383
+Epoch 29/256
+3063/3063 - 40s - loss: 0.2281 - val_loss: 0.2433
+Epoch 30/256
+3063/3063 - 40s - loss: 0.2262 - val_loss: 0.2506
+Epoch 31/256
+3063/3063 - 40s - loss: 0.2259 - val_loss: 0.2498
+Epoch 32/256
+3063/3063 - 40s - loss: 0.2246 - val_loss: 0.2728
+Epoch 33/256
+3063/3063 - 40s - loss: 0.2231 - val_loss: 0.2445
+Epoch 34/256
+3063/3063 - 39s - loss: 0.2218 - val_loss: 0.2446
+Epoch 35/256
+3063/3063 - 40s - loss: 0.2203 - val_loss: 0.2532
+Epoch 36/256
+3063/3063 - 40s - loss: 0.2194 - val_loss: 0.2458
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 42s - loss: 0.3905 - val_loss: 0.3880
+Epoch 2/256
+3063/3063 - 40s - loss: 0.3555 - val_loss: 0.3442
+Epoch 3/256
+3063/3063 - 40s - loss: 0.3467 - val_loss: 0.3737
+Epoch 4/256
+3063/3063 - 40s - loss: 0.3402 - val_loss: 0.3645
+Epoch 5/256
+3063/3063 - 40s - loss: 0.3333 - val_loss: 0.3370
+Epoch 6/256
+3063/3063 - 40s - loss: 0.3259 - val_loss: 0.3230
+Epoch 7/256
+3063/3063 - 40s - loss: 0.3165 - val_loss: 0.3098
+Epoch 8/256
+3063/3063 - 40s - loss: 0.3081 - val_loss: 0.3127
+Epoch 9/256
+3063/3063 - 40s - loss: 0.3012 - val_loss: 0.3002
+Epoch 10/256
+3063/3063 - 39s - loss: 0.2940 - val_loss: 0.2904
+Epoch 11/256
+3063/3063 - 40s - loss: 0.2887 - val_loss: 0.2824
+Epoch 12/256
+3063/3063 - 39s - loss: 0.2814 - val_loss: 0.2811
+Epoch 13/256
+3063/3063 - 40s - loss: 0.2752 - val_loss: 0.2780
+Epoch 14/256
+3063/3063 - 39s - loss: 0.2702 - val_loss: 0.2835
+Epoch 15/256
+3063/3063 - 39s - loss: 0.2659 - val_loss: 0.2714
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2618 - val_loss: 0.2636
+Epoch 17/256
+3063/3063 - 41s - loss: 0.2584 - val_loss: 0.2708
+Epoch 18/256
+3063/3063 - 40s - loss: 0.2547 - val_loss: 0.2848
+Epoch 19/256
+3063/3063 - 40s - loss: 0.2519 - val_loss: 0.2669
+Epoch 20/256
+3063/3063 - 40s - loss: 0.2495 - val_loss: 0.2661
+Epoch 21/256
+3063/3063 - 40s - loss: 0.2481 - val_loss: 0.2586
+Epoch 22/256
+3063/3063 - 40s - loss: 0.2451 - val_loss: 0.2508
+Epoch 23/256
+3063/3063 - 41s - loss: 0.2430 - val_loss: 0.2476
+Epoch 24/256
+3063/3063 - 40s - loss: 0.2408 - val_loss: 0.2707
+Epoch 25/256
+3063/3063 - 40s - loss: 0.2394 - val_loss: 0.2494
+Epoch 26/256
+3063/3063 - 40s - loss: 0.2366 - val_loss: 0.2594
+Epoch 27/256
+3063/3063 - 40s - loss: 0.2354 - val_loss: 0.2612
+Epoch 28/256
+3063/3063 - 39s - loss: 0.2337 - val_loss: 0.2536
+Epoch 29/256
+3063/3063 - 40s - loss: 0.2322 - val_loss: 0.2420
+Epoch 30/256
+3063/3063 - 39s - loss: 0.2292 - val_loss: 0.2473
+Epoch 31/256
+3063/3063 - 38s - loss: 0.2274 - val_loss: 0.2521
+Epoch 32/256
+3063/3063 - 39s - loss: 0.2267 - val_loss: 0.2395
+Epoch 33/256
+3063/3063 - 39s - loss: 0.2255 - val_loss: 0.2438
+Epoch 34/256
+3063/3063 - 38s - loss: 0.2239 - val_loss: 0.2620
+Epoch 35/256
+3063/3063 - 39s - loss: 0.2223 - val_loss: 0.2455
+Epoch 36/256
+3063/3063 - 39s - loss: 0.2220 - val_loss: 0.2367
+Epoch 37/256
+3063/3063 - 39s - loss: 0.2199 - val_loss: 0.2546
+Epoch 38/256
+3063/3063 - 39s - loss: 0.2196 - val_loss: 0.2404
+Epoch 39/256
+3063/3063 - 39s - loss: 0.2179 - val_loss: 0.2493
+Epoch 40/256
+3063/3063 - 39s - loss: 0.2169 - val_loss: 0.2373
+Epoch 41/256
+3063/3063 - 39s - loss: 0.2149 - val_loss: 0.2491
+Epoch 42/256
+3063/3063 - 39s - loss: 0.2148 - val_loss: 0.2401
+Epoch 43/256
+3063/3063 - 39s - loss: 0.2130 - val_loss: 0.2399
+Epoch 44/256
+3063/3063 - 39s - loss: 0.2128 - val_loss: 0.2397
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3896 - val_loss: 0.3797
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3546 - val_loss: 0.3542
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3439 - val_loss: 0.3303
+Epoch 4/256
+3063/3063 - 39s - loss: 0.3348 - val_loss: 0.3272
+Epoch 5/256
+3063/3063 - 40s - loss: 0.3255 - val_loss: 0.3395
+Epoch 6/256
+3063/3063 - 39s - loss: 0.3155 - val_loss: 0.3119
+Epoch 7/256
+3063/3063 - 39s - loss: 0.3047 - val_loss: 0.2889
+Epoch 8/256
+3063/3063 - 39s - loss: 0.2950 - val_loss: 0.2863
+Epoch 9/256
+3063/3063 - 40s - loss: 0.2894 - val_loss: 0.2878
+Epoch 10/256
+3063/3063 - 39s - loss: 0.2821 - val_loss: 0.2816
+Epoch 11/256
+3063/3063 - 39s - loss: 0.2781 - val_loss: 0.3076
+Epoch 12/256
+3063/3063 - 39s - loss: 0.2750 - val_loss: 0.2853
+Epoch 13/256
+3063/3063 - 40s - loss: 0.2695 - val_loss: 0.2685
+Epoch 14/256
+3063/3063 - 39s - loss: 0.2664 - val_loss: 0.2841
+Epoch 15/256
+3063/3063 - 39s - loss: 0.2627 - val_loss: 0.2790
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2604 - val_loss: 0.2659
+Epoch 17/256
+3063/3063 - 39s - loss: 0.2572 - val_loss: 0.2639
+Epoch 18/256
+3063/3063 - 39s - loss: 0.2547 - val_loss: 0.2867
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2528 - val_loss: 0.2693
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2496 - val_loss: 0.2750
+Epoch 21/256
+3063/3063 - 40s - loss: 0.2472 - val_loss: 0.2524
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2454 - val_loss: 0.2661
+Epoch 23/256
+3063/3063 - 40s - loss: 0.2423 - val_loss: 0.2582
+Epoch 24/256
+3063/3063 - 39s - loss: 0.2413 - val_loss: 0.2551
+Epoch 25/256
+3063/3063 - 40s - loss: 0.2394 - val_loss: 0.2523
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2392 - val_loss: 0.2624
+Epoch 27/256
+3063/3063 - 40s - loss: 0.2353 - val_loss: 0.2671
+Epoch 28/256
+3063/3063 - 39s - loss: 0.2339 - val_loss: 0.2454
+Epoch 29/256
+3063/3063 - 40s - loss: 0.2324 - val_loss: 0.2642
+Epoch 30/256
+3063/3063 - 39s - loss: 0.2319 - val_loss: 0.2493
+Epoch 31/256
+3063/3063 - 39s - loss: 0.2301 - val_loss: 0.2477
+Epoch 32/256
+3063/3063 - 38s - loss: 0.2274 - val_loss: 0.2525
+Epoch 33/256
+3063/3063 - 39s - loss: 0.2271 - val_loss: 0.2489
+Epoch 34/256
+3063/3063 - 39s - loss: 0.2263 - val_loss: 0.2490
+Epoch 35/256
+3063/3063 - 39s - loss: 0.2253 - val_loss: 0.2498
+Epoch 36/256
+3063/3063 - 38s - loss: 0.2232 - val_loss: 0.2567
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3903 - val_loss: 0.3577
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3570 - val_loss: 0.3464
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3482 - val_loss: 0.3566
+Epoch 4/256
+3063/3063 - 38s - loss: 0.3402 - val_loss: 0.3443
+Epoch 5/256
+3063/3063 - 39s - loss: 0.3340 - val_loss: 0.3334
+Epoch 6/256
+3063/3063 - 38s - loss: 0.3232 - val_loss: 0.3218
+Epoch 7/256
+3063/3063 - 39s - loss: 0.3108 - val_loss: 0.3086
+Epoch 8/256
+3063/3063 - 39s - loss: 0.3002 - val_loss: 0.3048
+Epoch 9/256
+3063/3063 - 39s - loss: 0.2928 - val_loss: 0.3072
+Epoch 10/256
+3063/3063 - 39s - loss: 0.2861 - val_loss: 0.2851
+Epoch 11/256
+3063/3063 - 39s - loss: 0.2808 - val_loss: 0.2904
+Epoch 12/256
+3063/3063 - 39s - loss: 0.2748 - val_loss: 0.2755
+Epoch 13/256
+3063/3063 - 39s - loss: 0.2703 - val_loss: 0.3221
+Epoch 14/256
+3063/3063 - 38s - loss: 0.2678 - val_loss: 0.2653
+Epoch 15/256
+3063/3063 - 39s - loss: 0.2641 - val_loss: 0.2903
+Epoch 16/256
+3063/3063 - 38s - loss: 0.2608 - val_loss: 0.2945
+Epoch 17/256
+3063/3063 - 39s - loss: 0.2589 - val_loss: 0.2831
+Epoch 18/256
+3063/3063 - 38s - loss: 0.2566 - val_loss: 0.2611
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2536 - val_loss: 0.2583
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2510 - val_loss: 0.2703
+Epoch 21/256
+3063/3063 - 39s - loss: 0.2501 - val_loss: 0.2518
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2467 - val_loss: 0.2568
+Epoch 23/256
+3063/3063 - 39s - loss: 0.2443 - val_loss: 0.2533
+Epoch 24/256
+3063/3063 - 38s - loss: 0.2426 - val_loss: 0.2635
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2403 - val_loss: 0.2569
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2386 - val_loss: 0.2478
+Epoch 27/256
+3063/3063 - 39s - loss: 0.2372 - val_loss: 0.2932
+Epoch 28/256
+3063/3063 - 38s - loss: 0.2356 - val_loss: 0.2499
+Epoch 29/256
+3063/3063 - 39s - loss: 0.2333 - val_loss: 0.2453
+Epoch 30/256
+3063/3063 - 39s - loss: 0.2317 - val_loss: 0.2579
+Epoch 31/256
+3063/3063 - 39s - loss: 0.2309 - val_loss: 0.2474
+Epoch 32/256
+3063/3063 - 39s - loss: 0.2291 - val_loss: 0.2506
+Epoch 33/256
+3063/3063 - 39s - loss: 0.2287 - val_loss: 0.2633
+Epoch 34/256
+3063/3063 - 38s - loss: 0.2267 - val_loss: 0.2475
+Epoch 35/256
+3063/3063 - 39s - loss: 0.2253 - val_loss: 0.2466
+Epoch 36/256
+3063/3063 - 38s - loss: 0.2241 - val_loss: 0.2493
+Epoch 37/256
+3063/3063 - 39s - loss: 0.2227 - val_loss: 0.2507
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3913 - val_loss: 0.3560
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3558 - val_loss: 0.3499
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3450 - val_loss: 0.3381
+Epoch 4/256
+3063/3063 - 38s - loss: 0.3351 - val_loss: 0.3327
+Epoch 5/256
+3063/3063 - 38s - loss: 0.3291 - val_loss: 0.3303
+Epoch 6/256
+3063/3063 - 38s - loss: 0.3218 - val_loss: 0.3272
+Epoch 7/256
+3063/3063 - 41s - loss: 0.3129 - val_loss: 0.3164
+Epoch 8/256
+3063/3063 - 37s - loss: 0.3040 - val_loss: 0.3209
+Epoch 9/256
+3063/3063 - 39s - loss: 0.2952 - val_loss: 0.2967
+Epoch 10/256
+3063/3063 - 38s - loss: 0.2875 - val_loss: 0.3038
+Epoch 11/256
+3063/3063 - 38s - loss: 0.2818 - val_loss: 0.2852
+Epoch 12/256
+3063/3063 - 39s - loss: 0.2772 - val_loss: 0.2767
+Epoch 13/256
+3063/3063 - 38s - loss: 0.2729 - val_loss: 0.2697
+Epoch 14/256
+3063/3063 - 38s - loss: 0.2681 - val_loss: 0.2893
+Epoch 15/256
+3063/3063 - 38s - loss: 0.2662 - val_loss: 0.2738
+Epoch 16/256
+3063/3063 - 38s - loss: 0.2626 - val_loss: 0.2710
+Epoch 17/256
+3063/3063 - 39s - loss: 0.2607 - val_loss: 0.2620
+Epoch 18/256
+3063/3063 - 38s - loss: 0.2556 - val_loss: 0.2612
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2539 - val_loss: 0.2944
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2524 - val_loss: 0.2526
+Epoch 21/256
+3063/3063 - 39s - loss: 0.2491 - val_loss: 0.2559
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2470 - val_loss: 0.2540
+Epoch 23/256
+3063/3063 - 39s - loss: 0.2444 - val_loss: 0.2576
+Epoch 24/256
+3063/3063 - 39s - loss: 0.2419 - val_loss: 0.2604
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2403 - val_loss: 0.2555
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2395 - val_loss: 0.2544
+Epoch 27/256
+3063/3063 - 40s - loss: 0.2371 - val_loss: 0.2570
+Epoch 28/256
+3063/3063 - 39s - loss: 0.2355 - val_loss: 0.2565
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3934 - val_loss: 0.3516
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3561 - val_loss: 0.3585
+Epoch 3/256
+3063/3063 - 40s - loss: 0.3468 - val_loss: 0.3423
+Epoch 4/256
+3063/3063 - 39s - loss: 0.3399 - val_loss: 0.3329
+Epoch 5/256
+3063/3063 - 39s - loss: 0.3323 - val_loss: 0.3237
+Epoch 6/256
+3063/3063 - 39s - loss: 0.3256 - val_loss: 0.3197
+Epoch 7/256
+3063/3063 - 40s - loss: 0.3145 - val_loss: 0.3222
+Epoch 8/256
+3063/3063 - 38s - loss: 0.3036 - val_loss: 0.2994
+Epoch 9/256
+3063/3063 - 38s - loss: 0.2953 - val_loss: 0.2925
+Epoch 10/256
+3063/3063 - 39s - loss: 0.2873 - val_loss: 0.2892
+Epoch 11/256
+3063/3063 - 39s - loss: 0.2811 - val_loss: 0.3139
+Epoch 12/256
+3063/3063 - 38s - loss: 0.2759 - val_loss: 0.2761
+Epoch 13/256
+3063/3063 - 39s - loss: 0.2715 - val_loss: 0.2769
+Epoch 14/256
+3063/3063 - 38s - loss: 0.2662 - val_loss: 0.2706
+Epoch 15/256
+3063/3063 - 39s - loss: 0.2634 - val_loss: 0.2762
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2594 - val_loss: 0.2954
+Epoch 17/256
+3063/3063 - 40s - loss: 0.2570 - val_loss: 0.2567
+Epoch 18/256
+3063/3063 - 38s - loss: 0.2536 - val_loss: 0.2542
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2507 - val_loss: 0.2510
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2490 - val_loss: 0.2575
+Epoch 21/256
+3063/3063 - 39s - loss: 0.2465 - val_loss: 0.2551
+Epoch 22/256
+3063/3063 - 38s - loss: 0.2432 - val_loss: 0.2665
+Epoch 23/256
+3063/3063 - 40s - loss: 0.2416 - val_loss: 0.2528
+Epoch 24/256
+3063/3063 - 39s - loss: 0.2418 - val_loss: 0.2533
+Epoch 25/256
+3063/3063 - 40s - loss: 0.2380 - val_loss: 0.2588
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2375 - val_loss: 0.2502
+Epoch 27/256
+3063/3063 - 39s - loss: 0.2354 - val_loss: 0.2442
+Epoch 28/256
+3063/3063 - 39s - loss: 0.2349 - val_loss: 0.2460
+Epoch 29/256
+3063/3063 - 40s - loss: 0.2320 - val_loss: 0.2424
+Epoch 30/256
+3063/3063 - 39s - loss: 0.2304 - val_loss: 0.2489
+Epoch 31/256
+3063/3063 - 40s - loss: 0.2290 - val_loss: 0.2512
+Epoch 32/256
+3063/3063 - 39s - loss: 0.2278 - val_loss: 0.2507
+Epoch 33/256
+3063/3063 - 39s - loss: 0.2262 - val_loss: 0.2561
+Epoch 34/256
+3063/3063 - 39s - loss: 0.2255 - val_loss: 0.2433
+Epoch 35/256
+3063/3063 - 39s - loss: 0.2235 - val_loss: 0.2470
+Epoch 36/256
+3063/3063 - 39s - loss: 0.2232 - val_loss: 0.2383
+Epoch 37/256
+3063/3063 - 41s - loss: 0.2210 - val_loss: 0.2502
+Epoch 38/256
+3063/3063 - 39s - loss: 0.2206 - val_loss: 0.2462
+Epoch 39/256
+3063/3063 - 39s - loss: 0.2199 - val_loss: 0.2489
+Epoch 40/256
+3063/3063 - 38s - loss: 0.2188 - val_loss: 0.2494
+Epoch 41/256
+3063/3063 - 39s - loss: 0.2167 - val_loss: 0.2544
+Epoch 42/256
+3063/3063 - 38s - loss: 0.2157 - val_loss: 0.2411
+Epoch 43/256
+3063/3063 - 39s - loss: 0.2137 - val_loss: 0.2400
+Epoch 44/256
+3063/3063 - 39s - loss: 0.2135 - val_loss: 0.2587
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3910 - val_loss: 0.3518
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3565 - val_loss: 0.3467
+Epoch 3/256
+3063/3063 - 39s - loss: 0.3478 - val_loss: 0.3410
+Epoch 4/256
+3063/3063 - 39s - loss: 0.3424 - val_loss: 0.3357
+Epoch 5/256
+3063/3063 - 40s - loss: 0.3340 - val_loss: 0.3276
+Epoch 6/256
+3063/3063 - 40s - loss: 0.3220 - val_loss: 0.3192
+Epoch 7/256
+3063/3063 - 40s - loss: 0.3104 - val_loss: 0.3081
+Epoch 8/256
+3063/3063 - 39s - loss: 0.3006 - val_loss: 0.2855
+Epoch 9/256
+3063/3063 - 40s - loss: 0.2916 - val_loss: 0.2962
+Epoch 10/256
+3063/3063 - 40s - loss: 0.2823 - val_loss: 0.2831
+Epoch 11/256
+3063/3063 - 40s - loss: 0.2770 - val_loss: 0.2669
+Epoch 12/256
+3063/3063 - 40s - loss: 0.2707 - val_loss: 0.2712
+Epoch 13/256
+3063/3063 - 40s - loss: 0.2667 - val_loss: 0.2718
+Epoch 14/256
+3063/3063 - 39s - loss: 0.2632 - val_loss: 0.2704
+Epoch 15/256
+3063/3063 - 40s - loss: 0.2593 - val_loss: 0.2581
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2551 - val_loss: 0.2955
+Epoch 17/256
+3063/3063 - 42s - loss: 0.2540 - val_loss: 0.2593
+Epoch 18/256
+3063/3063 - 39s - loss: 0.2505 - val_loss: 0.2785
+Epoch 19/256
+3063/3063 - 39s - loss: 0.2492 - val_loss: 0.2596
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2470 - val_loss: 0.2776
+Epoch 21/256
+3063/3063 - 39s - loss: 0.2442 - val_loss: 0.2712
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2441 - val_loss: 0.2481
+Epoch 23/256
+3063/3063 - 39s - loss: 0.2417 - val_loss: 0.2556
+Epoch 24/256
+3063/3063 - 39s - loss: 0.2396 - val_loss: 0.2585
+Epoch 25/256
+3063/3063 - 40s - loss: 0.2375 - val_loss: 0.2578
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2361 - val_loss: 0.2496
+Epoch 27/256
+3063/3063 - 40s - loss: 0.2338 - val_loss: 0.2570
+Epoch 28/256
+3063/3063 - 39s - loss: 0.2335 - val_loss: 0.2462
+Epoch 29/256
+3063/3063 - 40s - loss: 0.2317 - val_loss: 0.2507
+Epoch 30/256
+3063/3063 - 40s - loss: 0.2299 - val_loss: 0.2512
+Epoch 31/256
+3063/3063 - 40s - loss: 0.2289 - val_loss: 0.2484
+Epoch 32/256
+3063/3063 - 39s - loss: 0.2279 - val_loss: 0.2543
+Epoch 33/256
+3063/3063 - 40s - loss: 0.2263 - val_loss: 0.2414
+Epoch 34/256
+3063/3063 - 39s - loss: 0.2250 - val_loss: 0.2484
+Epoch 35/256
+3063/3063 - 39s - loss: 0.2243 - val_loss: 0.2569
+Epoch 36/256
+3063/3063 - 39s - loss: 0.2224 - val_loss: 0.2417
+Epoch 37/256
+3063/3063 - 39s - loss: 0.2203 - val_loss: 0.2410
+Epoch 38/256
+3063/3063 - 39s - loss: 0.2197 - val_loss: 0.2385
+Epoch 39/256
+3063/3063 - 39s - loss: 0.2189 - val_loss: 0.2379
+Epoch 40/256
+3063/3063 - 39s - loss: 0.2184 - val_loss: 0.2408
+Epoch 41/256
+3063/3063 - 40s - loss: 0.2166 - val_loss: 0.2564
+Epoch 42/256
+3063/3063 - 39s - loss: 0.2149 - val_loss: 0.2432
+Epoch 43/256
+3063/3063 - 39s - loss: 0.2138 - val_loss: 0.2464
+Epoch 44/256
+3063/3063 - 39s - loss: 0.2132 - val_loss: 0.2365
+Epoch 45/256
+3063/3063 - 39s - loss: 0.2114 - val_loss: 0.2439
+Epoch 46/256
+3063/3063 - 39s - loss: 0.2111 - val_loss: 0.2428
+Epoch 47/256
+3063/3063 - 39s - loss: 0.2093 - val_loss: 0.2407
+Epoch 48/256
+3063/3063 - 39s - loss: 0.2087 - val_loss: 0.2467
+Epoch 49/256
+3063/3063 - 40s - loss: 0.2069 - val_loss: 0.2528
+Epoch 50/256
+3063/3063 - 39s - loss: 0.2062 - val_loss: 0.2382
+Epoch 51/256
+3063/3063 - 40s - loss: 0.2062 - val_loss: 0.2459
+Epoch 52/256
+3063/3063 - 39s - loss: 0.2057 - val_loss: 0.2476
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 41s - loss: 0.3910 - val_loss: 0.3541
+Epoch 2/256
+3063/3063 - 39s - loss: 0.3587 - val_loss: 0.3456
+Epoch 3/256
+3063/3063 - 40s - loss: 0.3468 - val_loss: 0.3381
+Epoch 4/256
+3063/3063 - 39s - loss: 0.3382 - val_loss: 0.3415
+Epoch 5/256
+3063/3063 - 40s - loss: 0.3309 - val_loss: 0.3179
+Epoch 6/256
+3063/3063 - 39s - loss: 0.3194 - val_loss: 0.3112
+Epoch 7/256
+3063/3063 - 40s - loss: 0.3079 - val_loss: 0.3002
+Epoch 8/256
+3063/3063 - 39s - loss: 0.2972 - val_loss: 0.2908
+Epoch 9/256
+3063/3063 - 40s - loss: 0.2903 - val_loss: 0.2863
+Epoch 10/256
+3063/3063 - 39s - loss: 0.2842 - val_loss: 0.2820
+Epoch 11/256
+3063/3063 - 40s - loss: 0.2787 - val_loss: 0.2792
+Epoch 12/256
+3063/3063 - 39s - loss: 0.2745 - val_loss: 0.2717
+Epoch 13/256
+3063/3063 - 40s - loss: 0.2693 - val_loss: 0.2678
+Epoch 14/256
+3063/3063 - 39s - loss: 0.2672 - val_loss: 0.2844
+Epoch 15/256
+3063/3063 - 40s - loss: 0.2633 - val_loss: 0.2735
+Epoch 16/256
+3063/3063 - 39s - loss: 0.2596 - val_loss: 0.2758
+Epoch 17/256
+3063/3063 - 40s - loss: 0.2571 - val_loss: 0.2729
+Epoch 18/256
+3063/3063 - 39s - loss: 0.2555 - val_loss: 0.2539
+Epoch 19/256
+3063/3063 - 40s - loss: 0.2522 - val_loss: 0.2877
+Epoch 20/256
+3063/3063 - 39s - loss: 0.2494 - val_loss: 0.2818
+Epoch 21/256
+3063/3063 - 39s - loss: 0.2474 - val_loss: 0.2495
+Epoch 22/256
+3063/3063 - 39s - loss: 0.2451 - val_loss: 0.2572
+Epoch 23/256
+3063/3063 - 40s - loss: 0.2432 - val_loss: 0.2595
+Epoch 24/256
+3063/3063 - 39s - loss: 0.2414 - val_loss: 0.2521
+Epoch 25/256
+3063/3063 - 39s - loss: 0.2393 - val_loss: 0.2512
+Epoch 26/256
+3063/3063 - 39s - loss: 0.2384 - val_loss: 0.2444
+Epoch 27/256
+3063/3063 - 40s - loss: 0.2370 - val_loss: 0.2812
+Epoch 28/256
+3063/3063 - 39s - loss: 0.2352 - val_loss: 0.2522
+Epoch 29/256
+3063/3063 - 40s - loss: 0.2334 - val_loss: 0.2587
+Epoch 30/256
+3063/3063 - 42s - loss: 0.2320 - val_loss: 0.2549
+Epoch 31/256
+3063/3063 - 39s - loss: 0.2289 - val_loss: 0.2479
+Epoch 32/256
+3063/3063 - 40s - loss: 0.2285 - val_loss: 0.2425
+Epoch 33/256
+3063/3063 - 39s - loss: 0.2275 - val_loss: 0.2556
+Epoch 34/256
+3063/3063 - 39s - loss: 0.2252 - val_loss: 0.2555
+Epoch 35/256
+3063/3063 - 40s - loss: 0.2234 - val_loss: 0.2542
+Epoch 36/256
+3063/3063 - 39s - loss: 0.2226 - val_loss: 0.2470
+Epoch 37/256
+3063/3063 - 39s - loss: 0.2214 - val_loss: 0.2430
+Epoch 38/256
+3063/3063 - 39s - loss: 0.2213 - val_loss: 0.2450
+Epoch 39/256
+3063/3063 - 39s - loss: 0.2188 - val_loss: 0.2461
+Epoch 40/256
+3063/3063 - 39s - loss: 0.2174 - val_loss: 0.2498
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+			 64 [0.9654353916057272, 0.9657065786005348, 0.9645413109751734, 0.9635682490462889, 0.9616235302017329, 0.9659031221155838, 0.9662152022727468, 0.9646255184337645]
+getting ROC for dnn
+currently on dnn_256_3_2
