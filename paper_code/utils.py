@@ -419,7 +419,8 @@ import seaborn as sns
 from scipy.optimize import linear_sum_assignment
 from scipy.spatial.distance import cdist
 
-def earth_movers_distance(x,y,N=1300):
+def earth_movers_distance(x,y,N=3000):
+    print(N/len(x))
     d = cdist(x[:N],y[:N])
     assignment = linear_sum_assignment(d)
     return (d[assignment].sum()/N)
@@ -535,7 +536,7 @@ def kldiv(events, latent_label):
     nttH_loc = np.array([events[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
     return KLdivergence(ttH_loc, nttH_loc)
 
-def TEMP_gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, standardized=False):
+def TEMP_gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, standardized=True):
     c_cut = 5
     cmap = sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True)
 
@@ -544,11 +545,20 @@ def TEMP_gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation
     plt.rcParams['figure.autolayout'] = False
     plt.rcParams['text.usetex'] = True
     
-
-    ttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
-    nttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
+    means = [0,0]
+    stds = [1,1]
+    
+    if(standardized):
+        means = np.mean(curr_event, axis=0)
+        stds = np.std(curr_event, axis=0)
+        
+    ttH_loc  = np.array([[(curr_event[i][j]-means[j])/stds[j] for j in range(len(curr_event[i]))] 
+                         for i in range(len(latent_label)) if latent_label[i][1]==1])
+    nttH_loc = np.array([[(curr_event[i][j]-means[j])/stds[j] for j in range(len(curr_event[i]))] 
+                         for i in range(len(latent_label)) if latent_label[i][0]==1])
 
     if(rotated):
+        cntr      = np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
         ttH_cntr  = np.array([np.mean(ttH_loc[:,0]), np.mean(ttH_loc[:, 1])])
         nttH_cntr = np.array([np.mean(nttH_loc[:,0]), np.mean(nttH_loc[:, 1])])
         tmp = ttH_cntr - cntr
@@ -558,11 +568,11 @@ def TEMP_gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation
         nttH_loc = rotate(nttH_loc, origin=cntr, angle=angl)
     
     
-    distance = KLdivergence(ttH_loc, nttH_loc)
+    distance = earth_movers_distance(ttH_loc, nttH_loc)
     print('distance', distance)
     
 
-def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4'):
+def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4', EMD=True, NOAXIS=True, standardized=True):
     c_cut = 5
 
     plt.rcParams['font.family'] = 'serif'
@@ -572,11 +582,19 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
 
   
 
+    means = [0,0]
+    stds = [1,1]
     
-    
-    ttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
-    nttH_loc = np.array([curr_event[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
+    if(standardized):
+        means = np.mean(curr_event, axis=0)
+        stds = np.std(curr_event, axis=0)
+        
+    ttH_loc  = np.array([[(curr_event[i][j]-means[j])/stds[j] for j in range(len(curr_event[i]))] 
+                         for i in range(len(latent_label)) if latent_label[i][1]==1])
+    nttH_loc = np.array([[(curr_event[i][j]-means[j])/stds[j] for j in range(len(curr_event[i]))] 
+                         for i in range(len(latent_label)) if latent_label[i][0]==1])
 
+    
     if(rotated):
         cntr      = np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
         print(cntr, np.array([np.std(curr_event[:,0]), np.std(curr_event[:, 1])]))
@@ -596,8 +614,8 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
             nttH_loc = np.array([[-x0, x1] for x0, x1 in nttH_loc])
 
     
-    distance = KLdivergence(ttH_loc, nttH_loc)
-    print('KL div', distance)
+    distance = earth_movers_distance(ttH_loc, nttH_loc)
+    print('earth_movers_distance', distance)
        
     g = sns.jointplot(x=ttH_loc[:,0], y = ttH_loc[:,1], color=cmap(100), space=0, label='ttH jets',
                       cmap=cmap, kind='kde', height=10, fill=True, cut=c_cut,
@@ -632,21 +650,22 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
         cntr  =  np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
         cntr_std =  np.array([np.std(curr_event[:,0]), np.std(curr_event[:, 1])])
         std = max(cntr_std)
-        ax.set_xlim(cntr[0]-2*std**2, cntr[0]+10*std**2)
-        ax.set_ylim(cntr[1]-std**(1/2), cntr[1]+std)
-
+        ax.set_xlim(-40,60)
+        ax.set_ylim(10,30)
     ax.set_facecolor(cmap(c_cut))
-    ax.get_xaxis().set_visible(False)
-    ax.get_yaxis().set_visible(False)
-    g.ax_marg_y.get_yaxis().set_visible(False)
-    g.ax_marg_x.get_xaxis().set_visible(False)
-    
 
-    ax.text(.98, .02,
-            s=r"$D_{\rm KL}(ttH \parallel t\overline{t})$: $\mathbf{%.3f}$"%distance, 
-            transform=ax.transAxes,
-            horizontalalignment='right',
-            verticalalignment='bottom',)
+    if(NOAXIS):
+        ax.get_xaxis().set_visible(False)
+        ax.get_yaxis().set_visible(False)
+        g.ax_marg_y.get_yaxis().set_visible(False)
+        g.ax_marg_x.get_xaxis().set_visible(False)
+    
+    if(EMD):
+        ax.text(.98, .02,
+                s=r"EMD: $\mathbf{%.3f}$"%distance, 
+                transform=ax.transAxes,
+                horizontalalignment='right',
+                verticalalignment='bottom',)
 
 
 
