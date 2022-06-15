@@ -1,0 +1,452 @@
+nohup: ignoring input
+2022-06-14 11:53:18.849294: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-14 11:53:54.013452: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-06-14 11:53:54.029699: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-14 11:53:54.030733: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-14 11:53:54.030766: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-14 11:53:54.034791: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-14 11:53:54.034846: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-06-14 11:53:54.036460: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-06-14 11:53:54.036776: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-06-14 11:53:54.041059: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-06-14 11:53:54.041914: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-06-14 11:53:54.042149: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-14 11:53:54.045946: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-14 11:53:54.046516: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-06-14 11:53:54.232645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-14 11:53:54.233865: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-14 11:53:54.238154: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-14 11:53:54.238449: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-14 11:53:55.661905: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-06-14 11:53:55.661970: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-06-14 11:53:55.661988: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-06-14 11:53:55.661997: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-06-14 11:53:55.667114: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-06-14 11:53:55.669206: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-06-14 11:55:21.753603: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-06-14 11:55:21.754526: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-06-14 11:55:26.023288: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-14 11:55:26.338833: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'tripletwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64', 'particlewise_128_4_64': 'models/data100k_raw_combined_atlas_cut_particlewise_128_4_64', 'pairwise_nl_5_(64, 128, 256, 128, 64)_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64', 'pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64', 'nested_concat_70_4_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3', 'naivednn_256_3_2': 'models/data100k_raw_combined_atlas_cut_naivednn_256_3_2', 'dnn_256_3_2': 'models/data100k_raw_combined_atlas_cut_dnn_256_3_2'}
+Loaded tripletwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64
+Loaded particlewise_128_4_64 from models/data100k_raw_combined_atlas_cut_particlewise_128_4_64
+Loaded pairwise_nl_5_(64, 128, 256, 128, 64)_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+Loaded pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+Loaded nested_concat_70_4_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3
+Loaded naivednn_256_3_2 from models/data100k_raw_combined_atlas_cut_naivednn_256_3_2
+Loaded dnn_256_3_2 from models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+RIGHT NOW: nested_concat_general
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/512
+3063/3063 - 31s - loss: 0.4181 - val_loss: 0.3662
+Epoch 2/512
+3063/3063 - 24s - loss: 0.3641 - val_loss: 0.3664
+Epoch 3/512
+3063/3063 - 23s - loss: 0.3506 - val_loss: 0.3451
+Epoch 4/512
+3063/3063 - 25s - loss: 0.3416 - val_loss: 0.3392
+Epoch 5/512
+3063/3063 - 25s - loss: 0.3360 - val_loss: 0.3349
+Epoch 6/512
+3063/3063 - 23s - loss: 0.3320 - val_loss: 0.3268
+Epoch 7/512
+3063/3063 - 21s - loss: 0.3276 - val_loss: 0.3329
+Epoch 8/512
+3063/3063 - 22s - loss: 0.3240 - val_loss: 0.3214
+Epoch 9/512
+3063/3063 - 21s - loss: 0.3218 - val_loss: 0.3301
+Epoch 10/512
+3063/3063 - 22s - loss: 0.3195 - val_loss: 0.3276
+Epoch 11/512
+3063/3063 - 21s - loss: 0.3169 - val_loss: 0.3345
+Epoch 12/512
+3063/3063 - 21s - loss: 0.3149 - val_loss: 0.3234
+Epoch 13/512
+3063/3063 - 21s - loss: 0.3137 - val_loss: 0.3176
+Epoch 14/512
+3063/3063 - 22s - loss: 0.3121 - val_loss: 0.3179
+Epoch 15/512
+3063/3063 - 20s - loss: 0.3101 - val_loss: 0.3179
+Epoch 16/512
+3063/3063 - 20s - loss: 0.3096 - val_loss: 0.3254
+Epoch 17/512
+3063/3063 - 21s - loss: 0.3079 - val_loss: 0.3155
+Epoch 18/512
+3063/3063 - 21s - loss: 0.3061 - val_loss: 0.3231
+Epoch 19/512
+3063/3063 - 22s - loss: 0.3052 - val_loss: 0.3183
+Epoch 20/512
+3063/3063 - 21s - loss: 0.3043 - val_loss: 0.3208
+Epoch 21/512
+3063/3063 - 23s - loss: 0.3025 - val_loss: 0.3116
+Epoch 22/512
+3063/3063 - 23s - loss: 0.3017 - val_loss: 0.3465
+Epoch 23/512
+3063/3063 - 22s - loss: 0.2995 - val_loss: 0.3174
+Epoch 24/512
+3063/3063 - 21s - loss: 0.2981 - val_loss: 0.3319
+Epoch 25/512
+3063/3063 - 21s - loss: 0.2965 - val_loss: 0.3134
+Epoch 26/512
+3063/3063 - 21s - loss: 0.2961 - val_loss: 0.3106
+Epoch 27/512
+3063/3063 - 21s - loss: 0.2942 - val_loss: 0.3134
+Epoch 28/512
+3063/3063 - 20s - loss: 0.2928 - val_loss: 0.3070
+Epoch 29/512
+3063/3063 - 22s - loss: 0.2914 - val_loss: 0.3106
+Epoch 30/512
+3063/3063 - 21s - loss: 0.2887 - val_loss: 0.3097
+Epoch 31/512
+3063/3063 - 20s - loss: 0.2891 - val_loss: 0.3090
+Epoch 32/512
+3063/3063 - 20s - loss: 0.2873 - val_loss: 0.3143
+Epoch 33/512
+3063/3063 - 21s - loss: 0.2865 - val_loss: 0.3096
+Epoch 34/512
+3063/3063 - 21s - loss: 0.2854 - val_loss: 0.3135
+Epoch 35/512
+3063/3063 - 22s - loss: 0.2842 - val_loss: 0.3018
+Epoch 36/512
+3063/3063 - 21s - loss: 0.2824 - val_loss: 0.3046
+Epoch 37/512
+3063/3063 - 21s - loss: 0.2811 - val_loss: 0.3029
+Epoch 38/512
+3063/3063 - 21s - loss: 0.2808 - val_loss: 0.3097
+Epoch 39/512
+3063/3063 - 20s - loss: 0.2795 - val_loss: 0.3135
+Epoch 40/512
+3063/3063 - 21s - loss: 0.2780 - val_loss: 0.3160
+Epoch 41/512
+3063/3063 - 21s - loss: 0.2768 - val_loss: 0.3087
+Epoch 42/512
+3063/3063 - 22s - loss: 0.2764 - val_loss: 0.3083
+Epoch 43/512
+3063/3063 - 21s - loss: 0.2755 - val_loss: 0.3044
+Epoch 44/512
+3063/3063 - 21s - loss: 0.2746 - val_loss: 0.3094
+Epoch 45/512
+3063/3063 - 21s - loss: 0.2733 - val_loss: 0.3117
+Epoch 46/512
+3063/3063 - 22s - loss: 0.2720 - val_loss: 0.3026
+Epoch 47/512
+3063/3063 - 22s - loss: 0.2706 - val_loss: 0.3142
+Epoch 48/512
+3063/3063 - 23s - loss: 0.2698 - val_loss: 0.3257
+Epoch 49/512
+3063/3063 - 20s - loss: 0.2698 - val_loss: 0.3053
+Epoch 50/512
+3063/3063 - 21s - loss: 0.2685 - val_loss: 0.3162
+Epoch 51/512
+3063/3063 - 21s - loss: 0.2674 - val_loss: 0.3202
+Epoch 52/512
+3063/3063 - 21s - loss: 0.2664 - val_loss: 0.3091
+Epoch 53/512
+3063/3063 - 21s - loss: 0.2655 - val_loss: 0.3078
+Epoch 54/512
+3063/3063 - 21s - loss: 0.2636 - val_loss: 0.3027
+Epoch 55/512
+3063/3063 - 22s - loss: 0.2628 - val_loss: 0.3153
+Epoch 56/512
+3063/3063 - 21s - loss: 0.2613 - val_loss: 0.3126
+Epoch 57/512
+3063/3063 - 21s - loss: 0.2604 - val_loss: 0.3113
+Epoch 58/512
+3063/3063 - 21s - loss: 0.2596 - val_loss: 0.3140
+Epoch 59/512
+3063/3063 - 21s - loss: 0.2590 - val_loss: 0.3124
+Epoch 60/512
+3063/3063 - 20s - loss: 0.2568 - val_loss: 0.3130
+Epoch 61/512
+3063/3063 - 20s - loss: 0.2549 - val_loss: 0.3254
+Epoch 62/512
+3063/3063 - 21s - loss: 0.2553 - val_loss: 0.3132
+Epoch 63/512
+3063/3063 - 22s - loss: 0.2532 - val_loss: 0.3376
+Epoch 64/512
+3063/3063 - 22s - loss: 0.2527 - val_loss: 0.3104
+Epoch 65/512
+3063/3063 - 21s - loss: 0.2503 - val_loss: 0.3141
+Epoch 66/512
+3063/3063 - 21s - loss: 0.2499 - val_loss: 0.3124
+Epoch 67/512
+3063/3063 - 22s - loss: 0.2490 - val_loss: 0.3068
+2022-06-14 12:19:22.632665: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+###
+first saving models
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on particlewise_128_4_64
+	this one already saved, skipped
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+	this one already saved, skipped
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+	this one already saved, skipped
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on naivednn_256_3_2
+	this one already saved, skipped
+currently on dnn_256_3_2
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+nested_concat_general_68_3_64_3 is saved in models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+DNN Classifier
+tf.data.datset created for training data
+Model not yet created, creating new model
+Traceback (most recent call last):
+  File "gen_models.py", line 78, in <module>
+    PI.train_classifier('dnn', model_params_dict[nm] , use_weights_during_fit = True, epochs=EPOCHS)
+  File "/code/delon/pc_ec/paper_code/experiment.py", line 197, in train_classifier
+    self.models[classifier_name] = self.classifiers[classifier_key](**params)
+TypeError: __init__() got an unexpected keyword argument 'latent_dim'
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fdcc57dcc10>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fdcc57dcc10>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fdcc57dcc10>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fdcc57dcc10>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fdcc57dcc10>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fdcc57dcc10>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fdcc57dcc10>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fdcc57dcc10>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+2022-06-14 12:20:34.443540: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-14 12:21:02.517431: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-06-14 12:21:02.533644: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-14 12:21:02.534662: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-14 12:21:02.534701: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-14 12:21:02.538619: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-14 12:21:02.538675: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-06-14 12:21:02.540219: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-06-14 12:21:02.540528: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-06-14 12:21:02.544699: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-06-14 12:21:02.545552: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-06-14 12:21:02.545781: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-14 12:21:02.549574: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-14 12:21:02.550134: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-06-14 12:21:02.667647: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-14 12:21:02.668667: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-14 12:21:02.672263: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-14 12:21:02.672329: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-14 12:21:03.623771: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-06-14 12:21:03.623853: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-06-14 12:21:03.623897: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-06-14 12:21:03.623908: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-06-14 12:21:03.628960: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-06-14 12:21:03.630328: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-06-14 12:21:50.006147: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-06-14 12:21:50.006827: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-06-14 12:21:51.897147: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-14 12:21:52.252443: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8201
+2022-06-14 12:21:53.209650: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-14 12:21:53.755790: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'tripletwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64', 'particlewise_128_4_64': 'models/data100k_raw_combined_atlas_cut_particlewise_128_4_64', 'pairwise_nl_5_(64, 128, 256, 128, 64)_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64', 'pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64', 'nested_concat_70_4_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3', 'naivednn_256_3_2': 'models/data100k_raw_combined_atlas_cut_naivednn_256_3_2', 'dnn_256_3_2': 'models/data100k_raw_combined_atlas_cut_dnn_256_3_2', 'nested_concat_general_68_3_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3'}
+Loaded tripletwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64
+Loaded particlewise_128_4_64 from models/data100k_raw_combined_atlas_cut_particlewise_128_4_64
+Loaded pairwise_nl_5_(64, 128, 256, 128, 64)_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+Loaded pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+Loaded nested_concat_70_4_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3
+Loaded naivednn_256_3_2 from models/data100k_raw_combined_atlas_cut_naivednn_256_3_2
+Loaded dnn_256_3_2 from models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+Loaded nested_concat_general_68_3_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3
+At 0.5 threshold we have BDT signal efficiency 0.860
+alright we're gonna start look at ['tripletwise', 'pairwise', 'particlewise', 'pairwise_nl', 'pairwise_nl_iter', 'nested_concat', 'naivednn', 'dnn', 'nested_concat_general']
+getting ROC for tripletwise
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+getting ROC for particlewise
+currently on particlewise_128_4_64
+getting ROC for pairwise_nl
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+getting ROC for pairwise_nl_iter
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+getting ROC for nested_concat
+currently on nested_concat_70_4_64_3
+getting ROC for naivednn
+currently on naivednn_256_3_2
+getting ROC for dnn
+currently on dnn_256_3_2
+getting ROC for nested_concat_general
+currently on nested_concat_general_68_3_64_3
+getting ROC for naivednn
+pog
+getting ROC for dnn
+pog
+getting ROC for particlewise
+pog
+getting ROC for nested_concat_general
+pog
+getting ROC for nested_concat
+pog
+getting ROC for tripletwise
+pog
+getting ROC for pairwise
+pog
+getting ROC for pairwise_nl_iter
+pog
+getting ROC for pairwise_nl
+pog
+getting ROC for tripletwise
+pog
+getting ROC for pairwise
+pog
+getting ROC for particlewise
+pog
+getting ROC for pairwise_nl
+pog
+getting ROC for pairwise_nl_iter
+pog
+getting ROC for nested_concat
+pog
+getting ROC for naivednn
+pog
+getting ROC for dnn
+pog
+getting ROC for nested_concat_general
+pog
+[t-SNE] Computing 151 nearest neighbors...
+[t-SNE] Indexed 30000 samples in 9.249s...
+[t-SNE] Computed neighbors for 30000 samples in 18.882s...
+[t-SNE] Computed conditional probabilities for sample 1000 / 30000
+[t-SNE] Computed conditional probabilities for sample 2000 / 30000
+[t-SNE] Computed conditional probabilities for sample 3000 / 30000
+[t-SNE] Computed conditional probabilities for sample 4000 / 30000
+[t-SNE] Computed conditional probabilities for sample 5000 / 30000
+[t-SNE] Computed conditional probabilities for sample 6000 / 30000
+[t-SNE] Computed conditional probabilities for sample 7000 / 30000
+[t-SNE] Computed conditional probabilities for sample 8000 / 30000
+[t-SNE] Computed conditional probabilities for sample 9000 / 30000
+[t-SNE] Computed conditional probabilities for sample 10000 / 30000
+[t-SNE] Computed conditional probabilities for sample 11000 / 30000
+[t-SNE] Computed conditional probabilities for sample 12000 / 30000
+[t-SNE] Computed conditional probabilities for sample 13000 / 30000
+[t-SNE] Computed conditional probabilities for sample 14000 / 30000
+[t-SNE] Computed conditional probabilities for sample 15000 / 30000
+[t-SNE] Computed conditional probabilities for sample 16000 / 30000
+[t-SNE] Computed conditional probabilities for sample 17000 / 30000
+[t-SNE] Computed conditional probabilities for sample 18000 / 30000
+[t-SNE] Computed conditional probabilities for sample 19000 / 30000
+[t-SNE] Computed conditional probabilities for sample 20000 / 30000
+[t-SNE] Computed conditional probabilities for sample 21000 / 30000
+[t-SNE] Computed conditional probabilities for sample 22000 / 30000
+[t-SNE] Computed conditional probabilities for sample 23000 / 30000
+[t-SNE] Computed conditional probabilities for sample 24000 / 30000
+[t-SNE] Computed conditional probabilities for sample 25000 / 30000
+[t-SNE] Computed conditional probabilities for sample 26000 / 30000
+[t-SNE] Computed conditional probabilities for sample 27000 / 30000
+[t-SNE] Computed conditional probabilities for sample 28000 / 30000
+[t-SNE] Computed conditional probabilities for sample 29000 / 30000
+[t-SNE] Computed conditional probabilities for sample 30000 / 30000
+[t-SNE] Mean sigma: 0.037220
+[t-SNE] Computed conditional probabilities in 3.783s
+[t-SNE] Iteration 50: error = 103.4226303, gradient norm = 0.0001313 (50 iterations in 5.552s)
+[t-SNE] Iteration 100: error = 98.2800751, gradient norm = 0.0005932 (50 iterations in 6.691s)
+[t-SNE] Iteration 150: error = 97.9846344, gradient norm = 0.0001189 (50 iterations in 6.443s)
+[t-SNE] Iteration 200: error = 97.9704132, gradient norm = 0.0000287 (50 iterations in 6.533s)
+[t-SNE] Iteration 250: error = 97.9697418, gradient norm = 0.0000260 (50 iterations in 5.850s)
+[t-SNE] KL divergence after 250 iterations with early exaggeration: 97.969742
+[t-SNE] Iteration 300: error = 4.1215596, gradient norm = 0.0005516 (50 iterations in 5.771s)
+[t-SNE] Iteration 350: error = 3.8338103, gradient norm = 0.0002688 (50 iterations in 5.630s)
+[t-SNE] Iteration 400: error = 3.6960077, gradient norm = 0.0001645 (50 iterations in 6.878s)
+[t-SNE] Iteration 450: error = 3.6122479, gradient norm = 0.0001128 (50 iterations in 6.763s)
+[t-SNE] Iteration 500: error = 3.5551889, gradient norm = 0.0000824 (50 iterations in 5.922s)
+[t-SNE] Iteration 550: error = 3.5133727, gradient norm = 0.0000634 (50 iterations in 6.009s)
+[t-SNE] Iteration 600: error = 3.4812877, gradient norm = 0.0000520 (50 iterations in 5.974s)
+[t-SNE] Iteration 650: error = 3.4561355, gradient norm = 0.0000433 (50 iterations in 5.847s)
+[t-SNE] Iteration 700: error = 3.4357879, gradient norm = 0.0000377 (50 iterations in 5.428s)
+[t-SNE] Iteration 750: error = 3.4189777, gradient norm = 0.0000327 (50 iterations in 5.737s)
+[t-SNE] Iteration 800: error = 3.4049487, gradient norm = 0.0000286 (50 iterations in 6.513s)
+[t-SNE] Iteration 850: error = 3.3931043, gradient norm = 0.0000258 (50 iterations in 5.963s)
+[t-SNE] Iteration 900: error = 3.3830540, gradient norm = 0.0000234 (50 iterations in 6.143s)
+[t-SNE] Iteration 950: error = 3.3744831, gradient norm = 0.0000210 (50 iterations in 6.047s)
+[t-SNE] Iteration 1000: error = 3.3671060, gradient norm = 0.0000202 (50 iterations in 5.976s)
+[t-SNE] Iteration 1050: error = 3.3608561, gradient norm = 0.0000182 (50 iterations in 6.263s)
+[t-SNE] Iteration 1100: error = 3.3554659, gradient norm = 0.0000169 (50 iterations in 5.043s)
+[t-SNE] Iteration 1150: error = 3.3507748, gradient norm = 0.0000159 (50 iterations in 5.704s)
+[t-SNE] Iteration 1200: error = 3.3466418, gradient norm = 0.0000152 (50 iterations in 5.772s)
+[t-SNE] Iteration 1250: error = 3.3430469, gradient norm = 0.0000148 (50 iterations in 6.043s)
+[t-SNE] Iteration 1300: error = 3.3399251, gradient norm = 0.0000138 (50 iterations in 5.747s)
+[t-SNE] Iteration 1350: error = 3.3370922, gradient norm = 0.0000136 (50 iterations in 5.614s)
+[t-SNE] Iteration 1400: error = 3.3345370, gradient norm = 0.0000132 (50 iterations in 5.791s)
+[t-SNE] Iteration 1450: error = 3.3322473, gradient norm = 0.0000126 (50 iterations in 5.374s)
+[t-SNE] Iteration 1500: error = 3.3301682, gradient norm = 0.0000122 (50 iterations in 5.758s)
+[t-SNE] Iteration 1550: error = 3.3283038, gradient norm = 0.0000115 (50 iterations in 5.425s)
+[t-SNE] Iteration 1600: error = 3.3265829, gradient norm = 0.0000114 (50 iterations in 5.729s)
+[t-SNE] Iteration 1650: error = 3.3250709, gradient norm = 0.0000111 (50 iterations in 5.445s)
+[t-SNE] Iteration 1700: error = 3.3236892, gradient norm = 0.0000110 (50 iterations in 6.841s)
+[t-SNE] Iteration 1750: error = 3.3224053, gradient norm = 0.0000104 (50 iterations in 5.734s)
+[t-SNE] Iteration 1800: error = 3.3212092, gradient norm = 0.0000103 (50 iterations in 5.421s)
+[t-SNE] Iteration 1850: error = 3.3201523, gradient norm = 0.0000108 (50 iterations in 5.724s)
+[t-SNE] Iteration 1900: error = 3.3192959, gradient norm = 0.0000100 (50 iterations in 5.050s)
+[t-SNE] Iteration 1950: error = 3.3185136, gradient norm = 0.0000099 (50 iterations in 5.932s)
+[t-SNE] Iteration 2000: error = 3.3177469, gradient norm = 0.0000093 (50 iterations in 5.883s)
+[t-SNE] KL divergence after 2000 iterations: 3.317747

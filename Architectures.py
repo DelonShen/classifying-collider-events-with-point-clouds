@@ -114,8 +114,66 @@ class DeepSet(tf.keras.Model):
         x = self.final_Sigma(self.F[-1](x))
         return x
 
-class NestedConcat(tf.keras.Model):
+    
+
+class NestedConcat_General(tf.keras.Model):
     def __init__(self, width, depth, latent_dim, L=1, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False, mean=False):
+        super(NestedConcat_General, self).__init__()
+        depth = int(depth)
+        width = int(width)
+        latent_dim = int(latent_dim)
+
+        self.width = width
+        self.depth = depth
+        self.Sigma = MyActivation(Sigma)
+        self.depth = depth
+        self.final_Sigma = final_Sigma
+        self.N = L
+
+        self.F0 = [tf.keras.layers.Dense(width) for _ in range(depth)]
+        self.Phi0 = [tf.keras.layers.Dense(width) for _ in range(depth-1)]
+        
+        self.Phi = [[tf.keras.layers.Dense(width) for _ in range(depth-1)] for i in range(L)]
+        self.Phi[0].append(tf.keras.layers.Dense(latent_dim))
+
+        self.Adder = adder(mean=mean)
+
+        self.F = [[tf.keras.layers.Dense(width) for _ in range(depth)] for i in range(L)]
+        self.F_final = tf.keras.layers.Dense(2)
+        self.initial_mask = initial_mask
+
+    def call(self, inputs):
+
+        x = tf.keras.layers.Masking()(inputs)
+        
+        Theta_d = x
+
+        for layer in self.Phi0:
+            xhat = self.Sigma(tf.keras.layers.TimeDistributed(layer)(x))
+
+        xhat = self.Adder(xhat)
+        for layer in self.F0:
+            xhat = xhat = self.Sigma.activation(layer(xhat))
+
+        for i in range(1,self.N+1):
+            c_Phi = self.Phi[-i]
+            c_F   = self.F[-i]
+            xhat = concat_special()([Theta_d,xhat])
+            
+            for layer in c_Phi:
+                xhat = self.Sigma(tf.keras.layers.TimeDistributed(layer)(xhat))
+                
+            Theta_d = xhat
+
+            xhat = self.Adder(xhat)
+            for layer in c_F:
+                xhat = self.Sigma.activation(layer(xhat))
+
+        return self.final_Sigma(self.F_final(xhat))
+
+
+class NestedConcat(tf.keras.Model):
+    def __init__(self, width, depth, latent_dim, L=1, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False, mean=False, reuse=False):
         super(NestedConcat, self).__init__()
         depth = int(depth)
         width = int(width)
@@ -131,7 +189,7 @@ class NestedConcat(tf.keras.Model):
         self.Phi = [[tf.keras.layers.Dense(width) for _ in range(depth-1)] for i in range(L)]
         self.Phi[0].append(tf.keras.layers.Dense(latent_dim))
 
-
+        self.reuse=reuse
         self.Adder = adder(mean=mean)
 
         self.F = [[tf.keras.layers.Dense(width) for _ in range(depth)] for i in range(L)]
@@ -143,16 +201,21 @@ class NestedConcat(tf.keras.Model):
         x = tf.keras.layers.Masking()(inputs)
 
         xhat = None
+        xhat2= None
         for i in range(1,self.N+1):
             c_Phi = self.Phi[-i]
             c_F   = self.F[-i]
             if(xhat != None):
-                xhat = concat_special()([x,xhat])
+                if(self.reuse):
+                    xhat = concat_special()([xhat2,xhat])
+                else:
+                    xhat = concat_special()([x, xhat])
             else:
                 xhat = tf.keras.layers.Masking()(inputs)
 
             for layer in c_Phi:
                 xhat = self.Sigma(tf.keras.layers.TimeDistributed(layer)(xhat))
+            xhat2 = xhat
 
             xhat = self.Adder(xhat)
             for layer in c_F:
@@ -507,6 +570,7 @@ class LatentGetter(tf.keras.Model):
 model_params_dict = {'particlewise':{'width':128, 'depth':4, 'latent_dim':64}, 
                      'particlewise_mean':{'width':128, 'depth':4, 'latent_dim':64,'mean':True}, 
         'nested_concat':{'width':70, 'depth':4, 'latent_dim':64, 'L':3},
+        'nested_concat_general':{'width':68, 'depth':3, 'latent_dim':64, 'L':3},
         'pairwise': {'depth':5, 'ec_widths':(64,128,256,128,64), 'width':64},
         'pairwise_nl': {'depth':5, 'ec_widths':((64,128,256,128,64)), 'width':32, 'latent_dim':64},
         'pairwise_nl_iter': {'depth':5, 'ec_widths':((64,64,116,64,64),(64,64,116,64,64),(64,64,116,64,64)), 'width':32, 'latent_dim':64},
@@ -518,6 +582,7 @@ model_params_dict = {'particlewise':{'width':128, 'depth':4, 'latent_dim':64},
         }
 classifiers_name = {'particlewise':r'Particlewise', 
                     'nested_concat':r'Nested Concatenation',
+                    'nested_concat_general':r'Nested Concatenation w/ Memory',
                     'pairwise':r'Pairwise', 
                     'tripletwise':r'Tripletwise', 
                     'pairwise_nl':r'Nonlinear Pairwise',
@@ -526,6 +591,7 @@ classifiers_name = {'particlewise':r'Particlewise',
                     'naivednn':'dNN + Naive Features'}
 lstyle = {'particlewise':{'linestyle':'dashed', 'color':'#1982c4','linewidth':3}, 
                     'nested_concat':{'linestyle':'dashdot', 'color':'#38b000', 'linewidth':2},
+                    'nested_concat_general':{'linestyle':'dashdot', 'color':'#a738b0', 'linewidth':2},
                     'pairwise':{'linestyle':'solid', 'color':'Black', 'linewidth':3}, 
                     'tripletwise':{'linestyle':'dashdot', 'color':'#6a4c93', 'linewidth':3}, 
                     'pairwise_nl':{'linestyle':'dashed', 'color':'#fb8b24', 'linewidth':2},
@@ -535,6 +601,7 @@ lstyle = {'particlewise':{'linestyle':'dashed', 'color':'#1982c4','linewidth':3}
 
 classifiers = {'particlewise':DeepSet, 
             'nested_concat':NestedConcat,
+           'nested_concat_general':NestedConcat_General,
             'pairwise':Pairwise,
             'tripletwise':Tripletwise,
             'dnn':DNN_Classifier,

@@ -34,9 +34,9 @@ num_round = None
 train_bst = False
 
 #TESTING
-#EPOCHS = 2
-#filename = '../data/data50k_raw_combined_atlas_cut_small.pkl'
-#num_round = 1
+# EPOCHS = 2
+# filename = '../data/data50k_raw_combined_atlas_cut_small.pkl'
+# num_round = 1
 ######
 
 
@@ -162,7 +162,7 @@ ax.plot(tpr, 1/fpr, label=r'%.3f %s'%(auc, 'BDT + ATLAS Features'), color='light
 
 
 ax.get_legend().remove()
-ax.legend(loc='upper right', frameon=False, labelspacing=2.0)
+ax.legend(loc='upper right', frameon=False, labelspacing=1.0)
 handles, labels = ax.get_legend_handles_labels()
 
 idxs = np.argsort(labels)
@@ -171,7 +171,7 @@ labels = [' '.join(label.split(' ')[1:]) for label in labels]
 labels = list(reversed(np.array(labels)[idxs]))
 handles = list(reversed(np.array(handles)[idxs]))
 
-ax.legend(handles, labels, loc='upper right', frameon=False)
+ax.legend(handles, labels, loc='upper right', frameon=False, labelspacing=0.3)
 
 for txt in ax.texts:
     txt.set_visible(False)

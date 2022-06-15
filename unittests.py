@@ -80,6 +80,19 @@ class test_particlewise(unittest.TestCase):
     def test_permutation(self):
         self.assertEqual(test_permute(self.model), True)
 
+class test_nested_concat_general(unittest.TestCase):
+    def __init__(self, *args, **kwargs):
+        super(test_nested_concat_general, self).__init__(*args, **kwargs)
+        name = 'nested_concat_general'
+        self.model = classifiers[name](**model_params_dict[name])
+
+    def test_padding(self):
+        self.assertEqual(test_padding(self.model), True)
+
+    def test_permutation(self):
+        self.assertEqual(test_permute(self.model), True)
+
+
 class test_nested_concat(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(test_nested_concat, self).__init__(*args, **kwargs)
