@@ -89,7 +89,7 @@ for i in scan:
             del PI.models[classifier_name]
             del PI.perf[classifier_name]
 
-        PI.train_classifier('pairwise', {'depth':5, 'ec_widths':(64,128,256,128,2**i), 'width':64}, epochs=EPOCHS, seed=42+j, patience=8)
+        PI.train_classifier('pairwise', {'depth':5, 'ec_widths':(64,128,256,128,2**i), 'width':64}, epochs=EPOCHS, seed=42+j)
 
 
         fpr, tpr, thresholds, auc = PI.get_ROC('pairwise', {'depth':5, 'ec_widths':(64,128,256,128,2**i), 'width':64})
