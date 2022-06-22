@@ -33,10 +33,11 @@ num_round = None
 
 train_bst = False
 
+do_tsne = False
 #TESTING
-# EPOCHS = 2
-# filename = '../data/data50k_raw_combined_atlas_cut_small.pkl'
-# num_round = 1
+#EPOCHS = 2
+#filename = '../data/data50k_raw_combined_atlas_cut_small.pkl'
+#num_round = 1
 ######
 
 
@@ -231,7 +232,8 @@ table_file.close()
 
 
 # In[9]:
-
+if(not do_tsne):
+    quit()
 
 ####GENERATING TSNE PLOT
 from tqdm import trange

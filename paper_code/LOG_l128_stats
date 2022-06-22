@@ -1,0 +1,183 @@
+nohup: ignoring input
+2022-06-22 12:20:08.697380: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-22 12:21:40.099637: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-06-22 12:21:40.116360: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-22 12:21:40.117390: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-22 12:21:40.117425: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-22 12:21:40.121145: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-22 12:21:40.121206: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-06-22 12:21:40.122819: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-06-22 12:21:40.123135: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-06-22 12:21:40.127766: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-06-22 12:21:40.128922: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-06-22 12:21:40.129162: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-22 12:21:40.133087: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-22 12:21:40.133818: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-06-22 12:21:40.253186: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-22 12:21:40.254212: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-06-22 12:21:40.257845: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-06-22 12:21:40.257908: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-06-22 12:21:41.591027: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-06-22 12:21:41.591083: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-06-22 12:21:41.591099: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-06-22 12:21:41.591108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-06-22 12:21:41.596098: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-06-22 12:21:41.598252: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-06-22 12:21:42.246376: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-06-22 12:21:42.247116: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-06-22 12:21:44.388678: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-06-22 12:21:44.771330: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8201
+2022-06-22 12:21:45.507764: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-06-22 12:21:45.788601: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+		LATENT DIM 128
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 46s - loss: 0.3957 - val_loss: 0.3564
+Epoch 2/256
+3063/3063 - 41s - loss: 0.3537 - val_loss: 0.3611
+Epoch 3/256
+3063/3063 - 42s - loss: 0.3425 - val_loss: 0.3350
+Epoch 4/256
+3063/3063 - 42s - loss: 0.3317 - val_loss: 0.3476
+Epoch 5/256
+3063/3063 - 42s - loss: 0.3215 - val_loss: 0.3126
+Epoch 6/256
+3063/3063 - 41s - loss: 0.3100 - val_loss: 0.3083
+Epoch 7/256
+3063/3063 - 41s - loss: 0.3009 - val_loss: 0.3045
+Epoch 8/256
+3063/3063 - 41s - loss: 0.2905 - val_loss: 0.2855
+Epoch 9/256
+3063/3063 - 41s - loss: 0.2855 - val_loss: 0.2899
+Epoch 10/256
+3063/3063 - 41s - loss: 0.2782 - val_loss: 0.2938
+Epoch 11/256
+3063/3063 - 42s - loss: 0.2724 - val_loss: 0.2715
+Epoch 12/256
+3063/3063 - 41s - loss: 0.2681 - val_loss: 0.2773
+Epoch 13/256
+3063/3063 - 41s - loss: 0.2649 - val_loss: 0.2642
+Epoch 14/256
+3063/3063 - 41s - loss: 0.2594 - val_loss: 0.2801
+Epoch 15/256
+3063/3063 - 42s - loss: 0.2561 - val_loss: 0.2631
+Epoch 16/256
+3063/3063 - 41s - loss: 0.2535 - val_loss: 0.2568
+Epoch 17/256
+3063/3063 - 41s - loss: 0.2514 - val_loss: 0.2549
+Epoch 18/256
+3063/3063 - 41s - loss: 0.2484 - val_loss: 0.2520
+Epoch 19/256
+3063/3063 - 41s - loss: 0.2459 - val_loss: 0.2551
+Epoch 20/256
+3063/3063 - 41s - loss: 0.2449 - val_loss: 0.2505
+Epoch 21/256
+3063/3063 - 41s - loss: 0.2427 - val_loss: 0.2635
+Epoch 22/256
+3063/3063 - 41s - loss: 0.2408 - val_loss: 0.2995
+Epoch 23/256
+3063/3063 - 41s - loss: 0.2386 - val_loss: 0.2495
+Epoch 24/256
+3063/3063 - 42s - loss: 0.2376 - val_loss: 0.2633
+Epoch 25/256
+3063/3063 - 42s - loss: 0.2355 - val_loss: 0.2460
+Epoch 26/256
+3063/3063 - 41s - loss: 0.2330 - val_loss: 0.2485
+Epoch 27/256
+3063/3063 - 41s - loss: 0.2321 - val_loss: 0.2538
+Epoch 28/256
+3063/3063 - 42s - loss: 0.2309 - val_loss: 0.2422
+Epoch 29/256
+3063/3063 - 42s - loss: 0.2287 - val_loss: 0.2480
+Epoch 30/256
+3063/3063 - 42s - loss: 0.2275 - val_loss: 0.2537
+Epoch 31/256
+3063/3063 - 42s - loss: 0.2271 - val_loss: 0.2481
+Epoch 32/256
+3063/3063 - 41s - loss: 0.2251 - val_loss: 0.2821
+Epoch 33/256
+3063/3063 - 42s - loss: 0.2233 - val_loss: 0.2460
+Epoch 34/256
+3063/3063 - 41s - loss: 0.2228 - val_loss: 0.2441
+Epoch 35/256
+3063/3063 - 42s - loss: 0.2211 - val_loss: 0.2524
+Epoch 36/256
+3063/3063 - 42s - loss: 0.2197 - val_loss: 0.2456
+Epoch 37/256
+3063/3063 - 41s - loss: 0.2181 - val_loss: 0.2482
+Epoch 38/256
+3063/3063 - 41s - loss: 0.2176 - val_loss: 0.2474
+Epoch 39/256
+3063/3063 - 41s - loss: 0.2160 - val_loss: 0.2442
+Epoch 40/256
+3063/3063 - 41s - loss: 0.2146 - val_loss: 0.2454
+Epoch 41/256
+3063/3063 - 41s - loss: 0.2139 - val_loss: 0.2436
+Epoch 42/256
+3063/3063 - 41s - loss: 0.2132 - val_loss: 0.2458
+Epoch 43/256
+3063/3063 - 42s - loss: 0.2110 - val_loss: 0.2446
+Epoch 44/256
+3063/3063 - 42s - loss: 0.2097 - val_loss: 0.2405
+Epoch 45/256
+3063/3063 - 42s - loss: 0.2089 - val_loss: 0.2416
+Epoch 46/256
+3063/3063 - 42s - loss: 0.2074 - val_loss: 0.2443
+Epoch 47/256
+3063/3063 - 42s - loss: 0.2059 - val_loss: 0.2666
+Epoch 48/256
+3063/3063 - 42s - loss: 0.2055 - val_loss: 0.2377
+Epoch 49/256
+3063/3063 - 41s - loss: 0.2054 - val_loss: 0.2513
+Epoch 50/256
+3063/3063 - 42s - loss: 0.2031 - val_loss: 0.2485
+Epoch 51/256
+3063/3063 - 42s - loss: 0.2032 - val_loss: 0.2593
+Epoch 52/256
+3063/3063 - 41s - loss: 0.2011 - val_loss: 0.2501
+Epoch 53/256
+3063/3063 - 41s - loss: 0.1996 - val_loss: 0.2505
+Epoch 54/256
+3063/3063 - 41s - loss: 0.1998 - val_loss: 0.2402
+Epoch 55/256
+3063/3063 - 41s - loss: 0.1993 - val_loss: 0.2408
+Epoch 56/256
+3063/3063 - 41s - loss: 0.1976 - val_loss: 0.2401
+Epoch 57/256
+3063/3063 - 40s - loss: 0.1958 - val_loss: 0.2506
+Epoch 58/256
+3063/3063 - 41s - loss: 0.1947 - val_loss: 0.2578
+Epoch 59/256
+3063/3063 - 41s - loss: 0.1941 - val_loss: 0.2485
+Epoch 60/256
+3063/3063 - 40s - loss: 0.1929 - val_loss: 0.2513
+Epoch 61/256
+3063/3063 - 41s - loss: 0.1921 - val_loss: 0.2614
+Epoch 62/256
+3063/3063 - 41s - loss: 0.1896 - val_loss: 0.2749
+Epoch 63/256
+3063/3063 - 41s - loss: 0.1895 - val_loss: 0.2578
+Epoch 64/256
+3063/3063 - 41s - loss: 0.1893 - val_loss: 0.2560
+Epoch 65/256
+3063/3063 - 41s - loss: 0.1867 - val_loss: 0.2563
+Epoch 66/256
+3063/3063 - 41s - loss: 0.1861 - val_loss: 0.2576
+Epoch 67/256
+3063/3063 - 41s - loss: 0.1845 - val_loss: 0.2427

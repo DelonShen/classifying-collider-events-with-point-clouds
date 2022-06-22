@@ -171,9 +171,8 @@ class NestedConcat_General(tf.keras.Model):
 
         return self.final_Sigma(self.F_final(xhat))
 
-
 class NestedConcat(tf.keras.Model):
-    def __init__(self, width, depth, latent_dim, L=1, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False, mean=False, reuse=False):
+    def __init__(self, width, depth, latent_dim, L=1, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False, mean=False):
         super(NestedConcat, self).__init__()
         depth = int(depth)
         width = int(width)
@@ -189,7 +188,7 @@ class NestedConcat(tf.keras.Model):
         self.Phi = [[tf.keras.layers.Dense(width) for _ in range(depth-1)] for i in range(L)]
         self.Phi[0].append(tf.keras.layers.Dense(latent_dim))
 
-        self.reuse=reuse
+
         self.Adder = adder(mean=mean)
 
         self.F = [[tf.keras.layers.Dense(width) for _ in range(depth)] for i in range(L)]
@@ -201,21 +200,16 @@ class NestedConcat(tf.keras.Model):
         x = tf.keras.layers.Masking()(inputs)
 
         xhat = None
-        xhat2= None
         for i in range(1,self.N+1):
             c_Phi = self.Phi[-i]
             c_F   = self.F[-i]
             if(xhat != None):
-                if(self.reuse):
-                    xhat = concat_special()([xhat2,xhat])
-                else:
-                    xhat = concat_special()([x, xhat])
+                xhat = concat_special()([x,xhat])
             else:
                 xhat = tf.keras.layers.Masking()(inputs)
 
             for layer in c_Phi:
                 xhat = self.Sigma(tf.keras.layers.TimeDistributed(layer)(xhat))
-            xhat2 = xhat
 
             xhat = self.Adder(xhat)
             for layer in c_F:
@@ -588,7 +582,7 @@ classifiers_name = {'particlewise':r'Particlewise',
                     'pairwise_nl':r'Nonlinear Pairwise',
                     'pairwise_nl_iter':r'Iterated Nonlinear Pairwise' ,
                     'dnn':'dNN + ATLAS Features', 
-                    'naivednn':'dNN + Naive Features'}
+                    'naivednn':'dNN + Flattened Point Cloud'}
 lstyle = {'particlewise':{'linestyle':'dashed', 'color':'#1982c4','linewidth':3}, 
                     'nested_concat':{'linestyle':'dashdot', 'color':'#38b000', 'linewidth':2},
                     'nested_concat_general':{'linestyle':'dashdot', 'color':'#a738b0', 'linewidth':2},
