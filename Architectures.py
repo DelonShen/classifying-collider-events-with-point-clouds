@@ -24,11 +24,9 @@ class adder(tf.keras.layers.Layer):
         mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,tf.shape(inputs)[-1]))
         if(l1==True):
             mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,1))
-            return tf.reduce_sum(mask_expanded*inputs, axis= 1 )
-        if(self.mean):
-            return tf.reduce_sum(mask_expanded*inputs, axis= 1 )/tf.reduce_sum(mask_expanded, axis= 1 )
+            return tf.math.divide_no_nan(tf.reduce_sum(mask_expanded*inputs, axis= 1), tf.reduce_sum(mask_expanded, axis=1))
 
-        return tf.reduce_sum(mask_expanded*inputs, axis= 1 )
+        return tf.math.divide_no_nan(tf.reduce_sum(mask_expanded*inputs, axis= 1), tf.reduce_sum(mask_expanded, axis=1))
 
     def compute_mask(self, inputs, mask=None):
         if mask is None:
@@ -82,7 +80,7 @@ class DeepSet(tf.keras.Model):
         self.Phi = [tf.keras.layers.Dense(width) for _ in range(depth-1)]
         self.Phi.append(tf.keras.layers.Dense(latent_dim))
 
-        self.Adder = adder(mean=mean)
+        self.Adder = adder()
 
         self.F = [tf.keras.layers.Dense(width) for _ in range(depth)]
         self.F.append(tf.keras.layers.Dense(2))
@@ -136,7 +134,7 @@ class NestedConcat_General(tf.keras.Model):
         self.Phi = [[tf.keras.layers.Dense(width) for _ in range(depth-1)] for i in range(L)]
         self.Phi[0].append(tf.keras.layers.Dense(latent_dim))
 
-        self.Adder = adder(mean=mean)
+        self.Adder = adder()
 
         self.F = [[tf.keras.layers.Dense(width) for _ in range(depth)] for i in range(L)]
         self.F_final = tf.keras.layers.Dense(2)
@@ -189,7 +187,7 @@ class NestedConcat(tf.keras.Model):
         self.Phi[0].append(tf.keras.layers.Dense(latent_dim))
 
 
-        self.Adder = adder(mean=mean)
+        self.Adder = adder()
 
         self.F = [[tf.keras.layers.Dense(width) for _ in range(depth)] for i in range(L)]
         self.F_final = tf.keras.layers.Dense(2)

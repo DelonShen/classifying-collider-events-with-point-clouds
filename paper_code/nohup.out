@@ -1,0 +1,4 @@
+  File "./run_plots_comparison", line 1
+    python gen_models.py
+           ^
+SyntaxError: invalid syntax

@@ -1,0 +1,359 @@
+nohup: ignoring input
+2022-07-11 13:31:17.223573: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-11 13:31:46.013296: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-07-11 13:31:46.030224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-11 13:31:46.031527: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-11 13:31:46.031562: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-11 13:31:46.035917: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-07-11 13:31:46.035977: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-07-11 13:31:46.037609: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-07-11 13:31:46.037930: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-07-11 13:31:46.042283: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-07-11 13:31:46.043206: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-07-11 13:31:46.043452: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-07-11 13:31:46.047336: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-07-11 13:31:46.047939: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-11 13:31:46.171307: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-11 13:31:46.172445: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-11 13:31:46.176558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-07-11 13:31:46.176651: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-11 13:31:47.178189: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-07-11 13:31:47.178255: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-07-11 13:31:47.178273: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-07-11 13:31:47.178283: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-07-11 13:31:47.183397: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-07-11 13:31:47.185336: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-07-11 13:33:07.160896: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-07-11 13:33:07.161654: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-07-11 13:33:08.989119: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-07-11 13:33:09.262965: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'tripletwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64', 'particlewise_128_4_64': 'models/data100k_raw_combined_atlas_cut_particlewise_128_4_64', 'pairwise_nl_5_(64, 128, 256, 128, 64)_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64', 'pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64', 'nested_concat_70_4_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3', 'naivednn_256_3_2': 'models/data100k_raw_combined_atlas_cut_naivednn_256_3_2', 'dnn_256_3_2': 'models/data100k_raw_combined_atlas_cut_dnn_256_3_2', 'nested_concat_general_68_3_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3'}
+Loaded tripletwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64
+Loaded particlewise_128_4_64 from models/data100k_raw_combined_atlas_cut_particlewise_128_4_64
+Loaded pairwise_nl_5_(64, 128, 256, 128, 64)_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+Loaded pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+Loaded nested_concat_70_4_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3
+Loaded naivednn_256_3_2 from models/data100k_raw_combined_atlas_cut_naivednn_256_3_2
+Loaded dnn_256_3_2 from models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+Loaded nested_concat_general_68_3_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3
+RIGHT NOW: particlewise
+tf.data.datset created for training data
+Epoch 1/512
+3063/3063 - 14s - loss: 0.2918 - val_loss: 0.3229
+Epoch 2/512
+3063/3063 - 11s - loss: 0.2867 - val_loss: 0.3207
+Epoch 3/512
+3063/3063 - 12s - loss: 0.2846 - val_loss: 0.3250
+Epoch 4/512
+3063/3063 - 11s - loss: 0.2829 - val_loss: 0.3242
+Epoch 5/512
+3063/3063 - 11s - loss: 0.2821 - val_loss: 0.3268
+Epoch 6/512
+3063/3063 - 12s - loss: 0.2811 - val_loss: 0.3351
+Epoch 7/512
+3063/3063 - 11s - loss: 0.2798 - val_loss: 0.3401
+Epoch 8/512
+3063/3063 - 11s - loss: 0.2790 - val_loss: 0.3302
+Epoch 9/512
+3063/3063 - 12s - loss: 0.2781 - val_loss: 0.3246
+Epoch 10/512
+3063/3063 - 11s - loss: 0.2771 - val_loss: 0.3329
+Epoch 11/512
+3063/3063 - 11s - loss: 0.2765 - val_loss: 0.3383
+Epoch 12/512
+3063/3063 - 11s - loss: 0.2758 - val_loss: 0.3325
+Epoch 13/512
+3063/3063 - 10s - loss: 0.2751 - val_loss: 0.3330
+Epoch 14/512
+3063/3063 - 10s - loss: 0.2742 - val_loss: 0.3360
+Epoch 15/512
+3063/3063 - 10s - loss: 0.2725 - val_loss: 0.3447
+Epoch 16/512
+3063/3063 - 10s - loss: 0.2726 - val_loss: 0.3379
+Epoch 17/512
+3063/3063 - 11s - loss: 0.2712 - val_loss: 0.3410
+Epoch 18/512
+3063/3063 - 10s - loss: 0.2703 - val_loss: 0.3368
+Epoch 19/512
+3063/3063 - 11s - loss: 0.2691 - val_loss: 0.3381
+Epoch 20/512
+3063/3063 - 10s - loss: 0.2691 - val_loss: 0.3302
+Epoch 21/512
+3063/3063 - 10s - loss: 0.2672 - val_loss: 0.3496
+Epoch 22/512
+3063/3063 - 11s - loss: 0.2673 - val_loss: 0.3437
+Epoch 23/512
+3063/3063 - 10s - loss: 0.2658 - val_loss: 0.3380
+Epoch 24/512
+3063/3063 - 10s - loss: 0.2653 - val_loss: 0.3679
+Epoch 25/512
+3063/3063 - 11s - loss: 0.2644 - val_loss: 0.3332
+Epoch 26/512
+3063/3063 - 10s - loss: 0.2639 - val_loss: 0.3321
+Epoch 27/512
+3063/3063 - 10s - loss: 0.2623 - val_loss: 0.3375
+Epoch 28/512
+3063/3063 - 10s - loss: 0.2613 - val_loss: 0.3516
+Epoch 29/512
+3063/3063 - 10s - loss: 0.2605 - val_loss: 0.3435
+Epoch 30/512
+3063/3063 - 10s - loss: 0.2600 - val_loss: 0.3527
+Epoch 31/512
+3063/3063 - 10s - loss: 0.2584 - val_loss: 0.3535
+Epoch 32/512
+3063/3063 - 10s - loss: 0.2574 - val_loss: 0.3619
+Epoch 33/512
+3063/3063 - 11s - loss: 0.2566 - val_loss: 0.3557
+Epoch 34/512
+3063/3063 - 10s - loss: 0.2557 - val_loss: 0.3575
+###
+first saving models
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on particlewise_128_4_64
+	this one already saved, skipped
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+	this one already saved, skipped
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+	this one already saved, skipped
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on naivednn_256_3_2
+	this one already saved, skipped
+currently on dnn_256_3_2
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+	this one already saved, skipped
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+RIGHT NOW: nested_concat
+tf.data.datset created for training data
+Epoch 1/512
+3063/3063 - 26s - loss: 0.2708 - val_loss: 0.2746
+Epoch 2/512
+3063/3063 - 23s - loss: 0.2345 - val_loss: 0.2607
+Epoch 3/512
+3063/3063 - 24s - loss: 0.2262 - val_loss: 0.2605
+Epoch 4/512
+3063/3063 - 24s - loss: 0.2220 - val_loss: 0.2619
+Epoch 5/512
+3063/3063 - 23s - loss: 0.2183 - val_loss: 0.2678
+Epoch 6/512
+3063/3063 - 22s - loss: 0.2149 - val_loss: 0.2779
+Epoch 7/512
+3063/3063 - 22s - loss: 0.2129 - val_loss: 0.2793
+Epoch 8/512
+3063/3063 - 21s - loss: 0.2122 - val_loss: 0.2657
+Epoch 9/512
+3063/3063 - 21s - loss: 0.2112 - val_loss: 0.2672
+Epoch 10/512
+3063/3063 - 23s - loss: 0.2094 - val_loss: 0.2764
+Epoch 11/512
+3063/3063 - 23s - loss: 0.2065 - val_loss: 0.2863
+Epoch 12/512
+3063/3063 - 24s - loss: 0.2072 - val_loss: 0.2743
+Epoch 13/512
+3063/3063 - 23s - loss: 0.2049 - val_loss: 0.2720
+Epoch 14/512
+3063/3063 - 23s - loss: 0.2040 - val_loss: 0.2807
+Epoch 15/512
+3063/3063 - 24s - loss: 0.2029 - val_loss: 0.2756
+Epoch 16/512
+3063/3063 - 22s - loss: 0.2021 - val_loss: 0.2785
+Epoch 17/512
+3063/3063 - 23s - loss: 0.2020 - val_loss: 0.2808
+Epoch 18/512
+3063/3063 - 22s - loss: 0.1999 - val_loss: 0.2738
+Epoch 19/512
+3063/3063 - 22s - loss: 0.2000 - val_loss: 0.2876
+Epoch 20/512
+3063/3063 - 22s - loss: 0.1982 - val_loss: 0.2766
+Epoch 21/512
+3063/3063 - 22s - loss: 0.1986 - val_loss: 0.2805
+Epoch 22/512
+3063/3063 - 22s - loss: 0.1964 - val_loss: 0.3008
+Epoch 23/512
+3063/3063 - 21s - loss: 0.1958 - val_loss: 0.2808
+Epoch 24/512
+3063/3063 - 21s - loss: 0.1959 - val_loss: 0.2834
+Epoch 25/512
+3063/3063 - 21s - loss: 0.1955 - val_loss: 0.2904
+Epoch 26/512
+3063/3063 - 21s - loss: 0.1955 - val_loss: 0.2715
+Epoch 27/512
+3063/3063 - 23s - loss: 0.1938 - val_loss: 0.2859
+Epoch 28/512
+3063/3063 - 23s - loss: 0.1923 - val_loss: 0.2796
+Epoch 29/512
+3063/3063 - 22s - loss: 0.1935 - val_loss: 0.2777
+Epoch 30/512
+3063/3063 - 21s - loss: 0.1906 - val_loss: 0.2967
+Epoch 31/512
+3063/3063 - 21s - loss: 0.1907 - val_loss: 0.2846
+Epoch 32/512
+3063/3063 - 21s - loss: 0.1909 - val_loss: 0.3074
+Epoch 33/512
+3063/3063 - 21s - loss: 0.1909 - val_loss: 0.2776
+Epoch 34/512
+3063/3063 - 21s - loss: 0.1891 - val_loss: 0.2914
+Epoch 35/512
+3063/3063 - 21s - loss: 0.1880 - val_loss: 0.2905
+###
+first saving models
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on particlewise_128_4_64
+	this one already saved, skipped
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+	this one already saved, skipped
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+	this one already saved, skipped
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on naivednn_256_3_2
+	this one already saved, skipped
+currently on dnn_256_3_2
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+	this one already saved, skipped
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+RIGHT NOW: nested_concat_general
+tf.data.datset created for training data
+Epoch 1/512
+3063/3063 - 28s - loss: 0.3318 - val_loss: 0.3114
+Epoch 2/512
+3063/3063 - 25s - loss: 0.2972 - val_loss: 0.3025
+Epoch 3/512
+3063/3063 - 22s - loss: 0.2895 - val_loss: 0.2997
+Epoch 4/512
+3063/3063 - 23s - loss: 0.2848 - val_loss: 0.3114
+Epoch 5/512
+3063/3063 - 22s - loss: 0.2817 - val_loss: 0.2993
+Epoch 6/512
+3063/3063 - 22s - loss: 0.2789 - val_loss: 0.3058
+Epoch 7/512
+3063/3063 - 22s - loss: 0.2762 - val_loss: 0.3167
+Epoch 8/512
+3063/3063 - 22s - loss: 0.2741 - val_loss: 0.3069
+Epoch 9/512
+3063/3063 - 24s - loss: 0.2727 - val_loss: 0.3031
+Epoch 10/512
+3063/3063 - 24s - loss: 0.2700 - val_loss: 0.3035
+Epoch 11/512
+3063/3063 - 22s - loss: 0.2688 - val_loss: 0.3166
+Epoch 12/512
+3063/3063 - 23s - loss: 0.2669 - val_loss: 0.2995
+Epoch 13/512
+3063/3063 - 23s - loss: 0.2662 - val_loss: 0.3087
+Epoch 14/512
+3063/3063 - 23s - loss: 0.2644 - val_loss: 0.3103
+Epoch 15/512
+3063/3063 - 24s - loss: 0.2617 - val_loss: 0.3090
+Epoch 16/512
+3063/3063 - 24s - loss: 0.2604 - val_loss: 0.3103
+Epoch 17/512
+3063/3063 - 24s - loss: 0.2596 - val_loss: 0.3031
+Epoch 18/512
+3063/3063 - 23s - loss: 0.2573 - val_loss: 0.3047
+Epoch 19/512
+3063/3063 - 21s - loss: 0.2558 - val_loss: 0.3048
+Epoch 20/512
+3063/3063 - 23s - loss: 0.2550 - val_loss: 0.3154
+Epoch 21/512
+3063/3063 - 22s - loss: 0.2537 - val_loss: 0.3137
+Epoch 22/512
+3063/3063 - 24s - loss: 0.2519 - val_loss: 0.3277
+Epoch 23/512
+3063/3063 - 23s - loss: 0.2504 - val_loss: 0.3053
+Epoch 24/512
+3063/3063 - 23s - loss: 0.2489 - val_loss: 0.3201
+Epoch 25/512
+3063/3063 - 22s - loss: 0.2476 - val_loss: 0.3082
+Epoch 26/512
+3063/3063 - 22s - loss: 0.2460 - val_loss: 0.3037
+Epoch 27/512
+3063/3063 - 22s - loss: 0.2442 - val_loss: 0.3056
+Epoch 28/512
+3063/3063 - 23s - loss: 0.2433 - val_loss: 0.3047
+Epoch 29/512
+3063/3063 - 23s - loss: 0.2417 - val_loss: 0.3117
+Epoch 30/512
+3063/3063 - 22s - loss: 0.2396 - val_loss: 0.3186
+Epoch 31/512
+3063/3063 - 21s - loss: 0.2384 - val_loss: 0.3054
+Epoch 32/512
+3063/3063 - 22s - loss: 0.2374 - val_loss: 0.3238
+Epoch 33/512
+3063/3063 - 22s - loss: 0.2353 - val_loss: 0.3146
+Epoch 34/512
+3063/3063 - 23s - loss: 0.2338 - val_loss: 0.3244
+Epoch 35/512
+3063/3063 - 23s - loss: 0.2319 - val_loss: 0.3212
+Epoch 36/512
+3063/3063 - 23s - loss: 0.2299 - val_loss: 0.3118
+Epoch 37/512
+3063/3063 - 23s - loss: 0.2287 - val_loss: 0.3302
+2022-07-11 14:11:05.177492: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-07-11 14:11:05.529220: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8201
+###
+first saving models
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on particlewise_128_4_64
+	this one already saved, skipped
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+	this one already saved, skipped
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+	this one already saved, skipped
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on naivednn_256_3_2
+	this one already saved, skipped
+currently on dnn_256_3_2
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+	this one already saved, skipped
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+RIGHT NOW: tripletwise
+tf.data.datset created for training data
+Epoch 1/512
+3063/3063 - 312s - loss: 0.2121 - val_loss: 0.2451
+Epoch 2/512
+3063/3063 - 307s - loss: 0.2069 - val_loss: 0.2427
+Epoch 3/512
+3063/3063 - 307s - loss: 0.2059 - val_loss: 0.2384
+Epoch 4/512
+3063/3063 - 307s - loss: 0.2051 - val_loss: 0.2769
+Epoch 5/512
+3063/3063 - 307s - loss: 0.2037 - val_loss: 0.2378
+Epoch 6/512
+3063/3063 - 307s - loss: 0.2040 - val_loss: 0.2595

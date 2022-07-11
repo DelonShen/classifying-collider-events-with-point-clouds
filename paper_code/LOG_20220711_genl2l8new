@@ -1,0 +1,123 @@
+nohup: ignoring input
+2022-07-11 13:54:46.714829: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
+2022-07-11 13:54:46.714874: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-07-11 13:56:14.166779: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
+2022-07-11 13:56:14.166838: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2022-07-11 13:56:14.166880: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (top1.hep.utexas.edu): /proc/driver/nvidia/version does not exist
+2022-07-11 13:56:14.167415: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-11 13:56:14.421839: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-07-11 13:56:14.422626: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2397305000 Hz
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+RIGHT NOW: latent_two
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+3063/3063 - 57s - loss: 0.4012 - val_loss: 0.3578
+Epoch 2/256
+3063/3063 - 55s - loss: 0.3589 - val_loss: 0.3601
+Epoch 3/256
+3063/3063 - 55s - loss: 0.3501 - val_loss: 0.3436
+Epoch 4/256
+3063/3063 - 54s - loss: 0.3428 - val_loss: 0.3435
+Epoch 5/256
+3063/3063 - 54s - loss: 0.3375 - val_loss: 0.3277
+Epoch 6/256
+3063/3063 - 54s - loss: 0.3328 - val_loss: 0.3294
+Epoch 7/256
+3063/3063 - 55s - loss: 0.3283 - val_loss: 0.3274
+Epoch 8/256
+3063/3063 - 54s - loss: 0.3238 - val_loss: 0.3237
+Epoch 9/256
+3063/3063 - 55s - loss: 0.3226 - val_loss: 0.3242
+Epoch 10/256
+3063/3063 - 54s - loss: 0.3190 - val_loss: 0.3254
+Epoch 11/256
+3063/3063 - 54s - loss: 0.3160 - val_loss: 0.3172
+Epoch 12/256
+3063/3063 - 55s - loss: 0.3137 - val_loss: 0.3280
+Epoch 13/256
+3063/3063 - 54s - loss: 0.3119 - val_loss: 0.3113
+Epoch 14/256
+3063/3063 - 54s - loss: 0.3088 - val_loss: 0.3245
+Epoch 15/256
+3063/3063 - 54s - loss: 0.3064 - val_loss: 0.3248
+Epoch 16/256
+3063/3063 - 54s - loss: 0.3051 - val_loss: 0.3048
+Epoch 17/256
+3063/3063 - 55s - loss: 0.3018 - val_loss: 0.3059
+Epoch 18/256
+3063/3063 - 54s - loss: 0.2987 - val_loss: 0.3053
+Epoch 19/256
+3063/3063 - 54s - loss: 0.2976 - val_loss: 0.3274
+Epoch 20/256
+3063/3063 - 54s - loss: 0.2944 - val_loss: 0.2955
+Epoch 21/256
+3063/3063 - 54s - loss: 0.2921 - val_loss: 0.2944
+Epoch 22/256
+3063/3063 - 54s - loss: 0.2913 - val_loss: 0.3350
+Epoch 23/256
+3063/3063 - 54s - loss: 0.2885 - val_loss: 0.2994
+Epoch 24/256
+3063/3063 - 54s - loss: 0.2860 - val_loss: 0.2975
+Epoch 25/256
+3063/3063 - 55s - loss: 0.2852 - val_loss: 0.2869
+Epoch 26/256
+3063/3063 - 55s - loss: 0.2836 - val_loss: 0.2871
+Epoch 27/256
+3063/3063 - 56s - loss: 0.2819 - val_loss: 0.3015
+Epoch 28/256
+3063/3063 - 55s - loss: 0.2805 - val_loss: 0.2880
+Epoch 29/256
+3063/3063 - 55s - loss: 0.2778 - val_loss: 0.2787
+Epoch 30/256
+3063/3063 - 56s - loss: 0.2754 - val_loss: 0.2854
+Epoch 31/256
+3063/3063 - 55s - loss: 0.2746 - val_loss: 0.2886
+Epoch 32/256
+3063/3063 - 55s - loss: 0.2734 - val_loss: 0.2806
+Epoch 33/256
+3063/3063 - 55s - loss: 0.2720 - val_loss: 0.2845
+Epoch 34/256
+3063/3063 - 55s - loss: 0.2695 - val_loss: 0.2889
+Epoch 35/256
+3063/3063 - 55s - loss: 0.2679 - val_loss: 0.2769
+Epoch 36/256
+3063/3063 - 55s - loss: 0.2662 - val_loss: 0.2881
+Epoch 37/256
+3063/3063 - 55s - loss: 0.2652 - val_loss: 0.2733
+Epoch 38/256
+3063/3063 - 54s - loss: 0.2637 - val_loss: 0.2891
+Epoch 39/256
+3063/3063 - 55s - loss: 0.2622 - val_loss: 0.2852
+Epoch 40/256
+3063/3063 - 55s - loss: 0.2617 - val_loss: 0.2794
+Epoch 41/256
+3063/3063 - 55s - loss: 0.2608 - val_loss: 0.2643
+Epoch 42/256
+3063/3063 - 55s - loss: 0.2599 - val_loss: 0.2701
+Epoch 43/256
+3063/3063 - 55s - loss: 0.2582 - val_loss: 0.2650
+Epoch 44/256
+3063/3063 - 55s - loss: 0.2574 - val_loss: 0.2689
+Epoch 45/256
+3063/3063 - 55s - loss: 0.2562 - val_loss: 0.2706
+Epoch 46/256
+3063/3063 - 55s - loss: 0.2554 - val_loss: 0.2791
+Epoch 47/256
+3063/3063 - 55s - loss: 0.2538 - val_loss: 0.2752
+Epoch 48/256
+3063/3063 - 55s - loss: 0.2527 - val_loss: 0.2599
+Epoch 49/256
+3063/3063 - 55s - loss: 0.2523 - val_loss: 0.2727
+Epoch 50/256
+3063/3063 - 54s - loss: 0.2514 - val_loss: 0.2638
+Epoch 51/256
+3063/3063 - 55s - loss: 0.2519 - val_loss: 0.2810
+Epoch 52/256
+3063/3063 - 55s - loss: 0.2492 - val_loss: 0.2764

@@ -41,9 +41,9 @@ filename = '../data/data100k_raw_combined_atlas_cut.pkl'
 num_round = None
 
 #TESTING
-# EPOCHS = 2
-# filename = '../data/data50k_raw_combined_atlas_cut_small.pkl'
-# num_round = 1
+#EPOCHS = 2
+#filename = '../data/data50k_raw_combined_atlas_cut_small.pkl'
+#num_round = 1
 ######
 
 
@@ -57,14 +57,14 @@ PI.fromSaved()
 ##IF FROM SAVED
 #############
 
-to_train = ['tripletwise',
+to_train = ['particlewise',
+            'nested_concat',
+            'nested_concat_general',
+            'tripletwise',
             'pairwise',
-            'particlewise',
             'pairwise_nl',
             'pairwise_nl_iter',
-            'nested_concat',
-            'naivednn']
-to_train = ['nested_concat_general']
+            'naivednn',]
 
 for nm in to_train:
     print('RIGHT NOW: %s'%nm)

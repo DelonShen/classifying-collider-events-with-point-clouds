@@ -110,9 +110,13 @@ e03i = np.reshape(e03i, (len(scan),n_experiments))
 
 e07 = np.reshape(e07, (len(scan),n_experiments))
 e07i = np.reshape(e07i, (len(scan),n_experiments))
-
+print(AUCs)
+print(e03i)
+print(e03)
+print(e07i)
+print(e07)
 for a in range(len(scan)):
-    print('$2^%d$ & $%.3f \pm %.3f$ & %s & $%.1f\pm %.1f$ & $%.1f\pm %.1f$ & $%.1f\pm %.1f$ & $%.1f\pm %.1f$\\\\\n'%(scan[a], *mean_std(AUCs,a),n_params[a],
+    print('$2^%d$ & $%.4f \pm %.4f$ & %s & $%.1f\pm %.1f$ & $%.1f\pm %.1f$ & $%.1f\pm %.1f$ & $%.1f\pm %.1f$\\\\\n'%(scan[a], *mean_std(AUCs,a),n_params[a],
                                                                                                                                 *mean_std(e03i,a),
                                                                                                                                 *mean_std(e03,a),
                                                                                                                                 *mean_std(e07i,a),
