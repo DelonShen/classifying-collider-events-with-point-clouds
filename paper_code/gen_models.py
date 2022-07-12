@@ -52,19 +52,21 @@ num_round = None
 
 SUFFIX = ''
 PI = experiment.Experimenter(filename)
-PI.fromSaved()
 
+#PI.fromSaved()
 ##IF FROM SAVED
 #############
 
-to_train = ['particlewise',
+to_train = [
             'nested_concat',
             'nested_concat_general',
-            'tripletwise',
-            'pairwise',
-            'pairwise_nl',
-            'pairwise_nl_iter',
-            'naivednn',]
+#            'particlewise',
+#            'tripletwise',
+#            'pairwise',
+#            'pairwise_nl',
+#            'pairwise_nl_iter',
+#            'naivednn',
+]
 
 for nm in to_train:
     print('RIGHT NOW: %s'%nm)
@@ -75,6 +77,6 @@ for nm in to_train:
 
 print('DNN Classifier')
 PI.data_loader('dnn', gen_dataset_high_level, class_weight_invariant, tf.constant)
-PI.train_classifier('dnn', model_params_dict[nm] , use_weights_during_fit = True, epochs=EPOCHS)
+PI.train_classifier('dnn', model_params_dict['dnn'] , use_weights_during_fit = True, epochs=EPOCHS)
 print('###')
 PI.save_experimenter(suffix=SUFFIX)

@@ -15,18 +15,21 @@ class MyActivation(tf.keras.layers.Layer):
 
 class adder(tf.keras.layers.Layer):
     """custom adder function to maintain mask"""
-    def __init__(self, mean=False):
+    def __init__(self, mean=True):
         super(adder, self).__init__()
         self.mean = mean
         self.supports_masking = True
 
     def call(self, inputs, mask=None, l1=False):
         mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,tf.shape(inputs)[-1]))
+
         if(l1==True):
             mask_expanded = tf.tile(tf.expand_dims(tf.cast(mask, 'float32'),-1), (1,1,1))
-            return tf.math.divide_no_nan(tf.reduce_sum(mask_expanded*inputs, axis= 1), tf.reduce_sum(mask_expanded, axis=1))
 
+        if(self.mean==False):
+            return tf.reduce_sum(mask_expanded*inputs, axis= 1)
         return tf.math.divide_no_nan(tf.reduce_sum(mask_expanded*inputs, axis= 1), tf.reduce_sum(mask_expanded, axis=1))
+        
 
     def compute_mask(self, inputs, mask=None):
         if mask is None:
@@ -66,7 +69,7 @@ class pool_concat(tf.keras.layers.Layer):
 
 class DeepSet(tf.keras.Model):
     """Creates basic Deep Set architecture"""
-    def __init__(self, width, depth, latent_dim, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False, mean=False):
+    def __init__(self, width, depth, latent_dim, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False):
         super(DeepSet, self).__init__()
         depth = int(depth)
         width = int(width)
@@ -115,7 +118,7 @@ class DeepSet(tf.keras.Model):
     
 
 class NestedConcat_General(tf.keras.Model):
-    def __init__(self, width, depth, latent_dim, L=1, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False, mean=False):
+    def __init__(self, width, depth, latent_dim, L=1, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False):
         super(NestedConcat_General, self).__init__()
         depth = int(depth)
         width = int(width)
@@ -134,7 +137,7 @@ class NestedConcat_General(tf.keras.Model):
         self.Phi = [[tf.keras.layers.Dense(width) for _ in range(depth-1)] for i in range(L)]
         self.Phi[0].append(tf.keras.layers.Dense(latent_dim))
 
-        self.Adder = adder()
+        self.Adder = adder(mean=True)
 
         self.F = [[tf.keras.layers.Dense(width) for _ in range(depth)] for i in range(L)]
         self.F_final = tf.keras.layers.Dense(2)
@@ -170,7 +173,7 @@ class NestedConcat_General(tf.keras.Model):
         return self.final_Sigma(self.F_final(xhat))
 
 class NestedConcat(tf.keras.Model):
-    def __init__(self, width, depth, latent_dim, L=1, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False, mean=False):
+    def __init__(self, width, depth, latent_dim, L=1, Sigma=tf.nn.leaky_relu, final_Sigma=tf.nn.softmax, initial_mask=True, pooled=False):
         super(NestedConcat, self).__init__()
         depth = int(depth)
         width = int(width)
@@ -187,7 +190,7 @@ class NestedConcat(tf.keras.Model):
         self.Phi[0].append(tf.keras.layers.Dense(latent_dim))
 
 
-        self.Adder = adder()
+        self.Adder = adder(mean=True)
 
         self.F = [[tf.keras.layers.Dense(width) for _ in range(depth)] for i in range(L)]
         self.F_final = tf.keras.layers.Dense(2)

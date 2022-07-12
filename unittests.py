@@ -55,19 +55,6 @@ def test_permute(model):
                 working = False
     return working
          
-class test_particlewise_mean(unittest.TestCase):
-    def __init__(self, *args, **kwargs):
-        super(test_particlewise_mean, self).__init__(*args, **kwargs)
-        name = 'particlewise'
-        self.model = classifiers[name](**model_params_dict[name], mean=True)
-
-    def test_padding(self):
-        self.assertEqual(test_padding(self.model), True)
-
-    def test_permutation(self):
-        self.assertEqual(test_permute(self.model), True)
-
-
 class test_particlewise(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(test_particlewise, self).__init__(*args, **kwargs)
@@ -118,6 +105,7 @@ class test_pairwise(unittest.TestCase):
 
     def test_permutation(self):
         self.assertEqual(test_permute(self.model), True)
+
 
 
 

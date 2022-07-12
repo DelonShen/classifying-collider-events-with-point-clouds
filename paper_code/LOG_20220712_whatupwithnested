@@ -1,0 +1,92 @@
+nohup: ignoring input
+2022-07-12 17:54:23.076413: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
+2022-07-12 17:54:23.076478: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-07-12 17:54:27.599014: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
+2022-07-12 17:54:27.599114: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2022-07-12 17:54:27.599184: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (top1.hep.utexas.edu): /proc/driver/nvidia/version does not exist
+2022-07-12 17:54:27.599949: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-12 17:54:27.713742: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-07-12 17:54:27.714709: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2397305000 Hz
+Initializing Experimenter
+	Loading Data from ../data/data50k_raw_combined_atlas_cut_small.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+RIGHT NOW: nested_concat
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/2
+16/16 - 3s - loss: 0.6901 - val_loss: 0.6814
+Epoch 2/2
+16/16 - 0s - loss: 0.6596 - val_loss: 0.6070
+2022-07-12 17:54:31.675904: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+###
+first saving models
+currently on nested_concat_70_4_64_3
+nested_concat_70_4_64_3 is saved in models/data50k_raw_combined_atlas_cut_small_nested_concat_70_4_64_3
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data50k_raw_combined_atlas_cut_small
+RIGHT NOW: nested_concat_general
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/2
+16/16 - 2s - loss: 0.6929 - val_loss: 0.6864
+Epoch 2/2
+16/16 - 0s - loss: 0.6723 - val_loss: 0.6792
+###
+first saving models
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+nested_concat_general_68_3_64_3 is saved in models/data50k_raw_combined_atlas_cut_small_nested_concat_general_68_3_64_3
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data50k_raw_combined_atlas_cut_small
+DNN Classifier
+tf.data.datset created for training data
+Model not yet created, creating new model
+Traceback (most recent call last):
+  File "gen_models.py", line 80, in <module>
+    PI.train_classifier('dnn', model_params_dict[nm] , use_weights_during_fit = True, epochs=EPOCHS)
+  File "/code/delon/pc_ec/paper_code/experiment.py", line 197, in train_classifier
+    self.models[classifier_name] = self.classifiers[classifier_key](**params)
+TypeError: __init__() got an unexpected keyword argument 'latent_dim'
+2022-07-12 17:54:41.981381: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
+2022-07-12 17:54:41.981428: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-07-12 17:54:45.227647: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
+2022-07-12 17:54:45.227708: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2022-07-12 17:54:45.227771: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (top1.hep.utexas.edu): /proc/driver/nvidia/version does not exist
+2022-07-12 17:54:45.228366: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-12 17:54:45.794163: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-07-12 17:54:45.794878: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2397305000 Hz
+qt.qpa.xcb: XKeyboard extension not present on the X server
+Initializing Experimenter
+	Loading Data from ../data/data50k_raw_combined_atlas_cut_small.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data50k_raw_combined_atlas_cut_small
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'nested_concat_70_4_64_3': 'models/data50k_raw_combined_atlas_cut_small_nested_concat_70_4_64_3', 'nested_concat_general_68_3_64_3': 'models/data50k_raw_combined_atlas_cut_small_nested_concat_general_68_3_64_3'}
+Loaded nested_concat_70_4_64_3 from models/data50k_raw_combined_atlas_cut_small_nested_concat_70_4_64_3
+Loaded nested_concat_general_68_3_64_3 from models/data50k_raw_combined_atlas_cut_small_nested_concat_general_68_3_64_3
+At 0.5 threshold we have BDT signal efficiency 0.872
+alright we're gonna start look at ['nested_concat', 'nested_concat_general']
+getting ROC for nested_concat
+currently on nested_concat_70_4_64_3
+getting ROC for nested_concat_general
+currently on nested_concat_general_68_3_64_3
+getting ROC for nested_concat_general
+pog
+getting ROC for nested_concat
+pog
+getting ROC for nested_concat
+pog
+getting ROC for nested_concat_general
+pog
