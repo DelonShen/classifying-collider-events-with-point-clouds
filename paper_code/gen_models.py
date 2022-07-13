@@ -60,12 +60,12 @@ PI = experiment.Experimenter(filename)
 to_train = [
             'nested_concat',
             'nested_concat_general',
-#            'particlewise',
-#            'tripletwise',
-#            'pairwise',
-#            'pairwise_nl',
-#            'pairwise_nl_iter',
-#            'naivednn',
+            'particlewise',
+            'tripletwise',
+           'pairwise',
+            'pairwise_nl',
+            'pairwise_nl_iter',
+            'naivednn',
 ]
 
 for nm in to_train:
