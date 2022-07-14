@@ -1159,3 +1159,600 @@ Epoch 14/512
 3063/3063 - 83s - loss: 0.2972 - val_loss: 0.3048
 Epoch 15/512
 3063/3063 - 85s - loss: 0.2914 - val_loss: 0.3145
+Epoch 16/512
+3063/3063 - 84s - loss: 0.2865 - val_loss: 0.2795
+Epoch 17/512
+3063/3063 - 85s - loss: 0.2820 - val_loss: 0.2820
+Epoch 18/512
+3063/3063 - 87s - loss: 0.2765 - val_loss: 0.2844
+Epoch 19/512
+3063/3063 - 82s - loss: 0.2733 - val_loss: 0.2976
+Epoch 20/512
+3063/3063 - 87s - loss: 0.2705 - val_loss: 0.2748
+Epoch 21/512
+3063/3063 - 88s - loss: 0.2673 - val_loss: 0.2735
+Epoch 22/512
+3063/3063 - 88s - loss: 0.2639 - val_loss: 0.3345
+Epoch 23/512
+3063/3063 - 88s - loss: 0.2619 - val_loss: 0.2707
+Epoch 24/512
+3063/3063 - 87s - loss: 0.2585 - val_loss: 0.2623
+Epoch 25/512
+3063/3063 - 88s - loss: 0.2565 - val_loss: 0.2650
+Epoch 26/512
+3063/3063 - 88s - loss: 0.2534 - val_loss: 0.2567
+Epoch 27/512
+3063/3063 - 88s - loss: 0.2523 - val_loss: 0.2758
+Epoch 28/512
+3063/3063 - 87s - loss: 0.2509 - val_loss: 0.2551
+Epoch 29/512
+3063/3063 - 87s - loss: 0.2474 - val_loss: 0.2524
+Epoch 30/512
+3063/3063 - 88s - loss: 0.2460 - val_loss: 0.2559
+Epoch 31/512
+3063/3063 - 87s - loss: 0.2442 - val_loss: 0.2613
+Epoch 32/512
+3063/3063 - 87s - loss: 0.2425 - val_loss: 0.2584
+Epoch 33/512
+3063/3063 - 88s - loss: 0.2411 - val_loss: 0.2630
+Epoch 34/512
+3063/3063 - 88s - loss: 0.2383 - val_loss: 0.2589
+Epoch 35/512
+3063/3063 - 88s - loss: 0.2385 - val_loss: 0.2585
+Epoch 36/512
+3063/3063 - 87s - loss: 0.2361 - val_loss: 0.2662
+Epoch 37/512
+3063/3063 - 87s - loss: 0.2339 - val_loss: 0.2502
+Epoch 38/512
+3063/3063 - 85s - loss: 0.2339 - val_loss: 0.2535
+Epoch 39/512
+3063/3063 - 87s - loss: 0.2323 - val_loss: 0.2553
+Epoch 40/512
+3063/3063 - 87s - loss: 0.2310 - val_loss: 0.2631
+Epoch 41/512
+3063/3063 - 88s - loss: 0.2307 - val_loss: 0.2468
+Epoch 42/512
+3063/3063 - 90s - loss: 0.2297 - val_loss: 0.2484
+Epoch 43/512
+3063/3063 - 89s - loss: 0.2281 - val_loss: 0.2444
+Epoch 44/512
+3063/3063 - 88s - loss: 0.2273 - val_loss: 0.2472
+Epoch 45/512
+3063/3063 - 89s - loss: 0.2255 - val_loss: 0.2493
+Epoch 46/512
+3063/3063 - 90s - loss: 0.2238 - val_loss: 0.2481
+Epoch 47/512
+3063/3063 - 90s - loss: 0.2241 - val_loss: 0.2596
+Epoch 48/512
+3063/3063 - 84s - loss: 0.2216 - val_loss: 0.2411
+Epoch 49/512
+3063/3063 - 75s - loss: 0.2222 - val_loss: 0.2497
+Epoch 50/512
+3063/3063 - 75s - loss: 0.2210 - val_loss: 0.2574
+Epoch 51/512
+3063/3063 - 74s - loss: 0.2203 - val_loss: 0.2554
+Epoch 52/512
+3063/3063 - 75s - loss: 0.2187 - val_loss: 0.2480
+Epoch 53/512
+3063/3063 - 74s - loss: 0.2180 - val_loss: 0.2474
+Epoch 54/512
+3063/3063 - 75s - loss: 0.2173 - val_loss: 0.2394
+Epoch 55/512
+3063/3063 - 75s - loss: 0.2156 - val_loss: 0.2441
+Epoch 56/512
+3063/3063 - 74s - loss: 0.2158 - val_loss: 0.2442
+Epoch 57/512
+3063/3063 - 75s - loss: 0.2143 - val_loss: 0.2443
+Epoch 58/512
+3063/3063 - 75s - loss: 0.2127 - val_loss: 0.2439
+Epoch 59/512
+3063/3063 - 75s - loss: 0.2117 - val_loss: 0.2559
+Epoch 60/512
+3063/3063 - 75s - loss: 0.2117 - val_loss: 0.2583
+Epoch 61/512
+3063/3063 - 75s - loss: 0.2108 - val_loss: 0.2576
+Epoch 62/512
+3063/3063 - 75s - loss: 0.2102 - val_loss: 0.2533
+Epoch 63/512
+3063/3063 - 75s - loss: 0.2088 - val_loss: 0.2568
+Epoch 64/512
+3063/3063 - 75s - loss: 0.2090 - val_loss: 0.2495
+Epoch 65/512
+3063/3063 - 75s - loss: 0.2088 - val_loss: 0.2646
+Epoch 66/512
+3063/3063 - 75s - loss: 0.2080 - val_loss: 0.2535
+Epoch 67/512
+3063/3063 - 74s - loss: 0.2069 - val_loss: 0.2457
+Epoch 68/512
+3063/3063 - 74s - loss: 0.2059 - val_loss: 0.2442
+Epoch 69/512
+3063/3063 - 74s - loss: 0.2052 - val_loss: 0.2416
+Epoch 70/512
+3063/3063 - 75s - loss: 0.2036 - val_loss: 0.2518
+Epoch 71/512
+3063/3063 - 75s - loss: 0.2045 - val_loss: 0.2462
+Epoch 72/512
+3063/3063 - 75s - loss: 0.2034 - val_loss: 0.2439
+Epoch 73/512
+3063/3063 - 75s - loss: 0.2024 - val_loss: 0.2506
+Epoch 74/512
+3063/3063 - 75s - loss: 0.2012 - val_loss: 0.2518
+Epoch 75/512
+3063/3063 - 75s - loss: 0.2015 - val_loss: 0.2484
+Epoch 76/512
+3063/3063 - 75s - loss: 0.2002 - val_loss: 0.2589
+Epoch 77/512
+3063/3063 - 74s - loss: 0.1991 - val_loss: 0.2457
+Epoch 78/512
+3063/3063 - 75s - loss: 0.1991 - val_loss: 0.2497
+Epoch 79/512
+3063/3063 - 75s - loss: 0.1986 - val_loss: 0.2585
+Epoch 80/512
+3063/3063 - 75s - loss: 0.1973 - val_loss: 0.2525
+Epoch 81/512
+3063/3063 - 74s - loss: 0.1971 - val_loss: 0.2432
+Epoch 82/512
+3063/3063 - 75s - loss: 0.1965 - val_loss: 0.2849
+Epoch 83/512
+3063/3063 - 76s - loss: 0.1952 - val_loss: 0.2528
+Epoch 84/512
+3063/3063 - 76s - loss: 0.1955 - val_loss: 0.2434
+Epoch 85/512
+3063/3063 - 75s - loss: 0.1934 - val_loss: 0.2466
+Epoch 86/512
+3063/3063 - 75s - loss: 0.1943 - val_loss: 0.2572
+WARNING:absl:Found untraced functions such as conv2d_10_layer_call_and_return_conditional_losses, conv2d_10_layer_call_fn, conv2d_11_layer_call_and_return_conditional_losses, conv2d_11_layer_call_fn, conv2d_12_layer_call_and_return_conditional_losses while saving (showing 5 of 150). These functions will not be directly callable after loading.
+###
+first saving models
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+	this one already saved, skipped
+currently on particlewise_128_4_64
+	this one already saved, skipped
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+	this one already saved, skipped
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64 is saved in models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+RIGHT NOW: naivednn
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/512
+3063/3063 - 10s - loss: 0.4169 - val_loss: 0.3878
+Epoch 2/512
+3063/3063 - 10s - loss: 0.3864 - val_loss: 0.3779
+Epoch 3/512
+3063/3063 - 10s - loss: 0.3771 - val_loss: 0.3703
+Epoch 4/512
+3063/3063 - 10s - loss: 0.3699 - val_loss: 0.3722
+Epoch 5/512
+3063/3063 - 9s - loss: 0.3663 - val_loss: 0.3718
+Epoch 6/512
+3063/3063 - 9s - loss: 0.3631 - val_loss: 0.3762
+Epoch 7/512
+3063/3063 - 10s - loss: 0.3579 - val_loss: 0.3700
+Epoch 8/512
+3063/3063 - 9s - loss: 0.3555 - val_loss: 0.3675
+Epoch 9/512
+3063/3063 - 9s - loss: 0.3518 - val_loss: 0.3653
+Epoch 10/512
+3063/3063 - 10s - loss: 0.3490 - val_loss: 0.3818
+Epoch 11/512
+3063/3063 - 9s - loss: 0.3472 - val_loss: 0.3818
+Epoch 12/512
+3063/3063 - 9s - loss: 0.3447 - val_loss: 0.3718
+Epoch 13/512
+3063/3063 - 9s - loss: 0.3423 - val_loss: 0.3730
+Epoch 14/512
+3063/3063 - 9s - loss: 0.3401 - val_loss: 0.3714
+Epoch 15/512
+3063/3063 - 9s - loss: 0.3362 - val_loss: 0.3730
+Epoch 16/512
+3063/3063 - 10s - loss: 0.3357 - val_loss: 0.3778
+Epoch 17/512
+3063/3063 - 9s - loss: 0.3323 - val_loss: 0.3720
+Epoch 18/512
+3063/3063 - 9s - loss: 0.3287 - val_loss: 0.3766
+Epoch 19/512
+3063/3063 - 9s - loss: 0.3274 - val_loss: 0.3770
+Epoch 20/512
+3063/3063 - 10s - loss: 0.3250 - val_loss: 0.3762
+Epoch 21/512
+3063/3063 - 10s - loss: 0.3233 - val_loss: 0.3879
+Epoch 22/512
+3063/3063 - 9s - loss: 0.3197 - val_loss: 0.3819
+Epoch 23/512
+3063/3063 - 10s - loss: 0.3166 - val_loss: 0.3822
+Epoch 24/512
+3063/3063 - 9s - loss: 0.3161 - val_loss: 0.3887
+Epoch 25/512
+3063/3063 - 9s - loss: 0.3146 - val_loss: 0.3823
+Epoch 26/512
+3063/3063 - 9s - loss: 0.3119 - val_loss: 0.3879
+Epoch 27/512
+3063/3063 - 9s - loss: 0.3088 - val_loss: 0.3864
+Epoch 28/512
+3063/3063 - 9s - loss: 0.3067 - val_loss: 0.4018
+Epoch 29/512
+3063/3063 - 9s - loss: 0.3050 - val_loss: 0.3916
+Epoch 30/512
+3063/3063 - 9s - loss: 0.3027 - val_loss: 0.4140
+Epoch 31/512
+3063/3063 - 9s - loss: 0.3014 - val_loss: 0.4032
+Epoch 32/512
+3063/3063 - 9s - loss: 0.2981 - val_loss: 0.4026
+Epoch 33/512
+3063/3063 - 9s - loss: 0.2963 - val_loss: 0.3929
+Epoch 34/512
+3063/3063 - 10s - loss: 0.2942 - val_loss: 0.4213
+Epoch 35/512
+3063/3063 - 10s - loss: 0.2922 - val_loss: 0.4070
+Epoch 36/512
+3063/3063 - 10s - loss: 0.2904 - val_loss: 0.4026
+Epoch 37/512
+3063/3063 - 10s - loss: 0.2875 - val_loss: 0.4139
+Epoch 38/512
+3063/3063 - 10s - loss: 0.2837 - val_loss: 0.4051
+Epoch 39/512
+3063/3063 - 10s - loss: 0.2819 - val_loss: 0.4152
+Epoch 40/512
+3063/3063 - 10s - loss: 0.2806 - val_loss: 0.4203
+Epoch 41/512
+3063/3063 - 9s - loss: 0.2772 - val_loss: 0.4271
+###
+first saving models
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+	this one already saved, skipped
+currently on particlewise_128_4_64
+	this one already saved, skipped
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+	this one already saved, skipped
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+	this one already saved, skipped
+currently on naivednn_256_3_2
+naivednn_256_3_2 is saved in models/data100k_raw_combined_atlas_cut_naivednn_256_3_2
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+DNN Classifier
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/512
+3063/3063 - 10s - loss: 0.3948 - val_loss: 0.3561
+Epoch 2/512
+3063/3063 - 10s - loss: 0.3830 - val_loss: 0.3593
+Epoch 3/512
+3063/3063 - 10s - loss: 0.3819 - val_loss: 0.3674
+Epoch 4/512
+3063/3063 - 9s - loss: 0.3806 - val_loss: 0.3543
+Epoch 5/512
+3063/3063 - 9s - loss: 0.3783 - val_loss: 0.3497
+Epoch 6/512
+3063/3063 - 9s - loss: 0.3795 - val_loss: 0.3494
+Epoch 7/512
+3063/3063 - 10s - loss: 0.3764 - val_loss: 0.3538
+Epoch 8/512
+3063/3063 - 9s - loss: 0.3778 - val_loss: 0.3533
+Epoch 9/512
+3063/3063 - 10s - loss: 0.3766 - val_loss: 0.3513
+Epoch 10/512
+3063/3063 - 10s - loss: 0.3762 - val_loss: 0.3483
+Epoch 11/512
+3063/3063 - 10s - loss: 0.3756 - val_loss: 0.3494
+Epoch 12/512
+3063/3063 - 9s - loss: 0.3753 - val_loss: 0.3473
+Epoch 13/512
+3063/3063 - 10s - loss: 0.3757 - val_loss: 0.3524
+Epoch 14/512
+3063/3063 - 10s - loss: 0.3764 - val_loss: 0.3496
+Epoch 15/512
+3063/3063 - 10s - loss: 0.3750 - val_loss: 0.3511
+Epoch 16/512
+3063/3063 - 10s - loss: 0.3755 - val_loss: 0.3494
+Epoch 17/512
+3063/3063 - 10s - loss: 0.3753 - val_loss: 0.3466
+Epoch 18/512
+3063/3063 - 10s - loss: 0.3740 - val_loss: 0.3497
+Epoch 19/512
+3063/3063 - 10s - loss: 0.3745 - val_loss: 0.3503
+Epoch 20/512
+3063/3063 - 9s - loss: 0.3744 - val_loss: 0.3473
+Epoch 21/512
+3063/3063 - 9s - loss: 0.3735 - val_loss: 0.3503
+Epoch 22/512
+3063/3063 - 9s - loss: 0.3744 - val_loss: 0.3505
+Epoch 23/512
+3063/3063 - 9s - loss: 0.3728 - val_loss: 0.3484
+Epoch 24/512
+3063/3063 - 9s - loss: 0.3733 - val_loss: 0.3474
+Epoch 25/512
+3063/3063 - 9s - loss: 0.3729 - val_loss: 0.3494
+Epoch 26/512
+3063/3063 - 9s - loss: 0.3738 - val_loss: 0.3506
+Epoch 27/512
+3063/3063 - 9s - loss: 0.3745 - val_loss: 0.3472
+Epoch 28/512
+3063/3063 - 10s - loss: 0.3739 - val_loss: 0.3465
+Epoch 29/512
+3063/3063 - 10s - loss: 0.3736 - val_loss: 0.3489
+Epoch 30/512
+3063/3063 - 10s - loss: 0.3729 - val_loss: 0.3454
+Epoch 31/512
+3063/3063 - 9s - loss: 0.3736 - val_loss: 0.3466
+Epoch 32/512
+3063/3063 - 9s - loss: 0.3723 - val_loss: 0.3483
+Epoch 33/512
+3063/3063 - 9s - loss: 0.3739 - val_loss: 0.3475
+Epoch 34/512
+3063/3063 - 9s - loss: 0.3732 - val_loss: 0.3527
+Epoch 35/512
+3063/3063 - 9s - loss: 0.3724 - val_loss: 0.3468
+Epoch 36/512
+3063/3063 - 9s - loss: 0.3734 - val_loss: 0.3474
+Epoch 37/512
+3063/3063 - 9s - loss: 0.3716 - val_loss: 0.3502
+Epoch 38/512
+3063/3063 - 9s - loss: 0.3725 - val_loss: 0.3481
+Epoch 39/512
+3063/3063 - 9s - loss: 0.3736 - val_loss: 0.3526
+Epoch 40/512
+3063/3063 - 9s - loss: 0.3727 - val_loss: 0.3510
+Epoch 41/512
+3063/3063 - 9s - loss: 0.3712 - val_loss: 0.3467
+Epoch 42/512
+3063/3063 - 10s - loss: 0.3726 - val_loss: 0.3497
+Epoch 43/512
+3063/3063 - 9s - loss: 0.3726 - val_loss: 0.3483
+Epoch 44/512
+3063/3063 - 9s - loss: 0.3740 - val_loss: 0.3459
+Epoch 45/512
+3063/3063 - 9s - loss: 0.3723 - val_loss: 0.3503
+Epoch 46/512
+3063/3063 - 9s - loss: 0.3727 - val_loss: 0.3479
+Epoch 47/512
+3063/3063 - 9s - loss: 0.3722 - val_loss: 0.3481
+Epoch 48/512
+3063/3063 - 9s - loss: 0.3726 - val_loss: 0.3494
+Epoch 49/512
+3063/3063 - 9s - loss: 0.3728 - val_loss: 0.3507
+Epoch 50/512
+3063/3063 - 9s - loss: 0.3719 - val_loss: 0.3454
+Epoch 51/512
+3063/3063 - 8s - loss: 0.3730 - val_loss: 0.3483
+Epoch 52/512
+3063/3063 - 9s - loss: 0.3728 - val_loss: 0.3461
+Epoch 53/512
+3063/3063 - 9s - loss: 0.3712 - val_loss: 0.3489
+Epoch 54/512
+3063/3063 - 9s - loss: 0.3730 - val_loss: 0.3461
+Epoch 55/512
+3063/3063 - 9s - loss: 0.3738 - val_loss: 0.3478
+Epoch 56/512
+3063/3063 - 9s - loss: 0.3718 - val_loss: 0.3510
+Epoch 57/512
+3063/3063 - 9s - loss: 0.3707 - val_loss: 0.3463
+Epoch 58/512
+3063/3063 - 9s - loss: 0.3719 - val_loss: 0.3468
+Epoch 59/512
+3063/3063 - 9s - loss: 0.3724 - val_loss: 0.3464
+Epoch 60/512
+3063/3063 - 9s - loss: 0.3719 - val_loss: 0.3497
+Epoch 61/512
+3063/3063 - 9s - loss: 0.3709 - val_loss: 0.3467
+Epoch 62/512
+3063/3063 - 9s - loss: 0.3716 - val_loss: 0.3523
+Epoch 63/512
+3063/3063 - 9s - loss: 0.3723 - val_loss: 0.3450
+Epoch 64/512
+3063/3063 - 9s - loss: 0.3716 - val_loss: 0.3455
+Epoch 65/512
+3063/3063 - 9s - loss: 0.3717 - val_loss: 0.3470
+Epoch 66/512
+3063/3063 - 9s - loss: 0.3719 - val_loss: 0.3487
+Epoch 67/512
+3063/3063 - 9s - loss: 0.3734 - val_loss: 0.3469
+Epoch 68/512
+3063/3063 - 9s - loss: 0.3714 - val_loss: 0.3504
+Epoch 69/512
+3063/3063 - 9s - loss: 0.3716 - val_loss: 0.3473
+Epoch 70/512
+3063/3063 - 9s - loss: 0.3713 - val_loss: 0.3472
+Epoch 71/512
+3063/3063 - 8s - loss: 0.3715 - val_loss: 0.3460
+Epoch 72/512
+3063/3063 - 8s - loss: 0.3719 - val_loss: 0.3505
+Epoch 73/512
+3063/3063 - 8s - loss: 0.3708 - val_loss: 0.3496
+Epoch 74/512
+3063/3063 - 8s - loss: 0.3719 - val_loss: 0.3467
+Epoch 75/512
+3063/3063 - 9s - loss: 0.3717 - val_loss: 0.3481
+Epoch 76/512
+3063/3063 - 9s - loss: 0.3709 - val_loss: 0.3464
+Epoch 77/512
+3063/3063 - 9s - loss: 0.3706 - val_loss: 0.3473
+Epoch 78/512
+3063/3063 - 9s - loss: 0.3711 - val_loss: 0.3478
+Epoch 79/512
+3063/3063 - 9s - loss: 0.3706 - val_loss: 0.3474
+Epoch 80/512
+3063/3063 - 9s - loss: 0.3712 - val_loss: 0.3452
+Epoch 81/512
+3063/3063 - 9s - loss: 0.3715 - val_loss: 0.3459
+Epoch 82/512
+3063/3063 - 9s - loss: 0.3705 - val_loss: 0.3496
+Epoch 83/512
+3063/3063 - 9s - loss: 0.3714 - val_loss: 0.3464
+Epoch 84/512
+3063/3063 - 9s - loss: 0.3716 - val_loss: 0.3476
+Epoch 85/512
+3063/3063 - 9s - loss: 0.3710 - val_loss: 0.3473
+Epoch 86/512
+3063/3063 - 9s - loss: 0.3717 - val_loss: 0.3462
+Epoch 87/512
+3063/3063 - 9s - loss: 0.3719 - val_loss: 0.3474
+Epoch 88/512
+3063/3063 - 8s - loss: 0.3719 - val_loss: 0.3500
+Epoch 89/512
+3063/3063 - 9s - loss: 0.3696 - val_loss: 0.3496
+Epoch 90/512
+3063/3063 - 9s - loss: 0.3712 - val_loss: 0.3471
+Epoch 91/512
+3063/3063 - 9s - loss: 0.3716 - val_loss: 0.3541
+Epoch 92/512
+3063/3063 - 9s - loss: 0.3707 - val_loss: 0.3521
+Epoch 93/512
+3063/3063 - 9s - loss: 0.3713 - val_loss: 0.3465
+Epoch 94/512
+3063/3063 - 9s - loss: 0.3711 - val_loss: 0.3475
+Epoch 95/512
+3063/3063 - 9s - loss: 0.3707 - val_loss: 0.3486
+###
+first saving models
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+	this one already saved, skipped
+currently on particlewise_128_4_64
+	this one already saved, skipped
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+	this one already saved, skipped
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+	this one already saved, skipped
+currently on naivednn_256_3_2
+	this one already saved, skipped
+currently on dnn_256_3_2
+dnn_256_3_2 is saved in models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+2022-07-13 15:52:26.528570: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-13 15:52:52.965935: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-07-13 15:52:52.982102: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-13 15:52:52.983149: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-13 15:52:52.983183: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-13 15:52:52.987205: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-07-13 15:52:52.987260: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-07-13 15:52:52.988856: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-07-13 15:52:52.989207: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-07-13 15:52:52.993614: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-07-13 15:52:52.994487: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-07-13 15:52:52.994718: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-07-13 15:52:52.998555: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-07-13 15:52:52.999104: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-13 15:52:53.127086: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-13 15:52:53.128103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-13 15:52:53.131735: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-07-13 15:52:53.131798: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-13 15:52:54.054613: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-07-13 15:52:54.054667: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-07-13 15:52:54.054681: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-07-13 15:52:54.054690: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-07-13 15:52:54.059625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-07-13 15:52:54.062151: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-07-13 15:53:26.730359: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-07-13 15:53:26.731542: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-07-13 15:53:28.074927: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-07-13 15:53:28.522340: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-07-13 15:53:40.833593: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-07-13 15:53:41.177660: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8201
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'nested_concat_70_4_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3', 'nested_concat_general_68_3_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3', 'particlewise_128_4_64': 'models/data100k_raw_combined_atlas_cut_particlewise_128_4_64', 'tripletwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_nl_5_(64, 128, 256, 128, 64)_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64', 'pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64', 'naivednn_256_3_2': 'models/data100k_raw_combined_atlas_cut_naivednn_256_3_2', 'dnn_256_3_2': 'models/data100k_raw_combined_atlas_cut_dnn_256_3_2'}
+Loaded nested_concat_70_4_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3
+Loaded nested_concat_general_68_3_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3
+Loaded particlewise_128_4_64 from models/data100k_raw_combined_atlas_cut_particlewise_128_4_64
+Loaded tripletwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_nl_5_(64, 128, 256, 128, 64)_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+Loaded pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+Loaded naivednn_256_3_2 from models/data100k_raw_combined_atlas_cut_naivednn_256_3_2
+Loaded dnn_256_3_2 from models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+At 0.5 threshold we have BDT signal efficiency 0.860
+alright we're gonna start look at ['nested_concat', 'nested_concat_general', 'particlewise', 'tripletwise', 'pairwise', 'pairwise_nl', 'pairwise_nl_iter', 'naivednn', 'dnn']
+getting ROC for nested_concat
+currently on nested_concat_70_4_64_3
+getting ROC for nested_concat_general
+currently on nested_concat_general_68_3_64_3
+getting ROC for particlewise
+currently on particlewise_128_4_64
+getting ROC for tripletwise
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+getting ROC for pairwise_nl
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+getting ROC for pairwise_nl_iter
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+getting ROC for naivednn
+currently on naivednn_256_3_2
+getting ROC for dnn
+currently on dnn_256_3_2
+getting ROC for naivednn
+pog
+getting ROC for dnn
+pog
+getting ROC for particlewise
+pog
+getting ROC for nested_concat_general
+pog
+getting ROC for nested_concat
+pog
+getting ROC for pairwise_nl_iter
+pog
+getting ROC for pairwise
+pog
+getting ROC for pairwise_nl
+pog
+getting ROC for tripletwise
+pog
+getting ROC for nested_concat
+pog
+getting ROC for nested_concat_general
+pog
+getting ROC for particlewise
+pog
+getting ROC for tripletwise
+pog
+getting ROC for pairwise
+pog
+getting ROC for pairwise_nl
+pog
+getting ROC for pairwise_nl_iter
+pog
+getting ROC for naivednn
+pog
+getting ROC for dnn
+pog

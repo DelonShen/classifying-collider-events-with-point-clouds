@@ -502,17 +502,21 @@ Theory, 2008.
 from sklearn.manifold import TSNE
 from sklearn.metrics import pairwise_distances
 import openTSNE
-def compute_tsne_embedded(latent_reps, perplexity=50):
+def compute_tsne_embedded(latent_reps, perplexity=[50, 1998]):
     x = latent_reps
+    print(len(x[0]))
     print('computing tsne')
+    
     affinities_multiscale_mixture = openTSNE.affinity.Multiscale(
         x,
-        perplexities=[50, 1998],
-        metric="cosine",
+        perplexities=perplexity,
+        metric="euclidean",
         n_jobs=-1,
-        random_state=42,
+        random_state=8,
     )
-    init = openTSNE.initialization.pca(x, random_state=42)
+    init = openTSNE.initialization.pca(x, random_state=8)
+#     if(len(x[0])==2):
+#         return openTSNE.TSNE(n_jobs=-1, verbose=True).fit(affinities=affinities_multiscale_mixture)
 
     latent_reps_embedded_tsne = openTSNE.TSNE(n_jobs=-1, verbose=True).fit(affinities=affinities_multiscale_mixture,
                                                              initialization=init,)
@@ -520,7 +524,7 @@ def compute_tsne_embedded(latent_reps, perplexity=50):
 
     return latent_reps_embedded_tsne
 
-def compute_tsne(model, cut, X_test, perplexity=100):
+def compute_tsne(model, cut, X_test, perplexity=[50, 1998]):
     latent_getter = LatentGetter(model.layers[0:3], condensed=True)
     latent_reps = latent_getter.predict(X_test.numpy()[cut])
     return compute_tsne_embedded(latent_reps, perplexity=perplexity)
