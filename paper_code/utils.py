@@ -502,24 +502,29 @@ Theory, 2008.
 from sklearn.manifold import TSNE
 from sklearn.metrics import pairwise_distances
 import openTSNE
-def compute_tsne_embedded(latent_reps, perplexity=[50, 1998]):
+def compute_tsne_embedded(latent_reps, perplexity=[100, 1998]):
     x = latent_reps
     print(len(x[0]))
     print('computing tsne')
     
-    affinities_multiscale_mixture = openTSNE.affinity.Multiscale(
-        x,
-        perplexities=perplexity,
-        metric="euclidean",
-        n_jobs=-1,
-        random_state=8,
-    )
-    init = openTSNE.initialization.pca(x, random_state=8)
-#     if(len(x[0])==2):
-#         return openTSNE.TSNE(n_jobs=-1, verbose=True).fit(affinities=affinities_multiscale_mixture)
+    init = openTSNE.initialization.pca(x, random_state=42)
 
-    latent_reps_embedded_tsne = openTSNE.TSNE(n_jobs=-1, verbose=True).fit(affinities=affinities_multiscale_mixture,
-                                                             initialization=init,)
+    return openTSNE.TSNE(
+                        perplexity=1998,
+                        metric="euclidean",
+                        n_jobs=-1,
+                        random_state=42,
+                        verbose=True,
+                    ).fit(x, initialization=init)
+#     affinities_multiscale_mixture = openTSNE.affinity.Multiscale(
+#         x,
+#         perplexities=perplexity,
+#         metric="euclidean",
+#         n_jobs=-1,
+#         random_state=8,
+#     )
+#     latent_reps_embedded_tsne = openTSNE.TSNE(n_jobs=-1, verbose=True, early_exaggeration_iter=500, n_iter=1000,).fit(affinities=affinities_multiscale_mixture,
+#                                                              initialization=init,)
     
 
     return latent_reps_embedded_tsne
