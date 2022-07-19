@@ -510,7 +510,7 @@ def compute_tsne_embedded(latent_reps, perplexity=[100, 1998]):
     init = openTSNE.initialization.pca(x, random_state=42)
 
     return openTSNE.TSNE(
-                        perplexity=1998,
+                        perplexity=1000,
                         metric="euclidean",
                         n_jobs=-1,
                         random_state=42,
@@ -659,8 +659,8 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
         cntr  =  np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
         cntr_std =  np.array([np.std(curr_event[:,0]), np.std(curr_event[:, 1])])
         std = max(cntr_std)
-        ax.set_xlim(-40,60)
-        ax.set_ylim(10,30)
+        ax.set_xlim(-20,70)
+        ax.set_ylim(-20,50)
     ax.set_facecolor(cmap(c_cut))
 
     if(NOAXIS):
