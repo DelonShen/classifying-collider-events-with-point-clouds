@@ -1,0 +1,391 @@
+nohup: ignoring input
+2022-07-25 14:34:06.833399: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-25 14:34:36.098867: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-07-25 14:34:36.120825: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-25 14:34:36.121946: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-25 14:34:36.121987: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-25 14:34:36.126978: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-07-25 14:34:36.127059: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-07-25 14:34:36.129074: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-07-25 14:34:36.129907: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-07-25 14:34:36.135387: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-07-25 14:34:36.136563: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-07-25 14:34:36.136945: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-07-25 14:34:36.141315: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-07-25 14:34:36.142057: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-25 14:34:36.269049: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-25 14:34:36.270051: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-25 14:34:36.273704: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-07-25 14:34:36.273773: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-25 14:34:37.204114: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-07-25 14:34:37.204172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-07-25 14:34:37.204188: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-07-25 14:34:37.204196: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-07-25 14:34:37.209144: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-07-25 14:34:37.212134: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-07-25 14:36:30.451707: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-07-25 14:36:30.452509: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-07-25 14:36:31.090489: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-07-25 14:36:31.361472: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'nested_concat_70_4_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3', 'nested_concat_general_68_3_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3', 'particlewise_128_4_64': 'models/data100k_raw_combined_atlas_cut_particlewise_128_4_64', 'tripletwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_nl_5_(64, 128, 256, 128, 64)_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64', 'pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64', 'naivednn_256_3_2': 'models/data100k_raw_combined_atlas_cut_naivednn_256_3_2', 'dnn_256_3_2': 'models/data100k_raw_combined_atlas_cut_dnn_256_3_2'}
+Loaded nested_concat_70_4_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3
+Loaded nested_concat_general_68_3_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3
+Loaded particlewise_128_4_64 from models/data100k_raw_combined_atlas_cut_particlewise_128_4_64
+Loaded tripletwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_nl_5_(64, 128, 256, 128, 64)_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+Loaded pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+Loaded naivednn_256_3_2 from models/data100k_raw_combined_atlas_cut_naivednn_256_3_2
+Loaded dnn_256_3_2 from models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+DNN Classifier
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/512
+3063/3063 - 11s - loss: 0.3790 - val_loss: 0.3412
+Epoch 2/512
+3063/3063 - 10s - loss: 0.3654 - val_loss: 0.3436
+Epoch 3/512
+3063/3063 - 10s - loss: 0.3642 - val_loss: 0.3428
+Epoch 4/512
+3063/3063 - 10s - loss: 0.3626 - val_loss: 0.3339
+Epoch 5/512
+3063/3063 - 9s - loss: 0.3601 - val_loss: 0.3308
+Epoch 6/512
+3063/3063 - 10s - loss: 0.3609 - val_loss: 0.3311
+Epoch 7/512
+3063/3063 - 10s - loss: 0.3584 - val_loss: 0.3399
+Epoch 8/512
+3063/3063 - 10s - loss: 0.3587 - val_loss: 0.3362
+Epoch 9/512
+3063/3063 - 10s - loss: 0.3578 - val_loss: 0.3345
+Epoch 10/512
+3063/3063 - 10s - loss: 0.3572 - val_loss: 0.3295
+Epoch 11/512
+3063/3063 - 10s - loss: 0.3559 - val_loss: 0.3278
+Epoch 12/512
+3063/3063 - 10s - loss: 0.3550 - val_loss: 0.3294
+Epoch 13/512
+3063/3063 - 10s - loss: 0.3564 - val_loss: 0.3334
+Epoch 14/512
+3063/3063 - 10s - loss: 0.3571 - val_loss: 0.3332
+Epoch 15/512
+3063/3063 - 10s - loss: 0.3560 - val_loss: 0.3374
+Epoch 16/512
+3063/3063 - 10s - loss: 0.3563 - val_loss: 0.3303
+Epoch 17/512
+3063/3063 - 10s - loss: 0.3562 - val_loss: 0.3302
+Epoch 18/512
+3063/3063 - 9s - loss: 0.3549 - val_loss: 0.3321
+Epoch 19/512
+3063/3063 - 10s - loss: 0.3549 - val_loss: 0.3319
+Epoch 20/512
+3063/3063 - 10s - loss: 0.3551 - val_loss: 0.3311
+Epoch 21/512
+3063/3063 - 10s - loss: 0.3539 - val_loss: 0.3314
+Epoch 22/512
+3063/3063 - 10s - loss: 0.3552 - val_loss: 0.3385
+Epoch 23/512
+3063/3063 - 10s - loss: 0.3533 - val_loss: 0.3318
+Epoch 24/512
+3063/3063 - 10s - loss: 0.3547 - val_loss: 0.3305
+Epoch 25/512
+3063/3063 - 10s - loss: 0.3535 - val_loss: 0.3339
+Epoch 26/512
+3063/3063 - 10s - loss: 0.3546 - val_loss: 0.3344
+Epoch 27/512
+3063/3063 - 10s - loss: 0.3553 - val_loss: 0.3317
+Epoch 28/512
+3063/3063 - 10s - loss: 0.3546 - val_loss: 0.3263
+Epoch 29/512
+3063/3063 - 10s - loss: 0.3534 - val_loss: 0.3309
+Epoch 30/512
+3063/3063 - 10s - loss: 0.3540 - val_loss: 0.3268
+Epoch 31/512
+3063/3063 - 10s - loss: 0.3542 - val_loss: 0.3280
+Epoch 32/512
+3063/3063 - 10s - loss: 0.3525 - val_loss: 0.3292
+Epoch 33/512
+3063/3063 - 10s - loss: 0.3535 - val_loss: 0.3321
+Epoch 34/512
+3063/3063 - 10s - loss: 0.3539 - val_loss: 0.3341
+Epoch 35/512
+3063/3063 - 10s - loss: 0.3526 - val_loss: 0.3289
+Epoch 36/512
+3063/3063 - 10s - loss: 0.3537 - val_loss: 0.3319
+Epoch 37/512
+3063/3063 - 9s - loss: 0.3525 - val_loss: 0.3316
+Epoch 38/512
+3063/3063 - 10s - loss: 0.3527 - val_loss: 0.3302
+Epoch 39/512
+3063/3063 - 9s - loss: 0.3539 - val_loss: 0.3321
+Epoch 40/512
+3063/3063 - 10s - loss: 0.3525 - val_loss: 0.3299
+Epoch 41/512
+3063/3063 - 9s - loss: 0.3516 - val_loss: 0.3299
+Epoch 42/512
+3063/3063 - 10s - loss: 0.3526 - val_loss: 0.3324
+Epoch 43/512
+3063/3063 - 10s - loss: 0.3531 - val_loss: 0.3319
+Epoch 44/512
+3063/3063 - 10s - loss: 0.3546 - val_loss: 0.3288
+Epoch 45/512
+3063/3063 - 10s - loss: 0.3528 - val_loss: 0.3356
+Epoch 46/512
+3063/3063 - 9s - loss: 0.3529 - val_loss: 0.3337
+Epoch 47/512
+3063/3063 - 9s - loss: 0.3526 - val_loss: 0.3256
+Epoch 48/512
+3063/3063 - 10s - loss: 0.3529 - val_loss: 0.3326
+Epoch 49/512
+3063/3063 - 10s - loss: 0.3523 - val_loss: 0.3362
+Epoch 50/512
+3063/3063 - 9s - loss: 0.3522 - val_loss: 0.3276
+Epoch 51/512
+3063/3063 - 9s - loss: 0.3537 - val_loss: 0.3318
+Epoch 52/512
+3063/3063 - 9s - loss: 0.3536 - val_loss: 0.3272
+Epoch 53/512
+3063/3063 - 9s - loss: 0.3516 - val_loss: 0.3312
+Epoch 54/512
+3063/3063 - 9s - loss: 0.3536 - val_loss: 0.3293
+Epoch 55/512
+3063/3063 - 9s - loss: 0.3543 - val_loss: 0.3330
+Epoch 56/512
+3063/3063 - 10s - loss: 0.3521 - val_loss: 0.3371
+Epoch 57/512
+3063/3063 - 9s - loss: 0.3508 - val_loss: 0.3256
+Epoch 58/512
+3063/3063 - 9s - loss: 0.3525 - val_loss: 0.3340
+Epoch 59/512
+3063/3063 - 9s - loss: 0.3527 - val_loss: 0.3280
+Epoch 60/512
+3063/3063 - 9s - loss: 0.3527 - val_loss: 0.3330
+Epoch 61/512
+3063/3063 - 10s - loss: 0.3515 - val_loss: 0.3293
+Epoch 62/512
+3063/3063 - 9s - loss: 0.3517 - val_loss: 0.3354
+Epoch 63/512
+3063/3063 - 9s - loss: 0.3528 - val_loss: 0.3275
+Epoch 64/512
+3063/3063 - 9s - loss: 0.3520 - val_loss: 0.3287
+Epoch 65/512
+3063/3063 - 10s - loss: 0.3526 - val_loss: 0.3298
+Epoch 66/512
+3063/3063 - 10s - loss: 0.3522 - val_loss: 0.3305
+Epoch 67/512
+3063/3063 - 9s - loss: 0.3540 - val_loss: 0.3289
+Epoch 68/512
+3063/3063 - 9s - loss: 0.3518 - val_loss: 0.3326
+Epoch 69/512
+3063/3063 - 9s - loss: 0.3521 - val_loss: 0.3286
+Epoch 70/512
+3063/3063 - 9s - loss: 0.3514 - val_loss: 0.3309
+Epoch 71/512
+3063/3063 - 10s - loss: 0.3517 - val_loss: 0.3282
+Epoch 72/512
+3063/3063 - 9s - loss: 0.3524 - val_loss: 0.3344
+Epoch 73/512
+3063/3063 - 9s - loss: 0.3516 - val_loss: 0.3305
+Epoch 74/512
+3063/3063 - 9s - loss: 0.3523 - val_loss: 0.3286
+Epoch 75/512
+3063/3063 - 10s - loss: 0.3525 - val_loss: 0.3296
+Epoch 76/512
+3063/3063 - 10s - loss: 0.3516 - val_loss: 0.3284
+Epoch 77/512
+3063/3063 - 10s - loss: 0.3517 - val_loss: 0.3311
+Epoch 78/512
+3063/3063 - 10s - loss: 0.3513 - val_loss: 0.3282
+Epoch 79/512
+3063/3063 - 9s - loss: 0.3506 - val_loss: 0.3307
+2022-07-25 14:49:10.799857: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+###
+first saving models
+currently on nested_concat_70_4_64_3
+	this one already saved, skipped
+currently on nested_concat_general_68_3_64_3
+	this one already saved, skipped
+currently on particlewise_128_4_64
+	this one already saved, skipped
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+	this one already saved, skipped
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+	this one already saved, skipped
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+	this one already saved, skipped
+currently on naivednn_256_3_2
+	this one already saved, skipped
+currently on dnn_256_3_2
+dnn_256_3_2 is saved in models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fb698363b80>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fb698363b80>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fb698363b80>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fb698363b80>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fb698363b80>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fb698363b80>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fb698363b80>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7fb698363b80>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+2022-07-25 14:49:43.672130: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-25 14:50:11.819204: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2022-07-25 14:50:11.844136: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-25 14:50:11.845292: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-25 14:50:11.845338: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-25 14:50:11.850615: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-07-25 14:50:11.850693: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-07-25 14:50:11.852689: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2022-07-25 14:50:11.853083: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2022-07-25 14:50:11.858585: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2022-07-25 14:50:11.859779: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2022-07-25 14:50:11.860079: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-07-25 14:50:11.864358: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-07-25 14:50:11.865652: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-25 14:50:12.012666: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:84:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-25 14:50:12.013796: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:85:00.0 name: Tesla K80 computeCapability: 3.7
+coreClock: 0.8235GHz coreCount: 13 deviceMemorySize: 11.17GiB deviceMemoryBandwidth: 223.96GiB/s
+2022-07-25 14:50:12.017897: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2022-07-25 14:50:12.017982: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2022-07-25 14:50:12.951414: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-07-25 14:50:12.951475: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2022-07-25 14:50:12.951490: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N Y 
+2022-07-25 14:50:12.951498: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   Y N 
+2022-07-25 14:50:12.956462: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 8599 MB memory) -> physical GPU (device: 0, name: Tesla K80, pci bus id: 0000:84:00.0, compute capability: 3.7)
+2022-07-25 14:50:12.958397: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 10792 MB memory) -> physical GPU (device: 1, name: Tesla K80, pci bus id: 0000:85:00.0, compute capability: 3.7)
+2022-07-25 14:52:03.195678: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-07-25 14:52:03.196961: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2099935000 Hz
+2022-07-25 14:52:04.987600: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2022-07-25 14:52:05.250705: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2022-07-25 14:52:17.971872: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2022-07-25 14:52:18.307448: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8201
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'nested_concat_70_4_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3', 'nested_concat_general_68_3_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3', 'particlewise_128_4_64': 'models/data100k_raw_combined_atlas_cut_particlewise_128_4_64', 'tripletwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_nl_5_(64, 128, 256, 128, 64)_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64', 'pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64', 'naivednn_256_3_2': 'models/data100k_raw_combined_atlas_cut_naivednn_256_3_2', 'dnn_256_3_2': 'models/data100k_raw_combined_atlas_cut_dnn_256_3_2'}
+Loaded nested_concat_70_4_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3
+Loaded nested_concat_general_68_3_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3
+Loaded particlewise_128_4_64 from models/data100k_raw_combined_atlas_cut_particlewise_128_4_64
+Loaded tripletwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_nl_5_(64, 128, 256, 128, 64)_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+Loaded pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+Loaded naivednn_256_3_2 from models/data100k_raw_combined_atlas_cut_naivednn_256_3_2
+Loaded dnn_256_3_2 from models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+At 0.5 threshold we have BDT signal efficiency 0.860
+alright we're gonna start look at ['nested_concat', 'nested_concat_general', 'particlewise', 'tripletwise', 'pairwise', 'pairwise_nl', 'pairwise_nl_iter', 'naivednn', 'dnn']
+getting ROC for nested_concat
+currently on nested_concat_70_4_64_3
+getting ROC for nested_concat_general
+currently on nested_concat_general_68_3_64_3
+getting ROC for particlewise
+currently on particlewise_128_4_64
+getting ROC for tripletwise
+currently on tripletwise_5_(64, 128, 256, 128, 64)_64
+getting ROC for pairwise
+currently on pairwise_5_(64, 128, 256, 128, 64)_64
+getting ROC for pairwise_nl
+currently on pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+getting ROC for pairwise_nl_iter
+currently on pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+getting ROC for naivednn
+currently on naivednn_256_3_2
+getting ROC for dnn
+currently on dnn_256_3_2
+getting ROC for naivednn
+pog
+getting ROC for dnn
+pog
+getting ROC for particlewise
+pog
+getting ROC for nested_concat_general
+pog
+getting ROC for nested_concat
+pog
+getting ROC for pairwise_nl_iter
+pog
+getting ROC for pairwise
+pog
+getting ROC for pairwise_nl
+pog
+getting ROC for tripletwise
+pog
+getting ROC for nested_concat
+pog
+getting ROC for nested_concat_general
+pog
+getting ROC for particlewise
+pog
+getting ROC for tripletwise
+pog
+getting ROC for pairwise
+pog
+getting ROC for pairwise_nl
+pog
+getting ROC for pairwise_nl_iter
+pog
+getting ROC for naivednn
+pog
+getting ROC for dnn
+pog

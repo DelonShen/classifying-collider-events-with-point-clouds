@@ -123,13 +123,12 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False):
 
         curr_event.append(sum([temp_jets[jet_idx][0].Perp() for jet_idx in range(n_jets)])) #Scalar sum of all jets pT
 
-        jet_idxs = [i for i in range(n_jets)]
         tau_idxs = [i for i in range(n_jets) if temp_jets[i][2]==1]
         assert(len(tau_idxs)==2)
 
         #Best W-candidate dijet invariant mass
         #AND smallest DeltaR
-        multijet_idxs = combinations(jet_idxs, 2)
+        multijet_idxs = combinations([i for i in range(n_jets)], 2)
         curr_best_W_mass = -1.0
         curr_best_W_mass_diff = 1.1e10
 
@@ -155,9 +154,9 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False):
         curr_event.append(curr_smallest_DR)
 
         #Best t-candidate dijet invariant mass
-        multijet_idxs = combinations(jet_idxs, 3)
+        multijet_idxs = combinations([i for i in range(n_jets)], 3)
         curr_best_t_mass = -1.0
-        curr_best_t_mass_diff = 1.1e10
+        curr_best_t_mass_diff = None
         for jet_idxs in multijet_idxs:
             jetP4s = [temp_jets[jet_idx][0] for jet_idx in jet_idxs]
             multijetP4 = TLorentzVector()
@@ -166,7 +165,7 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False):
             multijet_mass = multijetP4.M()
 #            print(multijet_mass, m_t)
             mass_diff = abs(multijet_mass - m_t)
-            if(mass_diff < curr_best_t_mass_diff):
+            if(curr_best_t_mass_diff == None or mass_diff < curr_best_t_mass_diff):
                 curr_best_t_mass_diff = mass_diff
                 curr_best_t_mass = multijet_mass
         curr_event.append(curr_best_t_mass)
@@ -417,11 +416,12 @@ def weightedLoss(originalLossFunc, weightsList):
 
 import seaborn as sns
 from scipy.optimize import linear_sum_assignment
-from scipy.spatial.distance import cdist
-
-def earth_movers_distance(x,y,N=3000):
-    print(N/len(x))
-    d = cdist(x[:N],y[:N])
+from scipy.spatial.distance import cdist, seuclidean
+def earth_movers_distance(x,y,N=3000, metric='euclidean'):
+    V = None
+    if(metric=='seuclidean'):
+        V = np.var(np.vstack([x,y]), axis=0, ddof=1)
+    d = cdist(x[:N],y[:N], metric=metric, V=V)
     assignment = linear_sum_assignment(d)
     return (d[assignment].sum()/N)
 
@@ -507,15 +507,16 @@ def compute_tsne_embedded(latent_reps, perplexity=[100, 1998]):
     print(len(x[0]))
     print('computing tsne')
     
-    init = openTSNE.initialization.pca(x, random_state=42)
+#     init = openTSNE.initialization.pca(x, random_state=42)
 
     return openTSNE.TSNE(
                         perplexity=1000,
                         metric="euclidean",
+        initialization='random',
                         n_jobs=-1,
                         random_state=42,
                         verbose=True,
-                    ).fit(x, initialization=init)
+                    ).fit(x)
 #     affinities_multiscale_mixture = openTSNE.affinity.Multiscale(
 #         x,
 #         perplexities=perplexity,
@@ -534,11 +535,16 @@ def compute_tsne(model, cut, X_test, perplexity=[50, 1998]):
     latent_reps = latent_getter.predict(X_test.numpy()[cut])
     return compute_tsne_embedded(latent_reps, perplexity=perplexity)
 
-def emd(events, latent_label):
+
+def emd(events, latent_label, metric='euclidean'):
     ttH_loc = np.array([events[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
     nttH_loc = np.array([events[i] for i in range(len(latent_label)) if latent_label[i][0]==1])
-    return earth_movers_distance(ttH_loc, nttH_loc)
+    return earth_movers_distance(ttH_loc, nttH_loc, metric=metric)
 
+def compute_to_emd(model, cut, X_test, latent_label, metric='euclidean'):
+    latent_getter = LatentGetter(model.layers[0:3], condensed=True)
+    latent_reps = latent_getter.predict(X_test.numpy()[cut])
+    return emd(latent_reps, latent_label, metric=metric)
 
 def kldiv(events, latent_label):
     ttH_loc = np.array([events[i] for i in range(len(latent_label)) if latent_label[i][1]==1])
@@ -579,9 +585,9 @@ def TEMP_gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation
     
     distance = earth_movers_distance(ttH_loc, nttH_loc)
     print('distance', distance)
-    
 
-def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4', EMD=True, NOAXIS=True, standardized=True):
+
+def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4', EMD=True, NOAXIS=True, standardized=False):
     c_cut = 5
 
     plt.rcParams['font.family'] = 'serif'
@@ -623,7 +629,7 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
             nttH_loc = np.array([[-x0, x1] for x0, x1 in nttH_loc])
 
     
-    distance = earth_movers_distance(ttH_loc, nttH_loc)
+    distance = earth_movers_distance(ttH_loc, nttH_loc, metric='seuclidean')
     print('earth_movers_distance', distance)
        
     g = sns.jointplot(x=ttH_loc[:,0], y = ttH_loc[:,1], color=cmap(100), space=0, label='ttH jets',

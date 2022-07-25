@@ -53,7 +53,7 @@ num_round = None
 SUFFIX = ''
 PI = experiment.Experimenter(filename)
 
-#PI.fromSaved()
+PI.fromSaved()
 ##IF FROM SAVED
 #############
 
@@ -68,12 +68,20 @@ to_train = [
             'naivednn',
 ]
 
+to_train=[]
+
 for nm in to_train:
     print('RIGHT NOW: %s'%nm)
     PI.data_loader(nm, gen_multijet_to_inv_dataset, class_weight_invariant, tf.constant, aux_params=dict(dR_keep=False, multijet_n=1))
     PI.train_classifier(nm, model_params_dict[nm], epochs=EPOCHS)
     print('###')
     PI.save_experimenter(suffix=SUFFIX)
+
+del PI.models['dnn_256_3_2']
+del PI.datasets['dnn_weight']
+del PI.datasets['dnn_train']
+del PI.datasets['dnn_test']
+del PI.model_directories['dnn_256_3_2']
 
 print('DNN Classifier')
 PI.data_loader('dnn', gen_dataset_high_level, class_weight_invariant, tf.constant)
