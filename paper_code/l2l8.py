@@ -97,7 +97,7 @@ X_test_ATLAS, y_test_ATLAS = gen_dataset_high_level(PIl64.events_test, PIl64.eve
 
 
 n_cut = int(len(X_test)*0.1)
-n_cut = 15000
+n_cut = 10000
 assert(len(X_test) == len(X_test_latent))
 
 indices = np.random.permutation(len(X_test))
@@ -116,7 +116,6 @@ print(n_cut)
 # In[ ]:
 
 
-latent64_embedded = compute_tsne(latent64, X_test=X_test, cut=cut)
 
 
 # In[ ]:
@@ -127,14 +126,14 @@ ATLAS_embedded = compute_tsne_embedded(np.array(X_test_ATLAS)[cut])
 
 # In[ ]:
 
-
+# latent64_embedded = compute_tsne(latent64, X_test=X_test, cut=cut)
+# latent2_embedded = compute_tsne(latent2, cut=cut, X_test=X_test_latent, perplexity=[1000,1998])
 latent8_embedded = compute_tsne(latent8, cut=cut, X_test=X_test_latent)
 
 
 # In[ ]:
 
 
-latent2_embedded = compute_tsne(latent2, cut=cut, X_test=X_test_latent, perplexity=[1000,1998])
 
 
 # In[ ]:
@@ -146,39 +145,46 @@ sns.cubehelix_palette(start=2/10, light=.97, as_cmap=True)
 # In[ ]:
 
 axATLAS = gen_tsne(ATLAS_embedded, latent_label, text=r'\textbf{ATLAS Features}',
-                   cmap = sns.cubehelix_palette(start=2/10, light=.97, as_cmap=True), col_aux='#f49595', EMD=False)
-axATLAS.savefig('figures/ATLAS_tsne.pdf')
-
-
-axATLAS = gen_tsne(ATLAS_embedded, latent_label, text=r'\textbf{ATLAS Features}',
                    cmap = sns.cubehelix_palette(start=2/10, light=.97, as_cmap=True), col_aux='#f49595')
 axATLAS.savefig('figures/ATLAS_tsne.pdf')
 
 
-# In[ ]:
+# axATLAS = gen_tsne(ATLAS_embedded, latent_label, text=r'\textbf{ATLAS Features}',
+#                    cmap = sns.cubehelix_palette(start=2/10, light=.97, as_cmap=True), col_aux='#f49595', precomputed=True)
+# axATLAS.savefig('figures/ATLAS_tsne.pdf')
 
 
-ax = gen_tsne(latent2_embedded, latent_label_28, text=r'{Pairwise Architecture with} \boldmath$\mathbf{\ell=2^1}$',
-             cmap=sns.cubehelix_palette(start=14/10, light=.97, as_cmap=True), col_aux='#95f4b7')
-ax.savefig('figures/l2_tsne.pdf')
+# # In[ ]:
 
 
-# In[ ]:
+# ax = gen_tsne(latent2_embedded, latent_label_28, text=r'{Pairwise Architecture with} \boldmath$\mathbf{\ell=2^1}$',
+#              cmap=sns.cubehelix_palette(start=14/10, light=.97, as_cmap=True), col_aux='#95f4b7')
+# ax.savefig('figures/l2_tsne.pdf')
+# ax = gen_tsne(latent2_embedded, latent_label_28, text=r'{Pairwise Architecture with} \boldmath$\mathbf{\ell=2^1}$',
+#              cmap=sns.cubehelix_palette(start=14/10, light=.97, as_cmap=True), col_aux='#95f4b7', precomputed=True)
+# ax.savefig('figures/l2_tsne.pdf')
+
+
+
+# # In[ ]:
 
 
 ax = gen_tsne(latent8_embedded, latent_label_28, text=r'{Pairwise Architecture with} \boldmath$\mathbf{\ell=2^3}$',
               cmap=sns.cubehelix_palette(start=20/10, light=.97, as_cmap=True), col_aux='#95b3f4')
 ax.savefig('figures/l8_tsne.pdf')
 
+# ax = gen_tsne(latent8_embedded, latent_label_28, text=r'{Pairwise Architecture with} \boldmath$\mathbf{\ell=2^3}$',
+#               cmap=sns.cubehelix_palette(start=20/10, light=.97, as_cmap=True), col_aux='#95b3f4', precomputed=True)
+# ax.savefig('figures/l8_tsne.pdf')
 
-# In[ ]:
-
-
-axl64 = gen_tsne(latent64_embedded, latent_label, text=r'{Pairwise Architecture with} \boldmath$\mathbf{\ell=2^6}$ ',
-                )
-axl64.savefig('figures/l64_tsne.pdf')
+# # In[ ]:
 
 
-# In[ ]:
+# axl64 = gen_tsne(latent64_embedded, latent_label, text=r'{Pairwise Architecture with} \boldmath$\mathbf{\ell=2^6}$ ',
+#                 )
+# axl64.savefig('figures/l64_tsne.pdf')
+
+
+# # In[ ]:
 
 

@@ -514,7 +514,7 @@ def compute_tsne_embedded(latent_reps, perplexity=[100, 1998]):
 
     return openTSNE.TSNE(
                         perplexity=1000,
-                        metric="euclidean",
+                        metric="cosine",
         initialization='random',
                         n_jobs=-1,
                         random_state=42,
@@ -602,8 +602,8 @@ def TEMP_gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation
     distance = earth_movers_distance(ttH_loc, nttH_loc)
     print('distance', distance)
 
-
-def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4', EMD=True, NOAXIS=True, standardized=True, quantile=False):
+memo_emd = dict()
+def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4', EMD=True, NOAXIS=True, standardized=True, quantile=False, precomputed=False):
     c_cut = 5
 
     plt.rcParams['font.family'] = 'serif'
@@ -617,9 +617,17 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
         print('quantile scaling')
         curr_event = quantile_scale(curr_event)
 
-    ttH_loc  = np.array([[(curr_event[i][j]) for j in range(len(curr_event[i]))] 
+
+    means = [0,0]
+    stds = [1,1]
+    
+    if(standardized):
+        means = np.mean(curr_event, axis=0)
+        stds = np.std(curr_event, axis=0)
+        
+    ttH_loc  = np.array([[(curr_event[i][j]-means[j])/stds[j] for j in range(len(curr_event[i]))] 
                          for i in range(len(latent_label)) if latent_label[i][1]==1])
-    nttH_loc = np.array([[(curr_event[i][j]) for j in range(len(curr_event[i]))] 
+    nttH_loc = np.array([[(curr_event[i][j]-means[j])/stds[j] for j in range(len(curr_event[i]))] 
                          for i in range(len(latent_label)) if latent_label[i][0]==1])
 
     
@@ -642,10 +650,13 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
             nttH_loc = np.array([[-x0, x1] for x0, x1 in nttH_loc])
 
 
-
+    distance = -1
+    if(EMD):
+        if(not precomputed):
+            memo_emd[text] = earth_movers_distance(ttH_loc, nttH_loc, N=15000)
+        distance = memo_emd[text]
     
-    distance = earth_movers_distance(ttH_loc, nttH_loc, N=15000)
-    print('earth_movers_distance', distance)
+        print('earth_movers_distance', distance)
        
     g = sns.jointplot(x=ttH_loc[:,0], y = ttH_loc[:,1], color=cmap(100), space=0, label='ttH jets',
                       cmap=cmap, kind='kde', height=10, fill=True, cut=c_cut,
@@ -680,8 +691,8 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
         cntr  =  np.array([np.mean(curr_event[:,0]), np.mean(curr_event[:, 1])])
         cntr_std =  np.array([np.std(curr_event[:,0]), np.std(curr_event[:, 1])])
         std = max(cntr_std)
-        ax.set_xlim(-20,70)
-        ax.set_ylim(-20,50)
+        ax.set_xlim(-20,60)
+        ax.set_ylim(-30,50)
     ax.set_facecolor(cmap(c_cut))
 
     if(NOAXIS):

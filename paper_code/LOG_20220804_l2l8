@@ -1,10 +1,274 @@
-nohup: ignoring input
-2022-08-04 15:56:54.441858: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
-2022-08-04 15:56:54.441907: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
-2022-08-04 15:57:26.491370: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
-2022-08-04 15:57:26.491433: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
-2022-08-04 15:57:26.491487: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (top1.hep.utexas.edu): /proc/driver/nvidia/version does not exist
-2022-08-04 15:57:26.492548: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2022-08-04 19:20:48.958999: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
+2022-08-04 19:20:48.959088: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cut
+2022-08-04 19:21:21.212512: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/rh/httpd24/root/usr/lib64:/home/delon/madgraph/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib
+2022-08-04 19:21:21.212573: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-04 19:21:21.212627: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (top1.hep.utexas.edu): /proc/driver/nvidia/version does not exist
+2022-08-04 19:21:21.213863: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2022-08-04 15:58:44.032883: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
-2022-08-04 15:58:44.035192: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2397305000 Hz
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'nested_concat_70_4_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3', 'nested_concat_general_68_3_64_3': 'models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3', 'particlewise_128_4_64': 'models/data100k_raw_combined_atlas_cut_particlewise_128_4_64', 'tripletwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_5_(64, 128, 256, 128, 64)_64': 'models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64', 'pairwise_nl_5_(64, 128, 256, 128, 64)_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64', 'pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64': 'models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64', 'naivednn_256_3_2': 'models/data100k_raw_combined_atlas_cut_naivednn_256_3_2', 'dnn_256_3_2': 'models/data100k_raw_combined_atlas_cut_dnn_256_3_2'}
+Loaded nested_concat_70_4_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_70_4_64_3
+Loaded nested_concat_general_68_3_64_3 from models/data100k_raw_combined_atlas_cut_nested_concat_general_68_3_64_3
+Loaded particlewise_128_4_64 from models/data100k_raw_combined_atlas_cut_particlewise_128_4_64
+Loaded tripletwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_tripletwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_5_(64, 128, 256, 128, 64)_64 from models/data100k_raw_combined_atlas_cut_pairwise_5_(64, 128, 256, 128, 64)_64
+Loaded pairwise_nl_5_(64, 128, 256, 128, 64)_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_5_(64, 128, 256, 128, 64)_32_64
+Loaded pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64 from models/data100k_raw_combined_atlas_cut_pairwise_nl_iter_5_((64, 64, 116, 64, 64), (64, 64, 116, 64, 64), (64, 64, 116, 64, 64))_32_64
+Loaded naivednn_256_3_2 from models/data100k_raw_combined_atlas_cut_naivednn_256_3_2
+Loaded dnn_256_3_2 from models/data100k_raw_combined_atlas_cut_dnn_256_3_2
+Initializing Experimenter
+	Loading Data from ../data/data100k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+Loading Experimenter from Saved Experimenter at /data/delon/experimenter/data100k_raw_combined_atlas_cutlatent28
+Experimenter Loaded
+Getting split
+Split Stored
+Loading models
+{'latent_two_5_(64, 128, 256, 128, 2)_64': 'models/data100k_raw_combined_atlas_cut_latent_two_5_(64, 128, 256, 128, 2)_64latent28', 'latent_eight_5_(64, 128, 256, 128, 8)_64': 'models/data100k_raw_combined_atlas_cut_latent_eight_5_(64, 128, 256, 128, 8)_64latent28'}
+Loaded latent_two_5_(64, 128, 256, 128, 2)_64 from models/data100k_raw_combined_atlas_cut_latent_two_5_(64, 128, 256, 128, 2)_64latent28
+Loaded latent_eight_5_(64, 128, 256, 128, 8)_64 from models/data100k_raw_combined_atlas_cut_latent_eight_5_(64, 128, 256, 128, 8)_64latent28
+10000
+2022-08-04 19:22:23.420865: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-08-04 19:22:23.423718: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2397305000 Hz
+64
+computing tsne
+--------------------------------------------------------------------------------
+TSNE(initialization='random', n_jobs=-1, perplexity=1000, random_state=42,
+     verbose=True)
+--------------------------------------------------------------------------------
+===> Finding 3000 nearest neighbors using Annoy approximate search using euclidean distance...
+   --> Time elapsed: 9.50 seconds
+===> Calculating affinity matrix...
+   --> Time elapsed: 29.39 seconds
+===> Running optimization with exaggeration=12.00, lr=833.33 for 250 iterations...
+Iteration   50, KL divergence 2.0748, 50 iterations in 2.9931 sec
+Iteration  100, KL divergence 2.0748, 50 iterations in 2.8935 sec
+Iteration  150, KL divergence 2.0748, 50 iterations in 2.7820 sec
+Iteration  200, KL divergence 2.0748, 50 iterations in 2.6344 sec
+Iteration  250, KL divergence 2.0740, 50 iterations in 2.7344 sec
+   --> Time elapsed: 14.04 seconds
+===> Running optimization with exaggeration=1.00, lr=833.33 for 500 iterations...
+Iteration   50, KL divergence 1.0702, 50 iterations in 2.6316 sec
+Iteration  100, KL divergence 1.0089, 50 iterations in 2.7146 sec
+Iteration  150, KL divergence 0.9983, 50 iterations in 2.6743 sec
+Iteration  200, KL divergence 0.9958, 50 iterations in 2.6668 sec
+Iteration  250, KL divergence 0.9950, 50 iterations in 2.6787 sec
+Iteration  300, KL divergence 0.9947, 50 iterations in 2.6362 sec
+Iteration  350, KL divergence 0.9943, 50 iterations in 2.6333 sec
+Iteration  400, KL divergence 0.9943, 50 iterations in 2.7543 sec
+Iteration  450, KL divergence 0.9943, 50 iterations in 2.6980 sec
+Iteration  500, KL divergence 0.9943, 50 iterations in 2.6445 sec
+   --> Time elapsed: 26.73 seconds
+8
+computing tsne
+--------------------------------------------------------------------------------
+TSNE(initialization='random', n_jobs=-1, perplexity=1000, random_state=42,
+     verbose=True)
+--------------------------------------------------------------------------------
+===> Finding 3000 nearest neighbors using Annoy approximate search using euclidean distance...
+   --> Time elapsed: 9.85 seconds
+===> Calculating affinity matrix...
+   --> Time elapsed: 30.58 seconds
+===> Running optimization with exaggeration=12.00, lr=833.33 for 250 iterations...
+Iteration   50, KL divergence 2.2103, 50 iterations in 2.5324 sec
+Iteration  100, KL divergence 1.6628, 50 iterations in 2.5587 sec
+Iteration  150, KL divergence 1.6591, 50 iterations in 2.5501 sec
+Iteration  200, KL divergence 1.6591, 50 iterations in 2.5315 sec
+Iteration  250, KL divergence 1.6591, 50 iterations in 2.5793 sec
+   --> Time elapsed: 12.75 seconds
+===> Running optimization with exaggeration=1.00, lr=833.33 for 500 iterations...
+Iteration   50, KL divergence 0.5710, 50 iterations in 2.6215 sec
+Iteration  100, KL divergence 0.4746, 50 iterations in 2.5077 sec
+Iteration  150, KL divergence 0.4474, 50 iterations in 2.5804 sec
+Iteration  200, KL divergence 0.4382, 50 iterations in 2.5351 sec
+Iteration  250, KL divergence 0.4349, 50 iterations in 2.5998 sec
+Iteration  300, KL divergence 0.4338, 50 iterations in 2.6508 sec
+Iteration  350, KL divergence 0.4335, 50 iterations in 2.6232 sec
+Iteration  400, KL divergence 0.4334, 50 iterations in 2.6181 sec
+Iteration  450, KL divergence 0.4333, 50 iterations in 2.5482 sec
+Iteration  500, KL divergence 0.4333, 50 iterations in 2.4803 sec
+   --> Time elapsed: 25.77 seconds
+8
+computing tsne
+--------------------------------------------------------------------------------
+TSNE(initialization='random', n_jobs=-1, perplexity=1000, random_state=42,
+     verbose=True)
+--------------------------------------------------------------------------------
+===> Finding 3000 nearest neighbors using Annoy approximate search using euclidean distance...
+   --> Time elapsed: 9.88 seconds
+===> Calculating affinity matrix...
+   --> Time elapsed: 27.83 seconds
+===> Running optimization with exaggeration=12.00, lr=833.33 for 250 iterations...
+Iteration   50, KL divergence 2.1518, 50 iterations in 2.8316 sec
+Iteration  100, KL divergence 2.1518, 50 iterations in 2.7962 sec
+Iteration  150, KL divergence 2.1130, 50 iterations in 2.7840 sec
+Iteration  200, KL divergence 2.0875, 50 iterations in 2.7443 sec
+Iteration  250, KL divergence 2.0875, 50 iterations in 2.7735 sec
+   --> Time elapsed: 13.93 seconds
+===> Running optimization with exaggeration=1.00, lr=833.33 for 500 iterations...
+Iteration   50, KL divergence 0.9251, 50 iterations in 2.8504 sec
+Iteration  100, KL divergence 0.8471, 50 iterations in 2.8032 sec
+Iteration  150, KL divergence 0.8319, 50 iterations in 2.7618 sec
+Iteration  200, KL divergence 0.8280, 50 iterations in 2.7198 sec
+Iteration  250, KL divergence 0.8259, 50 iterations in 2.7721 sec
+Iteration  300, KL divergence 0.8252, 50 iterations in 2.6395 sec
+Iteration  350, KL divergence 0.8250, 50 iterations in 2.6629 sec
+Iteration  400, KL divergence 0.8247, 50 iterations in 2.7114 sec
+Iteration  450, KL divergence 0.8247, 50 iterations in 2.7279 sec
+Iteration  500, KL divergence 0.8247, 50 iterations in 2.6784 sec
+   --> Time elapsed: 27.33 seconds
+2
+computing tsne
+--------------------------------------------------------------------------------
+TSNE(initialization='random', n_jobs=-1, perplexity=1000, random_state=42,
+     verbose=True)
+--------------------------------------------------------------------------------
+===> Finding 3000 nearest neighbors using Annoy approximate search using euclidean distance...
+   --> Time elapsed: 10.47 seconds
+===> Calculating affinity matrix...
+   --> Time elapsed: 24.32 seconds
+===> Running optimization with exaggeration=12.00, lr=833.33 for 250 iterations...
+Iteration   50, KL divergence 2.2242, 50 iterations in 2.9275 sec
+Iteration  100, KL divergence 1.7626, 50 iterations in 2.9675 sec
+Iteration  150, KL divergence 1.7621, 50 iterations in 2.9249 sec
+Iteration  200, KL divergence 1.7621, 50 iterations in 2.9904 sec
+Iteration  250, KL divergence 1.7621, 50 iterations in 2.9813 sec
+   --> Time elapsed: 14.79 seconds
+===> Running optimization with exaggeration=1.00, lr=833.33 for 500 iterations...
+Iteration   50, KL divergence 0.4440, 50 iterations in 2.9690 sec
+Iteration  100, KL divergence 0.3512, 50 iterations in 2.9746 sec
+Iteration  150, KL divergence 0.3298, 50 iterations in 3.0072 sec
+Iteration  200, KL divergence 0.3228, 50 iterations in 3.0059 sec
+Iteration  250, KL divergence 0.3205, 50 iterations in 2.8967 sec
+Iteration  300, KL divergence 0.3196, 50 iterations in 2.7815 sec
+Iteration  350, KL divergence 0.3194, 50 iterations in 2.7901 sec
+Iteration  400, KL divergence 0.3193, 50 iterations in 2.7766 sec
+Iteration  450, KL divergence 0.3192, 50 iterations in 2.7772 sec
+Iteration  500, KL divergence 0.3192, 50 iterations in 2.7952 sec
+   --> Time elapsed: 28.77 seconds
+[ 1.70530257e-17 -1.47792889e-16] [10.82365552  8.40026826]
+computing EMD with N= 15000
+computed EMD with N=15000
+	EMD: 4.582
+earth_movers_distance 4.582128938202201
+Traceback (most recent call last):
+  File "l2l8.py", line 148, in <module>
+    axATLAS = gen_tsne(ATLAS_embedded, latent_label, text=r'\textbf{ATLAS Features}',
+  File "/code/delon/pc_ec/paper_code/utils.py", line 650, in gen_tsne
+    g = sns.jointplot(x=ttH_loc[:,0], y = ttH_loc[:,1], color=cmap(100), space=0, label='ttH jets',
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/seaborn/_decorators.py", line 46, in inner_f
+    return f(**kwargs)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/seaborn/axisgrid.py", line 2230, in jointplot
+    grid = JointGrid(
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/seaborn/_decorators.py", line 46, in inner_f
+    return f(**kwargs)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/seaborn/axisgrid.py", line 1740, in __init__
+    f.tight_layout()
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/figure.py", line 3224, in tight_layout
+    kwargs = get_tight_layout_figure(
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/tight_layout.py", line 320, in get_tight_layout_figure
+    kwargs = _auto_adjust_subplotpars(fig, renderer,
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/tight_layout.py", line 82, in _auto_adjust_subplotpars
+    bb += [ax.get_tightbbox(renderer, for_layout_only=True)]
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/axes/_base.py", line 4628, in get_tightbbox
+    bb_xaxis = self.xaxis.get_tightbbox(
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/axis.py", line 1105, in get_tightbbox
+    self._update_label_position(renderer)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/axis.py", line 2083, in _update_label_position
+    bboxes, bboxes2 = self._get_tick_boxes_siblings(renderer=renderer)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/axis.py", line 1881, in _get_tick_boxes_siblings
+    tlb, tlb2 = axis._get_tick_bboxes(ticks_to_draw, renderer)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/axis.py", line 1085, in _get_tick_bboxes
+    return ([tick.label1.get_window_extent(renderer)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/axis.py", line 1085, in <listcomp>
+    return ([tick.label1.get_window_extent(renderer)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/text.py", line 910, in get_window_extent
+    bbox, info, descent = self._get_layout(self._renderer)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/text.py", line 309, in _get_layout
+    _, lp_h, lp_d = renderer.get_text_width_height_descent(
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/backends/backend_agg.py", line 259, in get_text_width_height_descent
+    w, h, d = texmanager.get_text_width_height_descent(
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/texmanager.py", line 338, in get_text_width_height_descent
+    page, = dvi
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 237, in __iter__
+    while self._read():
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 316, in _read
+    self._dtable[byte](self, byte)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 166, in wrapper
+    return method(self, *[f(self, byte-min) for f in get_args])
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 467, in _fnt_def
+    self._fnt_def_real(k, c, s, d, a, l)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 472, in _fnt_def_real
+    tfm = _tfmfile(fontname)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 1063, in _fontfile
+    filename = find_tex_file(texname + suffix)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/_api/deprecation.py", line 389, in wrapper
+    return func(*inner_args, **inner_kwargs)
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 1034, in find_tex_file
+    lk = _LuatexKpsewhich()
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 980, in __new__
+    self._proc = self._new_proc()
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/matplotlib/dviread.py", line 984, in _new_proc
+    return subprocess.Popen(
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/subprocess.py", line 1639, in _execute_child
+    self.pid = _posixsubprocess.fork_exec(
+OSError: [Errno 12] Cannot allocate memory
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
+Exception ignored in: <function _CheckpointRestoreCoordinatorDeleter.__del__ at 0x7f7ad64b5ca0>
+Traceback (most recent call last):
+  File "/home/delon/.conda/envs/pcec/lib/python3.8/site-packages/tensorflow/python/training/tracking/util.py", line 158, in __del__
+TypeError: 'NoneType' object is not callable
