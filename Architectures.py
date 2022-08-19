@@ -573,6 +573,7 @@ model_params_dict = {'particlewise':{'width':128, 'depth':4, 'latent_dim':64},
         'dnn': {'width':256,'depth':3,'num_classes':2},
         'naivednn':{'width':256,'depth':3,'num_classes':2},
         'latent_two': {'depth':5, 'ec_widths':(64,128,256,128,2), 'width':64},
+        'latent_one': {'depth':5, 'ec_widths':(64,128,256,128,1), 'width':64},
         'latent_eight': {'depth':5, 'ec_widths':(64,128,256,128,2**3), 'width':64},
         }
 classifiers_name = {'particlewise':r'Particlewise', 
@@ -604,6 +605,7 @@ classifiers = {'particlewise':DeepSet,
             'pairwise_nl':IteratedPiPairwise,
             'pairwise_nl_iter':IteratedPiPairwise,
             #AUX ARCHS
+            'latent_one': Pairwise,
             'latent_two': Pairwise,
             'latent_eight': Pairwise,
             }

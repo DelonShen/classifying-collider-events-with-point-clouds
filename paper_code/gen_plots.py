@@ -31,7 +31,7 @@ random.seed(42)
 filename = '../data/data100k_raw_combined_atlas_cut.pkl'
 num_round = None
 
-train_bst = True
+train_bst = False
 
 do_tsne = False
 #TESTING
@@ -156,10 +156,13 @@ models_to_plot = [PI.model_name_to_model(model_name) for model_name in list(PI.m
 model_params_to_plot = [model_params_dict[PI.model_name_to_model(model_name)] for model_name in list(PI.models.keys())]
 model_params_to_plot
 
+location_0 = bisect.bisect_left(tpr, 0.7)
+e7 = 1/fpr[location_0-1]
+
 
 fig, ax = PI.plot_multiple_sorted_by_AUC(models_to_plot, model_params_to_plot)
 colormap = sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True)
-ax.plot(tpr, 1/fpr, label=r'%.3f %s'%(auc, 'BDT + ATLAS Features'), color='lightgrey')                                         
+ax.plot(tpr, 1/fpr, label=r'%.3f %s'%(e7, 'BDT + ATLAS Features'), color='lightgrey')                                         
 
 
 ax.get_legend().remove()
@@ -179,11 +182,11 @@ for txt in ax.texts:
 
 annotation_string = r'\textbf{ROC Curve for Event Classification}'
 annotation_string += '\n'
-annotation_string += r'$t\overline{t}(H\rightarrow\tau\tau)$ and $t\overline{t}(t\rightarrow \tau\nu b)$'
+annotation_string += r'$t\overline{t}(H\rightarrow\tau\tau)$ and $t\overline{t}(\rightarrow \tau\nu b)$'
 annotation_string += '\n'
 annotation_string += r'\textsc{MadGraph 5}+\textsc{Pythia} 8+\textsc{Delphes}'
 annotation_string += '\n'
-annotation_string += r'Anti-Kt with $R=0.4$, $\sqrt{s} = 14$'
+annotation_string += r'Anti-Kt with $R=0.4$, $\sqrt{s} = 14 TeV$'
 ax.text(.05,1, annotation_string)
 plt.gcf().set_size_inches(10, 10)
 
@@ -212,7 +215,7 @@ for (fpr, tpr, thresholds, auc), key, params in zip(table_data, models_to_plot, 
     location = bisect.bisect_left(tpr, 0.3)
     c_model = PI.models['%s_%s'%(key, PI.get_tail_string(params))]
     NPARAMS = human_format(c_model.count_params())
-    table_file.write('%s & %.3f & %s &%.1f & %.1f & %.1f & %.1f\\\\\n'%(c_names[key], auc, NPARAMS,
+    table_file.write('%s & %.4f & %s &%.1f & %.1f & %.1f & %.1f\\\\\n'%(c_names[key], auc, NPARAMS,
                                                            1/fpr[location-1], (tpr)[location-1]/fpr[location-1],
                                                            1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
     

@@ -104,6 +104,28 @@ def class_weight(y_train): #we assume two classes
 def get_DeltaR(p4_1, p4_2):
     return p4_1.DeltaR(p4_2)**2
 
+def get_eta_info(inp, oup, events_tag, systematics_test=False):
+    #extract input to bdt/nn from table 4 of paper draft
+    X = []
+    y = []
+    etas = []
+    for event_idx in range(len(inp)):
+        curr_event = []
+        curr_oup = []
+
+        curr_event_tag = events_tag[event_idx][0]
+        curr_oup = [curr_event_tag==0, curr_event_tag==1]
+        curr_oup = list(map(int, curr_oup))
+
+        temp_jets = inp[event_idx].copy()
+        n_jets = len(temp_jets)
+        for jet in temp_jets:
+            etas.append(jet[0].Eta())
+
+
+    return etas
+
+
 def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False):
     #extract input to bdt/nn from table 4 of paper draft
     X = []
@@ -603,7 +625,7 @@ def TEMP_gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation
     print('distance', distance)
 
 memo_emd = dict()
-def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4', EMD=True, NOAXIS=True, standardized=True, quantile=False, precomputed=False):
+def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in Pairwise Architecture', rotated=True, log=False, bnds=False, cmap=sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True), col_aux='#d495f4', EMD=True, NOAXIS=True, standardized=True, quantile=False, precomputed=False, aux_text=r"\texttt{(t-SNE)}"):
     c_cut = 5
 
     plt.rcParams['font.family'] = 'serif'
@@ -707,6 +729,11 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
                 transform=ax.transAxes,
                 horizontalalignment='right',
                 verticalalignment='bottom',)
+    ax.text(.02, .02,
+            s=aux_text, 
+            transform=ax.transAxes,
+            horizontalalignment='left',
+            verticalalignment='bottom',)
 
 
 

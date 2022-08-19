@@ -1,5 +1,6 @@
 from utils import *
 from tensorflow.keras.callbacks import EarlyStopping
+import bisect 
 
 from sklearn import metrics
 import pickle
@@ -293,9 +294,10 @@ class Experimenter:
         fpr, tpr, thresholds, auc = self.get_ROC(classifier_key, params, ideal=ideal)
         plt.rcParams['font.family'] = 'serif'
         plt.rcParams['font.size'] = 20
-
+        location_0 = bisect.bisect_left(tpr, 0.7)
+        e7 = 1/fpr[location_0-1]
         if(ax != None):
-            ax.plot(tpr, 1/fpr, **lstyle[classifier_key], label=r'%.5f %s'%(auc, classifiers_name[classifier_key]))
+            ax.plot(tpr, 1/fpr, **lstyle[classifier_key], label=r'%.5f %s'%(e7, classifiers_name[classifier_key]))
             ax.set_yscale('log')
             return
 
