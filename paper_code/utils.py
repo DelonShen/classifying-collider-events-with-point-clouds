@@ -126,12 +126,12 @@ def get_eta_info(inp, oup, events_tag, systematics_test=False):
     return etas
 
 
-def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False):
+def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False, mtautau=False, mrel=False):
     #extract input to bdt/nn from table 4 of paper draft
     X = []
     y = []
 
-    for event_idx in range(len(inp)):
+    for event_idx in trange(len(inp)):
         curr_event = []
         curr_oup = []
 
@@ -172,6 +172,8 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False):
             if(mass_diff < curr_best_W_mass_diff):
                 curr_best_W_mass_diff = mass_diff
                 curr_best_W_mass = multijet_mass
+        if(mrel):
+            curr_best_W_mass = np.abs(curr_best_W_mass - 80.4 )
         curr_event.append(curr_best_W_mass)
         curr_event.append(curr_smallest_DR)
 
@@ -190,6 +192,8 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False):
             if(curr_best_t_mass_diff == None or mass_diff < curr_best_t_mass_diff):
                 curr_best_t_mass_diff = mass_diff
                 curr_best_t_mass = multijet_mass
+        if(mrel):
+            curr_best_t_mass = np.abs(curr_best_t_mass - 172.5  )
         curr_event.append(curr_best_t_mass)
 
         #Delta R tau tau and |Delta Eta(tau tau)| and pT(tautau)
@@ -208,6 +212,12 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False):
         MET = events_tag[event_idx][2]
 
         curr_event.append(MET)
+        
+        if(mtautau):
+            assert(len(tau_jet_P4) == 2)
+            m_tautau = (tau_jet_P4[0] + tau_jet_P4[1]).M()
+            curr_event.append(np.abs(m_tautau-125))
+
 
 
 
@@ -527,17 +537,19 @@ Theory, 2008.
 from sklearn.manifold import TSNE
 from sklearn.metrics import pairwise_distances
 import openTSNE
-def compute_tsne_embedded(latent_reps, perplexity=[100, 1998]):
+def compute_tsne_embedded(latent_reps, perplexity=[100, 1998], euclid=False):
     x = latent_reps
     print(len(x[0]))
     print('computing tsne')
     
 #     init = openTSNE.initialization.pca(x, random_state=42)
-
+    mtrc = 'cosine'
+    if(euclid):
+        mtrc = 'euclidean'
     return openTSNE.TSNE(
                         perplexity=1000,
-                        metric="cosine",
-        initialization='random',
+                        metric=mtrc,
+                        initialization='random',
                         n_jobs=-1,
                         random_state=42,
                         verbose=True,
@@ -555,10 +567,10 @@ def compute_tsne_embedded(latent_reps, perplexity=[100, 1998]):
 
     return latent_reps_embedded_tsne
 
-def compute_tsne(model, cut, X_test, perplexity=[50, 1998]):
+def compute_tsne(model, cut, X_test, perplexity=[50, 1998], euclid=False):
     latent_getter = LatentGetter(model.layers[0:3], condensed=True)
     latent_reps = latent_getter.predict(X_test.numpy()[cut])
-    return compute_tsne_embedded(latent_reps, perplexity=perplexity)
+    return compute_tsne_embedded(latent_reps, perplexity=perplexity, euclid=euclid)
 
 def quantile_scale(events):
     f = lambda x:(x+1/2)
@@ -699,7 +711,7 @@ def gen_tsne(curr_event, latent_label, text=r'\textbf{Latent Representation} in 
     import matplotlib.patches as  mpatches
     import matplotlib.lines as  mlines
     
-    handles = [mpatches.Patch(facecolor=cmap(100), label=r'$ttH$ Events'),
+    handles = [mpatches.Patch(facecolor=cmap(100), label=r'$t\overline{t}H$ Events'),
                mlines.Line2D([], [], color=COL2, label=r'$t\overline{t}$ Events', lw=linew)]
     legend = ax.legend(loc='upper right', handles=handles, frameon=False, title=text)
     legend._legend_box.align = 'right'
