@@ -216,7 +216,9 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False, mtautau
         if(mtautau):
             assert(len(tau_jet_P4) == 2)
             m_tautau = (tau_jet_P4[0] + tau_jet_P4[1]).M()
-            curr_event.append(np.abs(m_tautau-125))
+            if(mrel):
+                m_tautau = np.abs(m_tautau-125)
+            curr_event.append(m_tautau)
 
 
 
