@@ -54,6 +54,21 @@ class Experimenter:
         experimenter_file = open(filename, 'rb')
         _, _, _, _, _, _, _, self.model_directories = pickle.load(experimenter_file)
 
+    def update_data(self, suffix=''):
+        self.events, self.events_oup, self.events_tag = load_data_from_file(self.filename)
+        print('\tData Loaded')
+        print('\tCreating Splits')
+        self.events_train, self.events_test = self.get_split(self.events)
+        self.events_oup_train, self.events_oup_test = self.get_split(self.events_oup)
+        self.events_tag_train, self.events_tag_test = self.get_split(self.events_tag)
+        print('now saving paramters of experimenter')
+        experimenter_filename  ='/data/delon/experimenter/'+self.filename.split('/')[-1].split('.')[0]+suffix
+        experimenter_file = open(experimenter_filename, 'wb')
+        pickle.dump((self.filename, self.events, self.events_oup, self.events_tag, self.training_idx, self.test_idx, self.datasets, self.model_directories), experimenter_file)
+        experimenter_file.close()
+        print('saved experimenter at', experimenter_filename)
+
+
     def fromSaved(self, suffix=''):
 
         experimenter_filename  ='/data/delon/experimenter/'+self.filename.split('/')[-1].split('.')[0]+suffix

@@ -1,5 +1,5 @@
 import ROOT
-from ROOT import TLorentzVector
+from ROOT import TLorentzVector, TVector3
 
 from tqdm import trange
 import pickle
@@ -126,7 +126,7 @@ def get_eta_info(inp, oup, events_tag, systematics_test=False):
     return etas
 
 
-def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False, mtautau=False, mrel=False):
+def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False, mtautau=False, mrel=False, colinear_approx=False):
     #extract input to bdt/nn from table 4 of paper draft
     X = []
     y = []
@@ -216,6 +216,21 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False, mtautau
         if(mtautau):
             assert(len(tau_jet_P4) == 2)
             m_tautau = (tau_jet_P4[0] + tau_jet_P4[1]).M()
+            if(colinear_approx):
+                MET_E = events_tag[event_idx][2] #ASSMPTION: particles that make up MET massless so ET = PT
+                MET_Eta = events_tag[event_idx][3]
+                MET_Phi = events_tag[event_idx][4]
+                v_MET = TVector3()
+                v_MET.SetPtEtaPhi(MET_E, 0,MET_Phi) #ignore eta?
+                #Solving (2) for p_{mis} in https://arxiv.org/pdf/1012.4686.pdf
+                tv = [tau.Theta() for tau in tau_jet_P4]
+                pv = [tau.Phi() for tau in tau_jet_P4]
+                pm = [1/np.sin(tv[i])*1/np.sin(pv[0] - pv[1])*(-1)**i*(v_MET.Y()*np.cos(pv[(i+1)%2])-v_MET.X()*np.sin(pv[(i+1)%2]))
+                     for i in range(2)]
+                x = [tau_jet_P4[i].P()/(tau_jet_P4[i].P()+pm[i]) for i in range(2)]
+                print(x)
+                m_tautau = m_tautau/np.sqrt(x[0]*x[1])
+                
             if(mrel):
                 m_tautau = np.abs(m_tautau-125)
             curr_event.append(m_tautau)
