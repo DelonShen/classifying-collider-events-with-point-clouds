@@ -126,7 +126,7 @@ def get_eta_info(inp, oup, events_tag, systematics_test=False):
     return etas
 
 
-def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False, mtautau=False, mrel=False, colinear_approx=False):
+def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False, mtautau=False, mrel=False, colinear_approx=False, tmm=False, ca2=False):
     #extract input to bdt/nn from table 4 of paper draft
     X = []
     y = []
@@ -216,20 +216,56 @@ def gen_dataset_high_level(inp, oup, events_tag, systematics_test=False, mtautau
         if(mtautau):
             assert(len(tau_jet_P4) == 2)
             m_tautau = (tau_jet_P4[0] + tau_jet_P4[1]).M()
+            MET_E = events_tag[event_idx][2] #ASSMPTION: particles that make up MET massless so ET = PT
+            MET_Eta = events_tag[event_idx][3]
+            MET_Phi = events_tag[event_idx][4]
+            v_MET = TVector3()
+            v_MET.SetPtEtaPhi(MET_E, 0,MET_Phi) #ignore eta?
+            tv = [tau.Theta() for tau in tau_jet_P4]
+            pv = [tau.Phi() for tau in tau_jet_P4]
+            m2v = [tau.M2() for tau in tau_jet_P4]
+            momv = [tau.Vect() for tau in tau_jet_P4] #get momentum vector
+            mom2v = [p.Dot(p) for p in momv]
             if(colinear_approx):
-                MET_E = events_tag[event_idx][2] #ASSMPTION: particles that make up MET massless so ET = PT
-                MET_Eta = events_tag[event_idx][3]
-                MET_Phi = events_tag[event_idx][4]
-                v_MET = TVector3()
-                v_MET.SetPtEtaPhi(MET_E, 0,MET_Phi) #ignore eta?
-                #Solving (2) for p_{mis} in https://arxiv.org/pdf/1012.4686.pdf
-                tv = [tau.Theta() for tau in tau_jet_P4]
-                pv = [tau.Phi() for tau in tau_jet_P4]
+                #Solving (2) for p_{mis} in https://arxiv.or/pdf/1012.4686.pdf
                 pm = [1/np.sin(tv[i])*1/np.sin(pv[0] - pv[1])*(-1)**i*(v_MET.Y()*np.cos(pv[(i+1)%2])-v_MET.X()*np.sin(pv[(i+1)%2]))
                      for i in range(2)]
                 x = [tau_jet_P4[i].P()/(tau_jet_P4[i].P()+pm[i]) for i in range(2)]
-                print(x)
-                m_tautau = m_tautau/np.sqrt(x[0]*x[1])
+                m_tautau = (tau_jet_P4[0]+tau_jet_P4[1]).M()/np.sqrt(x[0]*x[1])
+                if(np.isnan(m_tautau)):
+                    print('tau P:',[tau_jet_P4[i].P() for i in range(2)])
+                    
+                    print('p missing:', pm)
+                    print('phi vis:', pv)
+                    print('x:', x)
+                    print()
+            elif(tmm):
+                #using Eq. (1) in https://arxiv.org/pdf/1012.4686.pdf
+                m2_tautau = m2v[0] + m2v[1]
+                sqs = [np.sqrt(m2v[i] + mom2v[i]) for i in range(2)]
+                m2_tautau += 2*(sqs[0]*sqs[1])
+                m2_tautau += 2*(MET_E*sqs[0]+MET_E*sqs[1])
+                m2_tautau -= 2*(momv[0].Dot(momv[1])+momv[0].Dot(v_MET)+momv[1].Dot(v_MET))
+                m_tautau = np.sqrt(m2_tautau)
+            elif(ca2):
+                #Reconstructing semi-invisible events in resonant tau pair production from Higgs
+                #first lets try rotating shit to a single plane
+                rV = [tau.Vect() for tau in tau_jet_P4]
+                zaxis = rV[0].Cross(rV[1]).Unit()
+                yaxis = zaxis.Cross(rV[0]).Unit()
+                xaxis = rV[0].Unit()
+                
+                temp_mags = [V.Mag() for V in rV]
+                
+                rV[0].SetXYZ(rV[0].Mag(),0,0)
+                rV[1].SetXYZ(rV[1].Dot(xaxis), rV[1].Dot(yaxis), 0)
+                
+                for i in range(2):
+                    assert(np.abs(temp_mags[i] - rV[i].Mag()) <1e-5)
+                    
+                ri = [np.abs((v_MET.Y()*rV[i].X() - v_MET.X()*rV[i].Y())/(rV[0].Y()*rV[1].X()-rV[0].X()*rV[1].Y())) for i in range(2)]
+                fi = [1/(1+ri[(i+1)%2]) for i in range(2)]
+                m_tautau = (tau_jet_P4[0]+tau_jet_P4[1]).M()/np.sqrt(fi[0]*fi[1])
                 
             if(mrel):
                 m_tautau = np.abs(m_tautau-125)

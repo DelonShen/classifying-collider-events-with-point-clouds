@@ -90,16 +90,22 @@ def human_format(num):
 
 import xgboost as xgb
 
-X_train, y_train = gen_dataset_high_level(PI.events_train, PI.events_oup_train, PI.events_tag_train) 
-X_test, y_test = gen_dataset_high_level(PI.events_test, PI.events_oup_test, PI.events_tag_test) 
+X_train, y_train = gen_dataset_high_level(PI.events_train, PI.events_oup_train, PI.events_tag_train, mtautau=True, colinear_approx=False, tmm=False, ca2=True) 
+X_test, y_test = gen_dataset_high_level(PI.events_test, PI.events_oup_test, PI.events_tag_test, mtautau=True, colinear_approx=False, tmm=False, ca2=True) 
 
 X_train = np.array(X_train)
-yo_train = np.array([np.argmax(y) for y in y_train])
-yo_test = np.array([np.argmax(y) for y in y_test])
 X_test = np.array(X_test)
 
-xg_train = xgb.DMatrix(X_train, label=yo_train)
-xg_test = xgb.DMatrix(X_test, label=yo_test)
+yo_train = np.array([np.argmax(y) for y in y_train])
+yo_test = np.array([np.argmax(y) for y in y_test])
+
+xg_train = [0,0]
+xg_test  = [0,0]
+
+xg_train[0] = xgb.DMatrix(X_train[:,:-1], label=yo_train) #no mtautau
+xg_train[1] = xgb.DMatrix(X_train, label=yo_train) #with mtautau
+xg_test[0]  = xgb.DMatrix(X_test[:,:-1], label=yo_test) #no mtautau
+xg_test[1]  = xgb.DMatrix(X_test, label=yo_test) #with mtautau
 
 
 # setup parameters for xgboost
@@ -118,33 +124,19 @@ bst_filename = 'models/'+filename.split('/')[-1].split('.')[0]+'BDT.json'
 bst = None
 import pickle
 if(train_bst):
-    bst = xgb.train(param, xg_train, num_round)
+    bst = [xgb.train(param, xg_train[0], num_round), xgb.train(param, xg_train[1], num_round)]
     pickle.dump(bst, open(bst_filename, 'wb'))
 else:
     bst = pickle.load(open(bst_filename, 'rb'))
 
 
-yhat_test = bst.predict(xg_test).reshape(yo_test.shape[0], 2)
-yhat_test = np.array([true for (true, false) in yhat_test])
+yhat_test = [bst[i].predict(xg_test[i]).reshape(yo_test.shape[0], 2) for i in range(2)]
+yhat_test = [np.array([true for (true, false) in yhat_test[i]]) for i in range(2)]
 yop_test  = np.array([true for (true, false) in y_test])
 
 
 # In[6]:
-
-
 from sklearn import metrics
-
-fpr, tpr, thresholds = metrics.roc_curve(yop_test, yhat_test)
-auc = metrics.auc(fpr, tpr)
-
-import bisect 
-
-location = bisect.bisect_left(list(reversed(thresholds)), 0.5)
-print('At 0.5 threshold we have BDT signal efficiency %.3f'%list(reversed(tpr))[location-1])
-
-
-# In[7]:
-
 
 import matplotlib.pyplot as plt
 plt.rcParams['font.family'] = 'serif'
@@ -156,13 +148,26 @@ models_to_plot = [PI.model_name_to_model(model_name) for model_name in list(PI.m
 model_params_to_plot = [model_params_dict[PI.model_name_to_model(model_name)] for model_name in list(PI.models.keys())]
 model_params_to_plot
 
-location_0 = bisect.bisect_left(tpr, 0.7)
-e7 = 1/fpr[location_0-1]
-
-
 fig, ax = PI.plot_multiple_sorted_by_AUC(models_to_plot, model_params_to_plot)
 colormap = sns.cubehelix_palette(start=26/10, light=.97, as_cmap=True)
-ax.plot(tpr, 1/fpr, label=r'%.3f %s'%(e7, 'BDT + ATLAS Features'), color='lightgrey')                                         
+
+BDT_labels = ['BDT + ATLAS Features', 'BDT + ATLAS Features + '+r'$M_{\tau\tau}^{\rm Coll}$']
+bdt_lstyle = [{'color':'lightgrey'}, {'color':'#f8ad9d'}]
+for i in range(2):
+    fpr, tpr, thresholds = metrics.roc_curve(yop_test, yhat_test[i])
+    auc = metrics.auc(fpr, tpr)
+
+    import bisect 
+
+    location = bisect.bisect_left(list(reversed(thresholds)), 0.5)
+    print('At 0.5 threshold we have BDT signal efficiency %.3f'%list(reversed(tpr))[location-1])
+
+
+    location_0 = bisect.bisect_left(tpr, 0.7)
+    e7 = 1/fpr[location_0-1]
+
+    ax.plot(tpr, 1/fpr, **bdt_lstyle[i], label=r'%.3f %s'%(e7, BDT_labels[i]))                                         
+
 
 
 ax.get_legend().remove()
@@ -219,17 +224,19 @@ for (fpr, tpr, thresholds, auc), key, params in zip(table_data, models_to_plot, 
                                                            1/fpr[location-1], (tpr)[location-1]/fpr[location-1],
                                                            1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
     
-yhat_test = bst.predict(xg_test).reshape(yo_test.shape[0], 2)
-yhat_test = np.array([true for (true, false) in yhat_test])
+# yhat_test = bst.predict(xg_test).reshape(yo_test.shape[0], 2)
+# yhat_test = np.array([true for (true, false) in yhat_test])
 yop_test  = np.array([true for (true, false) in y_test])
 from sklearn import metrics
-fpr, tpr, thresholds = metrics.roc_curve(yop_test, yhat_test)
-auc = metrics.auc(fpr, tpr)
-location_0 = bisect.bisect_left(tpr, 0.7)
-location = bisect.bisect_left(tpr, 0.3)
-table_file.write('%s & %.3f & %s &%.1f & %.1f & %.1f & %.1f\\\\\n'%('BDT + ATLAS Features', auc, '-',
-                                                       1/fpr[location-1], (tpr)[location-1]/fpr[location-1],
-                                                       1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
+
+for i in range(2):
+    fpr, tpr, thresholds = metrics.roc_curve(yop_test, yhat_test[i])
+    auc = metrics.auc(fpr, tpr)
+    location_0 = bisect.bisect_left(tpr, 0.7)
+    location = bisect.bisect_left(tpr, 0.3)
+    table_file.write('%s & %.3f & %s &%.1f & %.1f & %.1f & %.1f\\\\\n'%(BDT_labels[i], auc, '-',
+                                                           1/fpr[location-1], (tpr)[location-1]/fpr[location-1],
+                                                           1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
 
 table_file.close()
 
