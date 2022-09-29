@@ -316,7 +316,7 @@ class Experimenter:
             ax.set_yscale('log')
             return
 
-        plt.figure(figsize=(8, 8), dpi=80)
+        plt.figure(figsize=(8, 10), dpi=80)
         plt.plot(tpr, 1/fpr, color='black', label=r'AUC: %.5f'%(auc))
         plt.xlim([0.0, 1.0])
         ax.set_xlabel(r'$\epsilon_s$')
@@ -336,7 +336,7 @@ class Experimenter:
         plt.rcParams['font.family'] = 'serif'
         plt.rcParams['font.size'] = 20
     
-        fig, ax = plt.subplots(figsize=(7,7), dpi=80)
+        fig, ax = plt.subplots(figsize=(7,10), dpi=80)
         for (classifier_key, param) in models:
             self.plot_ROC(classifier_key, param, ax=ax, ideal=ideal)
 

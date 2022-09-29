@@ -193,7 +193,7 @@ annotation_string += r'\textsc{MadGraph 5}+\textsc{Pythia} 8+\textsc{Delphes}'
 annotation_string += '\n'
 annotation_string += r'Anti-Kt with $R=0.4$, $\sqrt{s} = 14 TeV$'
 ax.text(.05,1, annotation_string)
-plt.gcf().set_size_inches(10, 10)
+plt.gcf().set_size_inches(10, 13)
 
 plt.rcParams['font.family'] = 'serif'
 plt.rcParams['font.size'] = 20
