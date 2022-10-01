@@ -160,13 +160,13 @@ for i in range(2):
     import bisect 
 
     location = bisect.bisect_left(list(reversed(thresholds)), 0.5)
-    print('At 0.5 threshold we have BDT signal efficiency %.3f'%list(reversed(tpr))[location-1])
+    print('At 0.5 threshold we have BDT signal efficiency %.4f'%list(reversed(tpr))[location-1])
 
 
     location_0 = bisect.bisect_left(tpr, 0.7)
     e7 = 1/fpr[location_0-1]
 
-    ax.plot(tpr, 1/fpr, **bdt_lstyle[i], label=r'%.3f %s'%(e7, BDT_labels[i]))                                         
+    ax.plot(tpr, 1/fpr, **bdt_lstyle[i], label=r'%.4f %s'%(e7, BDT_labels[i]))                                         
 
 
 
@@ -191,7 +191,7 @@ annotation_string += r'$t\overline{t}(H\rightarrow\tau\tau)$ and $t\overline{t}(
 annotation_string += '\n'
 annotation_string += r'\textsc{MadGraph 5}+\textsc{Pythia} 8+\textsc{Delphes}'
 annotation_string += '\n'
-annotation_string += r'Anti-Kt with $R=0.4$, $\sqrt{s} = 14 TeV$'
+annotation_string += r'Anti-Kt with $R=0.4$, $\sqrt{s} = 14 \textrm{ TeV}$'
 ax.text(.05,1, annotation_string)
 plt.gcf().set_size_inches(10, 13)
 
@@ -234,7 +234,7 @@ for i in range(2):
     auc = metrics.auc(fpr, tpr)
     location_0 = bisect.bisect_left(tpr, 0.7)
     location = bisect.bisect_left(tpr, 0.3)
-    table_file.write('%s & %.3f & %s &%.1f & %.1f & %.1f & %.1f\\\\\n'%(BDT_labels[i], auc, '-',
+    table_file.write('%s & %.4f & %s &%.1f & %.1f & %.1f & %.1f\\\\\n'%(BDT_labels[i], auc, '-',
                                                            1/fpr[location-1], (tpr)[location-1]/fpr[location-1],
                                                            1/fpr[location_0-1], (tpr)[location_0-1]/fpr[location_0-1]))
 
