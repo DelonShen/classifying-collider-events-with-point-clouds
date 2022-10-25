@@ -28,7 +28,7 @@ np.random.seed(42)
 random.seed(42)
 
 
-filename = '../data/data100k_raw_combined_atlas_cut.pkl'
+filename = '../data/data80k_raw_combined_atlas_cut.pkl'
 num_round = None
 
 train_bst = False

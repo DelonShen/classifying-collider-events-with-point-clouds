@@ -37,7 +37,7 @@ np.random.seed(42)
 random.seed(42)
 
 
-filename = '../data/data100k_raw_combined_atlas_cut.pkl'
+filename = '../data/data80k_raw_combined_atlas_cut.pkl'
 num_round = None
 
 #TESTING
@@ -53,7 +53,7 @@ num_round = None
 SUFFIX = ''
 PI = experiment.Experimenter(filename)
 
-PI.fromSaved()
+#PI.fromSaved()
 ##IF FROM SAVED
 #############
 
@@ -67,8 +67,6 @@ to_train = [
             'pairwise_nl_iter',
             'naivednn',
 ]
-
-to_train=[]
 
 for nm in to_train:
     print('RIGHT NOW: %s'%nm)
