@@ -31,7 +31,7 @@ random.seed(42)
 filename = '../data/data80k_raw_combined_atlas_cut.pkl'
 num_round = None
 
-train_bst = False
+train_bst = True 
 
 do_tsne = False
 #TESTING
@@ -109,7 +109,7 @@ xg_test[1]  = xgb.DMatrix(X_test, label=yo_test) #with mtautau
 
 
 # setup parameters for xgboost
-param = {'colsample_bytree': 0.7729268575934765, 'eta': 0.25, 'gamma': 1.002343020792451, 'max_depth': 10, 'min_child_weight': 9, 'n_estimators': 530, 'reg_alpha': 41.0, 'reg_lambda': 0.8554269844258477} #THESE SELECTED as optimal BY HYPEROPT 
+param = {'colsample_bytree': 0.7033583205447576, 'eta': 0.35000000000000003, 'gamma': 1.0236613539496342, 'max_depth': 10, 'min_child_weight': 10, 'n_estimators': 297, 'reg_alpha': 40.0, 'reg_lambda': 0.9868980507614524}
 
 # use softmax multi-class classification
 param['objective'] = 'multi:softprob'
@@ -173,8 +173,8 @@ for i in range(2):
 ax.get_legend().remove()
 ax.legend(loc='upper right', frameon=False, labelspacing=1.0)
 handles, labels = ax.get_legend_handles_labels()
-
-idxs = np.argsort(labels)
+e7_labels = [eval(label.split()[0]) for label in labels]
+idxs = np.argsort(e7_labels)
 
 labels = [' '.join(label.split(' ')[1:]) for label in labels]
 labels = list(reversed(np.array(labels)[idxs]))

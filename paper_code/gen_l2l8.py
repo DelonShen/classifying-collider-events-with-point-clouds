@@ -32,7 +32,7 @@ def human_format(num):
     return '%.0f%s' % (num, ['', 'K', 'M', 'G', 'T', 'P'][magnitude])
 
 
-filename = '../data/data100k_raw_combined_atlas_cut.pkl'
+filename = '../data/data80k_raw_combined_atlas_cut.pkl'
 SUFFIX = 'latent28'
 
 

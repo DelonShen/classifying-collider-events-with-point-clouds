@@ -8,7 +8,7 @@ import xgboost as xgb
 # import packages for hyperparameters tuning
 from hyperopt import STATUS_OK, Trials, fmin, hp, tpe
 MAX_EVAL = 256
-filename = 'data/data100k_raw_combined_atlas_cut.pkl'
+filename = '../data/data80k_raw_combined_atlas_cut.pkl'
 
 #filename = 'data/data50k_raw_combined_atlas_cut_small.pkl'
 #MAX_EVAL = 100

@@ -5,7 +5,7 @@ from ROOT import TLorentzVector, TVector3
 DR_CUT = 0.4
 K =6
 n_events = 80000
-filename_temp = 'data100k_raw_combined_atlas_cut'
+filename_temp = 'data80k_raw_combined_atlas_cut'
 ###TEST
 #n_events=100
 #filename_temp = 'data100k_raw_combined_atlas_cut_TEST'
