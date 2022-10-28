@@ -1,0 +1,476 @@
+nohup: ignoring input
+2022-10-25 13:10:45.750715: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/delon/intel/oneapi/mkl/latest/lib/intel64:/data/delon/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib:/opt/rh/httpd24/root/usr/lib64:/home/delon/gsl/lib:/data/delon/PARADISO
+2022-10-25 13:10:45.750802: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2022-10-25 13:12:42.156179: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /data/delon/intel/oneapi/mkl/latest/lib/intel64:/data/delon/MG5_aMC_v3_1_1/HEPTools/lhapdf6_py3/lib:/opt/rh/httpd24/root/usr/lib64:/home/delon/gsl/lib:/data/delon/PARADISO
+2022-10-25 13:12:42.158988: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2022-10-25 13:12:42.159108: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (top1.hep.utexas.edu): /proc/driver/nvidia/version does not exist
+2022-10-25 13:12:42.160420: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-10-25 13:12:42.208339: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 47040000 exceeds 10% of free system memory.
+2022-10-25 13:12:42.627572: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 32928000 exceeds 10% of free system memory.
+2022-10-25 13:12:42.709157: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:176] None of the MLIR Optimization Passes are enabled (registered 2)
+2022-10-25 13:12:42.710074: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2397305000 Hz
+2022-10-25 13:12:45.180122: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 30758400 exceeds 10% of free system memory.
+2022-10-25 13:12:45.180552: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 30758400 exceeds 10% of free system memory.
+2022-10-25 13:12:45.245569: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 30758400 exceeds 10% of free system memory.
+Initializing Experimenter
+	Loading Data from ../data/data80k_raw_combined_atlas_cut.pkl
+	Data Loaded
+	Creating Splits
+	Splits Created
+Done initalizing
+RIGHT NOW: latent_two
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+2450/2450 - 85s - loss: 0.4311 - val_loss: 0.3860
+Epoch 2/256
+2450/2450 - 59s - loss: 0.3884 - val_loss: 0.3782
+Epoch 3/256
+2450/2450 - 57s - loss: 0.3779 - val_loss: 0.3649
+Epoch 4/256
+2450/2450 - 57s - loss: 0.3710 - val_loss: 0.4191
+Epoch 5/256
+2450/2450 - 59s - loss: 0.3636 - val_loss: 0.3826
+Epoch 6/256
+2450/2450 - 59s - loss: 0.3580 - val_loss: 0.3539
+Epoch 7/256
+2450/2450 - 59s - loss: 0.3531 - val_loss: 0.3471
+Epoch 8/256
+2450/2450 - 59s - loss: 0.3506 - val_loss: 0.3479
+Epoch 9/256
+2450/2450 - 59s - loss: 0.3462 - val_loss: 0.3473
+Epoch 10/256
+2450/2450 - 59s - loss: 0.3444 - val_loss: 0.3377
+Epoch 11/256
+2450/2450 - 62s - loss: 0.3405 - val_loss: 0.3713
+Epoch 12/256
+2450/2450 - 92s - loss: 0.3387 - val_loss: 0.3393
+Epoch 13/256
+2450/2450 - 89s - loss: 0.3361 - val_loss: 0.3387
+Epoch 14/256
+2450/2450 - 90s - loss: 0.3357 - val_loss: 0.3323
+Epoch 15/256
+2450/2450 - 61s - loss: 0.3331 - val_loss: 0.3612
+Epoch 16/256
+2450/2450 - 58s - loss: 0.3325 - val_loss: 0.3330
+Epoch 17/256
+2450/2450 - 59s - loss: 0.3304 - val_loss: 0.3486
+Epoch 18/256
+2450/2450 - 58s - loss: 0.3288 - val_loss: 0.3385
+Epoch 19/256
+2450/2450 - 59s - loss: 0.3278 - val_loss: 0.3386
+Epoch 20/256
+2450/2450 - 58s - loss: 0.3274 - val_loss: 0.3283
+Epoch 21/256
+2450/2450 - 59s - loss: 0.3253 - val_loss: 0.3247
+Epoch 22/256
+2450/2450 - 59s - loss: 0.3241 - val_loss: 0.3259
+Epoch 23/256
+2450/2450 - 62s - loss: 0.3221 - val_loss: 0.3245
+Epoch 24/256
+2450/2450 - 61s - loss: 0.3212 - val_loss: 0.3206
+Epoch 25/256
+2450/2450 - 61s - loss: 0.3206 - val_loss: 0.3239
+Epoch 26/256
+2450/2450 - 61s - loss: 0.3192 - val_loss: 0.3219
+Epoch 27/256
+2450/2450 - 62s - loss: 0.3191 - val_loss: 0.3190
+Epoch 28/256
+2450/2450 - 61s - loss: 0.3164 - val_loss: 0.3212
+Epoch 29/256
+2450/2450 - 61s - loss: 0.3166 - val_loss: 0.3242
+Epoch 30/256
+2450/2450 - 61s - loss: 0.3161 - val_loss: 0.3333
+Epoch 31/256
+2450/2450 - 62s - loss: 0.3142 - val_loss: 0.3203
+Epoch 32/256
+2450/2450 - 61s - loss: 0.3129 - val_loss: 0.3130
+Epoch 33/256
+2450/2450 - 61s - loss: 0.3119 - val_loss: 0.3163
+Epoch 34/256
+2450/2450 - 61s - loss: 0.3113 - val_loss: 0.3165
+Epoch 35/256
+2450/2450 - 61s - loss: 0.3103 - val_loss: 0.3140
+Epoch 36/256
+2450/2450 - 61s - loss: 0.3091 - val_loss: 0.3240
+Epoch 37/256
+2450/2450 - 60s - loss: 0.3092 - val_loss: 0.3151
+Epoch 38/256
+2450/2450 - 59s - loss: 0.3068 - val_loss: 0.3193
+Epoch 39/256
+2450/2450 - 58s - loss: 0.3063 - val_loss: 0.3203
+Epoch 40/256
+2450/2450 - 57s - loss: 0.3049 - val_loss: 0.3350
+Epoch 41/256
+2450/2450 - 58s - loss: 0.3046 - val_loss: 0.3136
+Epoch 42/256
+2450/2450 - 62s - loss: 0.3040 - val_loss: 0.3113
+Epoch 43/256
+2450/2450 - 107s - loss: 0.3023 - val_loss: 0.3173
+Epoch 44/256
+2450/2450 - 104s - loss: 0.3017 - val_loss: 0.3256
+Epoch 45/256
+2450/2450 - 96s - loss: 0.3004 - val_loss: 0.3085
+Epoch 46/256
+2450/2450 - 65s - loss: 0.2990 - val_loss: 0.3316
+Epoch 47/256
+2450/2450 - 58s - loss: 0.2996 - val_loss: 0.3080
+Epoch 48/256
+2450/2450 - 58s - loss: 0.2974 - val_loss: 0.3098
+Epoch 49/256
+2450/2450 - 58s - loss: 0.2966 - val_loss: 0.3186
+Epoch 50/256
+2450/2450 - 58s - loss: 0.2963 - val_loss: 0.3273
+Epoch 51/256
+2450/2450 - 58s - loss: 0.2956 - val_loss: 0.3088
+Epoch 52/256
+2450/2450 - 58s - loss: 0.2955 - val_loss: 0.3077
+Epoch 53/256
+2450/2450 - 58s - loss: 0.2931 - val_loss: 0.3088
+Epoch 54/256
+2450/2450 - 58s - loss: 0.2930 - val_loss: 0.3075
+Epoch 55/256
+2450/2450 - 58s - loss: 0.2929 - val_loss: 0.3201
+Epoch 56/256
+2450/2450 - 58s - loss: 0.2917 - val_loss: 0.3034
+Epoch 57/256
+2450/2450 - 58s - loss: 0.2906 - val_loss: 0.3173
+Epoch 58/256
+2450/2450 - 57s - loss: 0.2905 - val_loss: 0.3119
+Epoch 59/256
+2450/2450 - 58s - loss: 0.2884 - val_loss: 0.3034
+Epoch 60/256
+2450/2450 - 58s - loss: 0.2872 - val_loss: 0.3049
+Epoch 61/256
+2450/2450 - 58s - loss: 0.2866 - val_loss: 0.3071
+Epoch 62/256
+2450/2450 - 58s - loss: 0.2869 - val_loss: 0.3191
+Epoch 63/256
+2450/2450 - 59s - loss: 0.2863 - val_loss: 0.3058
+Epoch 64/256
+2450/2450 - 58s - loss: 0.2840 - val_loss: 0.3055
+Epoch 65/256
+2450/2450 - 58s - loss: 0.2843 - val_loss: 0.3170
+Epoch 66/256
+2450/2450 - 58s - loss: 0.2830 - val_loss: 0.3070
+Epoch 67/256
+2450/2450 - 58s - loss: 0.2828 - val_loss: 0.3417
+Epoch 68/256
+2450/2450 - 58s - loss: 0.2808 - val_loss: 0.3118
+Epoch 69/256
+2450/2450 - 58s - loss: 0.2804 - val_loss: 0.3078
+Epoch 70/256
+2450/2450 - 57s - loss: 0.2789 - val_loss: 0.3064
+Epoch 71/256
+2450/2450 - 58s - loss: 0.2792 - val_loss: 0.3252
+Epoch 72/256
+2450/2450 - 58s - loss: 0.2786 - val_loss: 0.3046
+Epoch 73/256
+2450/2450 - 58s - loss: 0.2780 - val_loss: 0.3084
+Epoch 74/256
+2450/2450 - 58s - loss: 0.2777 - val_loss: 0.3011
+Epoch 75/256
+2450/2450 - 58s - loss: 0.2751 - val_loss: 0.3045
+Epoch 76/256
+2450/2450 - 57s - loss: 0.2760 - val_loss: 0.3067
+Epoch 77/256
+2450/2450 - 58s - loss: 0.2755 - val_loss: 0.3024
+Epoch 78/256
+2450/2450 - 58s - loss: 0.2747 - val_loss: 0.3023
+Epoch 79/256
+2450/2450 - 57s - loss: 0.2742 - val_loss: 0.3119
+Epoch 80/256
+2450/2450 - 57s - loss: 0.2731 - val_loss: 0.2998
+Epoch 81/256
+2450/2450 - 57s - loss: 0.2723 - val_loss: 0.2993
+Epoch 82/256
+2450/2450 - 58s - loss: 0.2723 - val_loss: 0.2999
+Epoch 83/256
+2450/2450 - 58s - loss: 0.2726 - val_loss: 0.3121
+Epoch 84/256
+2450/2450 - 58s - loss: 0.2700 - val_loss: 0.3056
+Epoch 85/256
+2450/2450 - 58s - loss: 0.2708 - val_loss: 0.3026
+Epoch 86/256
+2450/2450 - 58s - loss: 0.2696 - val_loss: 0.3049
+Epoch 87/256
+2450/2450 - 58s - loss: 0.2691 - val_loss: 0.2974
+Epoch 88/256
+2450/2450 - 58s - loss: 0.2682 - val_loss: 0.3074
+Epoch 89/256
+2450/2450 - 58s - loss: 0.2678 - val_loss: 0.3060
+Epoch 90/256
+2450/2450 - 58s - loss: 0.2673 - val_loss: 0.3075
+Epoch 91/256
+2450/2450 - 58s - loss: 0.2667 - val_loss: 0.3025
+Epoch 92/256
+2450/2450 - 57s - loss: 0.2660 - val_loss: 0.3005
+Epoch 93/256
+2450/2450 - 57s - loss: 0.2648 - val_loss: 0.3089
+Epoch 94/256
+2450/2450 - 57s - loss: 0.2650 - val_loss: 0.3053
+Epoch 95/256
+2450/2450 - 58s - loss: 0.2644 - val_loss: 0.3039
+Epoch 96/256
+2450/2450 - 58s - loss: 0.2632 - val_loss: 0.2969
+Epoch 97/256
+2450/2450 - 58s - loss: 0.2628 - val_loss: 0.3062
+Epoch 98/256
+2450/2450 - 58s - loss: 0.2624 - val_loss: 0.2988
+Epoch 99/256
+2450/2450 - 57s - loss: 0.2619 - val_loss: 0.3140
+Epoch 100/256
+2450/2450 - 57s - loss: 0.2607 - val_loss: 0.3003
+Epoch 101/256
+2450/2450 - 58s - loss: 0.2598 - val_loss: 0.3107
+Epoch 102/256
+2450/2450 - 58s - loss: 0.2588 - val_loss: 0.3324
+Epoch 103/256
+2450/2450 - 58s - loss: 0.2596 - val_loss: 0.3112
+Epoch 104/256
+2450/2450 - 58s - loss: 0.2580 - val_loss: 0.3137
+Epoch 105/256
+2450/2450 - 57s - loss: 0.2578 - val_loss: 0.3012
+Epoch 106/256
+2450/2450 - 58s - loss: 0.2578 - val_loss: 0.3074
+Epoch 107/256
+2450/2450 - 58s - loss: 0.2572 - val_loss: 0.3030
+Epoch 108/256
+2450/2450 - 58s - loss: 0.2566 - val_loss: 0.3022
+Epoch 109/256
+2450/2450 - 58s - loss: 0.2553 - val_loss: 0.3310
+Epoch 110/256
+2450/2450 - 58s - loss: 0.2551 - val_loss: 0.3031
+Epoch 111/256
+2450/2450 - 58s - loss: 0.2549 - val_loss: 0.2997
+Epoch 112/256
+2450/2450 - 58s - loss: 0.2553 - val_loss: 0.3050
+Epoch 113/256
+2450/2450 - 58s - loss: 0.2532 - val_loss: 0.3114
+Epoch 114/256
+2450/2450 - 58s - loss: 0.2534 - val_loss: 0.3049
+Epoch 115/256
+2450/2450 - 58s - loss: 0.2535 - val_loss: 0.2999
+Epoch 116/256
+2450/2450 - 58s - loss: 0.2524 - val_loss: 0.3122
+Epoch 117/256
+2450/2450 - 58s - loss: 0.2520 - val_loss: 0.3064
+Epoch 118/256
+2450/2450 - 57s - loss: 0.2510 - val_loss: 0.2992
+Epoch 119/256
+2450/2450 - 58s - loss: 0.2496 - val_loss: 0.3122
+Epoch 120/256
+2450/2450 - 58s - loss: 0.2491 - val_loss: 0.3119
+Epoch 121/256
+2450/2450 - 58s - loss: 0.2493 - val_loss: 0.3026
+Epoch 122/256
+2450/2450 - 58s - loss: 0.2488 - val_loss: 0.3027
+Epoch 123/256
+2450/2450 - 58s - loss: 0.2484 - val_loss: 0.3070
+Epoch 124/256
+2450/2450 - 58s - loss: 0.2484 - val_loss: 0.3020
+Epoch 125/256
+2450/2450 - 59s - loss: 0.2470 - val_loss: 0.3147
+Epoch 126/256
+2450/2450 - 59s - loss: 0.2462 - val_loss: 0.3112
+Epoch 127/256
+2450/2450 - 59s - loss: 0.2470 - val_loss: 0.3094
+Epoch 128/256
+2450/2450 - 60s - loss: 0.2438 - val_loss: 0.3078
+2022-10-25 15:21:54.511286: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+WARNING:absl:Found untraced functions such as conv2d_layer_call_fn, conv2d_layer_call_and_return_conditional_losses, conv2d_1_layer_call_fn, conv2d_1_layer_call_and_return_conditional_losses, conv2d_2_layer_call_fn while saving (showing 5 of 50). These functions will not be directly callable after loading.
+###
+first saving models
+currently on latent_two_5_(64, 128, 256, 128, 2)_64
+latent_two_5_(64, 128, 256, 128, 2)_64 is saved in models/data80k_raw_combined_atlas_cut_latent_two_5_(64, 128, 256, 128, 2)_64latent28
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data80k_raw_combined_atlas_cutlatent28
+RIGHT NOW: latent_eight
+tf.data.datset created for training data
+Model not yet created, creating new model
+Epoch 1/256
+2450/2450 - 60s - loss: 0.4197 - val_loss: 0.3808
+Epoch 2/256
+2450/2450 - 58s - loss: 0.3831 - val_loss: 0.3732
+Epoch 3/256
+2450/2450 - 59s - loss: 0.3735 - val_loss: 0.3621
+Epoch 4/256
+2450/2450 - 59s - loss: 0.3675 - val_loss: 0.3967
+Epoch 5/256
+2450/2450 - 59s - loss: 0.3586 - val_loss: 0.3759
+Epoch 6/256
+2450/2450 - 59s - loss: 0.3537 - val_loss: 0.3551
+Epoch 7/256
+2450/2450 - 59s - loss: 0.3492 - val_loss: 0.3436
+Epoch 8/256
+2450/2450 - 59s - loss: 0.3458 - val_loss: 0.3391
+Epoch 9/256
+2450/2450 - 58s - loss: 0.3420 - val_loss: 0.3410
+Epoch 10/256
+2450/2450 - 58s - loss: 0.3395 - val_loss: 0.3394
+Epoch 11/256
+2450/2450 - 59s - loss: 0.3353 - val_loss: 0.3539
+Epoch 12/256
+2450/2450 - 64s - loss: 0.3322 - val_loss: 0.3282
+Epoch 13/256
+2450/2450 - 59s - loss: 0.3288 - val_loss: 0.3296
+Epoch 14/256
+2450/2450 - 60s - loss: 0.3269 - val_loss: 0.3363
+Epoch 15/256
+2450/2450 - 65s - loss: 0.3235 - val_loss: 0.3395
+Epoch 16/256
+2450/2450 - 58s - loss: 0.3203 - val_loss: 0.3209
+Epoch 17/256
+2450/2450 - 59s - loss: 0.3180 - val_loss: 0.3335
+Epoch 18/256
+2450/2450 - 59s - loss: 0.3158 - val_loss: 0.3312
+Epoch 19/256
+2450/2450 - 59s - loss: 0.3131 - val_loss: 0.3197
+Epoch 20/256
+2450/2450 - 59s - loss: 0.3115 - val_loss: 0.3090
+Epoch 21/256
+2450/2450 - 59s - loss: 0.3095 - val_loss: 0.3081
+Epoch 22/256
+2450/2450 - 58s - loss: 0.3077 - val_loss: 0.3116
+Epoch 23/256
+2450/2450 - 58s - loss: 0.3061 - val_loss: 0.3077
+Epoch 24/256
+2450/2450 - 58s - loss: 0.3035 - val_loss: 0.3086
+Epoch 25/256
+2450/2450 - 59s - loss: 0.3025 - val_loss: 0.3090
+Epoch 26/256
+2450/2450 - 59s - loss: 0.2994 - val_loss: 0.3115
+Epoch 27/256
+2450/2450 - 58s - loss: 0.3002 - val_loss: 0.3004
+Epoch 28/256
+2450/2450 - 59s - loss: 0.2970 - val_loss: 0.3041
+Epoch 29/256
+2450/2450 - 59s - loss: 0.2969 - val_loss: 0.2993
+Epoch 30/256
+2450/2450 - 58s - loss: 0.2946 - val_loss: 0.3006
+Epoch 31/256
+2450/2450 - 58s - loss: 0.2940 - val_loss: 0.3010
+Epoch 32/256
+2450/2450 - 58s - loss: 0.2915 - val_loss: 0.2973
+Epoch 33/256
+2450/2450 - 58s - loss: 0.2899 - val_loss: 0.3048
+Epoch 34/256
+2450/2450 - 57s - loss: 0.2887 - val_loss: 0.2969
+Epoch 35/256
+2450/2450 - 58s - loss: 0.2878 - val_loss: 0.2942
+Epoch 36/256
+2450/2450 - 58s - loss: 0.2875 - val_loss: 0.3006
+Epoch 37/256
+2450/2450 - 58s - loss: 0.2856 - val_loss: 0.2990
+Epoch 38/256
+2450/2450 - 59s - loss: 0.2842 - val_loss: 0.3034
+Epoch 39/256
+2450/2450 - 58s - loss: 0.2835 - val_loss: 0.3047
+Epoch 40/256
+2450/2450 - 58s - loss: 0.2825 - val_loss: 0.3082
+Epoch 41/256
+2450/2450 - 58s - loss: 0.2813 - val_loss: 0.2990
+Epoch 42/256
+2450/2450 - 58s - loss: 0.2799 - val_loss: 0.2905
+Epoch 43/256
+2450/2450 - 59s - loss: 0.2796 - val_loss: 0.2936
+Epoch 44/256
+2450/2450 - 59s - loss: 0.2789 - val_loss: 0.3288
+Epoch 45/256
+2450/2450 - 60s - loss: 0.2767 - val_loss: 0.2888
+Epoch 46/256
+2450/2450 - 59s - loss: 0.2751 - val_loss: 0.3181
+Epoch 47/256
+2450/2450 - 58s - loss: 0.2749 - val_loss: 0.2926
+Epoch 48/256
+2450/2450 - 58s - loss: 0.2737 - val_loss: 0.2918
+Epoch 49/256
+2450/2450 - 58s - loss: 0.2730 - val_loss: 0.3013
+Epoch 50/256
+2450/2450 - 58s - loss: 0.2717 - val_loss: 0.3155
+Epoch 51/256
+2450/2450 - 58s - loss: 0.2712 - val_loss: 0.2877
+Epoch 52/256
+2450/2450 - 58s - loss: 0.2709 - val_loss: 0.2977
+Epoch 53/256
+2450/2450 - 59s - loss: 0.2698 - val_loss: 0.3022
+Epoch 54/256
+2450/2450 - 59s - loss: 0.2675 - val_loss: 0.2885
+Epoch 55/256
+2450/2450 - 59s - loss: 0.2674 - val_loss: 0.2976
+Epoch 56/256
+2450/2450 - 59s - loss: 0.2666 - val_loss: 0.2844
+Epoch 57/256
+2450/2450 - 58s - loss: 0.2661 - val_loss: 0.2948
+Epoch 58/256
+2450/2450 - 57s - loss: 0.2655 - val_loss: 0.2937
+Epoch 59/256
+2450/2450 - 58s - loss: 0.2632 - val_loss: 0.2887
+Epoch 60/256
+2450/2450 - 58s - loss: 0.2630 - val_loss: 0.2926
+Epoch 61/256
+2450/2450 - 59s - loss: 0.2625 - val_loss: 0.2876
+Epoch 62/256
+2450/2450 - 58s - loss: 0.2619 - val_loss: 0.2965
+Epoch 63/256
+2450/2450 - 58s - loss: 0.2611 - val_loss: 0.2927
+Epoch 64/256
+2450/2450 - 58s - loss: 0.2597 - val_loss: 0.2899
+Epoch 65/256
+2450/2450 - 58s - loss: 0.2597 - val_loss: 0.2994
+Epoch 66/256
+2450/2450 - 58s - loss: 0.2586 - val_loss: 0.2954
+Epoch 67/256
+2450/2450 - 59s - loss: 0.2576 - val_loss: 0.3080
+Epoch 68/256
+2450/2450 - 58s - loss: 0.2572 - val_loss: 0.2953
+Epoch 69/256
+2450/2450 - 58s - loss: 0.2562 - val_loss: 0.3013
+Epoch 70/256
+2450/2450 - 57s - loss: 0.2545 - val_loss: 0.2943
+Epoch 71/256
+2450/2450 - 58s - loss: 0.2541 - val_loss: 0.3066
+Epoch 72/256
+2450/2450 - 58s - loss: 0.2530 - val_loss: 0.2921
+Epoch 73/256
+2450/2450 - 58s - loss: 0.2539 - val_loss: 0.2892
+Epoch 74/256
+2450/2450 - 57s - loss: 0.2529 - val_loss: 0.2863
+Epoch 75/256
+2450/2450 - 59s - loss: 0.2506 - val_loss: 0.2982
+Epoch 76/256
+2450/2450 - 60s - loss: 0.2516 - val_loss: 0.2888
+Epoch 77/256
+2450/2450 - 59s - loss: 0.2508 - val_loss: 0.2912
+Epoch 78/256
+2450/2450 - 61s - loss: 0.2494 - val_loss: 0.2945
+Epoch 79/256
+2450/2450 - 60s - loss: 0.2488 - val_loss: 0.2980
+Epoch 80/256
+2450/2450 - 58s - loss: 0.2486 - val_loss: 0.2911
+Epoch 81/256
+2450/2450 - 59s - loss: 0.2478 - val_loss: 0.3038
+Epoch 82/256
+2450/2450 - 59s - loss: 0.2467 - val_loss: 0.2946
+Epoch 83/256
+2450/2450 - 59s - loss: 0.2457 - val_loss: 0.3057
+Epoch 84/256
+2450/2450 - 59s - loss: 0.2447 - val_loss: 0.2927
+Epoch 85/256
+2450/2450 - 59s - loss: 0.2447 - val_loss: 0.2946
+Epoch 86/256
+2450/2450 - 59s - loss: 0.2431 - val_loss: 0.2913
+Epoch 87/256
+2450/2450 - 58s - loss: 0.2424 - val_loss: 0.2888
+Epoch 88/256
+2450/2450 - 58s - loss: 0.2421 - val_loss: 0.2950
+WARNING:absl:Found untraced functions such as conv2d_5_layer_call_fn, conv2d_5_layer_call_and_return_conditional_losses, conv2d_6_layer_call_fn, conv2d_6_layer_call_and_return_conditional_losses, conv2d_7_layer_call_fn while saving (showing 5 of 50). These functions will not be directly callable after loading.
+###
+first saving models
+currently on latent_two_5_(64, 128, 256, 128, 2)_64
+	this one already saved, skipped
+currently on latent_eight_5_(64, 128, 256, 128, 8)_64
+latent_eight_5_(64, 128, 256, 128, 8)_64 is saved in models/data80k_raw_combined_atlas_cut_latent_eight_5_(64, 128, 256, 128, 8)_64latent28
+now saving paramters of experimenter
+saved experimenter at /data/delon/experimenter/data80k_raw_combined_atlas_cutlatent28
