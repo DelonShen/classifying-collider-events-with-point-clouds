@@ -1,6 +1,6 @@
 # Classifying Collider Events with Point Clouds
 
-Implementation of architectures in [PAPER TITLE](https://arxiv.org/abs/xxxx.xxxxx)
+Implementation of architectures in [Comparing Point Cloud Strategies for Collider Event Classification](https://arxiv.org/abs/xxxx.xxxxx)
 
 ------
 *If you have any questions at all about the code or using these kinds of architectures in your own analysis I'm always open to chatting, just let me know at [hi@delonshen.com](mailto:hi@delonshen.com)*
@@ -61,4 +61,10 @@ Input data should have shape `(N_events, N_PAD, N_features)`.
 
 ## Genereating Figures in Paper
 
-The (very messy) code used to generate results in paper can be found in the directory `paper_code/`. The scripts to train the models/generate the figures look like `paper_code/gen_*` and the outputs are found in the directory `paper_code/figures/`.
+The (very messy) code used to generate results in paper can be found in the directory `paper_code/`. The scripts to train the models is in `paper_code/gen_models.py` and the code to generate the figures in the paper are scattered throughout the other files. Namely:
+- Fig 3 and Table 1 from `gen_plots.py`
+- Table 3 from `latent_scan.py` and `latent_scan_aux.ipynb`
+- Fig 4 and Fig 5 from `l2l8.ipynb`
+- Fig 6 from `spearman_rank_analysis.ipynb`
+- Fig 7 from `ditau_study.ipynb`
+All this code and the `paper_code` folder itself is truly quite messy so if you have any questions about anything in this folder please don't hesitate to reach out at [hi@delonshen.com](mailto:hi@delonshen.com).  
