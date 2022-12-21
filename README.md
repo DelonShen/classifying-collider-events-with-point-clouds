@@ -59,7 +59,7 @@ Input data should have shape `(N_events, N_PAD, N_features)`.
 - `N_PAD` is the number of particles you zero-pad each event. The zero padded particles are ignored by the architecture through masking layers but required for computationally efficient implementation. `N_PAD` should be larger than or equal to the maximum number of particles you have in one event in your dataset. If you have a dataset with shape `(N_events, -1, N_features)` where `-1` implies that each event has a variable number of particles you can call `tensorflow.keras.preprocessing.sequence.pad_sequences(events, dtype='float32', padding='post', maxlen=N_PAD)` to generate a padded version of your dataset suitable to be passed to the architectures.
 - `N_features` is the number of features you describe each particle in your event with. We recommend mimicing the features chosen in the paper described in equation (14) (TODO check with final version)
 
-## Genereating Figures in Paper
+## Generating Figures in Paper
 
 The (very messy) code used to generate results in paper can be found in the directory `paper_code/`. The scripts to train the models is in `paper_code/gen_models.py` and the code to generate the figures in the paper are scattered throughout the other files. Namely:
 - Fig 3 and Table 1 from `gen_plots.py`
@@ -67,4 +67,5 @@ The (very messy) code used to generate results in paper can be found in the dire
 - Fig 4 and Fig 5 from `l2l8.ipynb`
 - Fig 6 from `spearman_rank_analysis.ipynb`
 - Fig 7 from `ditau_study.ipynb`
+
 All this code and the `paper_code` folder itself is truly quite messy so if you have any questions about anything in this folder please don't hesitate to reach out at [hi@delonshen.com](mailto:hi@delonshen.com).  
