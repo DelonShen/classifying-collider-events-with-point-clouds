@@ -1,6 +1,6 @@
 # Classifying Collider Events with Point Clouds
 
-Implementation of architectures in [Comparing Point Cloud Strategies for Collider Event Classification](https://arxiv.org/abs/xxxx.xxxxx)
+Implementation of architectures in [Comparing Point Cloud Strategies for Collider Event Classification [2212.10659]](http://arxiv.org/abs/2212.10659)
 
 ------
 *If you have any questions at all about the code or using these kinds of architectures in your own analysis I'm always open to chatting, just let me know at [hi@delonshen.com](mailto:hi@delonshen.com)*
@@ -57,7 +57,7 @@ classifier = classifiers['pairwise'](**model_params_dict['pairwise'])
 Input data should have shape `(N_events, N_PAD, N_features)`. 
 - `N_events` is the number of collider events in your dataset
 - `N_PAD` is the number of particles you zero-pad each event. The zero padded particles are ignored by the architecture through masking layers but required for computationally efficient implementation. `N_PAD` should be larger than or equal to the maximum number of particles you have in one event in your dataset. If you have a dataset with shape `(N_events, -1, N_features)` where `-1` implies that each event has a variable number of particles you can call `tensorflow.keras.preprocessing.sequence.pad_sequences(events, dtype='float32', padding='post', maxlen=N_PAD)` to generate a padded version of your dataset suitable to be passed to the architectures.
-- `N_features` is the number of features you describe each particle in your event with. We recommend mimicing the features chosen in the paper described in equation (14) (TODO check with final version)
+- `N_features` is the number of features you describe each particle in your event with. We recommend mimicing the features chosen in the paper described in equation (34) 
 
 ## Generating Figures in Paper
 
