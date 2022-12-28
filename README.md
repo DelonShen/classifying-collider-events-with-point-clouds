@@ -3,7 +3,7 @@
 Implementation of architectures in [Comparing Point Cloud Strategies for Collider Event Classification [2212.10659]](http://arxiv.org/abs/2212.10659)
 
 ------
-*If you have any questions at all about the code or using these kinds of architectures in your own analysis I'm always open to chatting, just let me know at [hi@delonshen.com](mailto:hi@delonshen.com)*
+*If you have any questions at all about the code or using these kinds of architectures in your own analysis I'm always open to chatting, just let me know at [delon@stanford.edu](mailto:delon@stanford.edu)*
 
 ## Basics
 
@@ -68,4 +68,4 @@ The (very messy) code used to generate results in paper can be found in the dire
 - Fig 6 from `spearman_rank_analysis.ipynb`
 - Fig 7 from `ditau_study.ipynb`
 
-All this code and the `paper_code` folder itself is truly quite messy so if you have any questions about anything in this folder please don't hesitate to reach out at [hi@delonshen.com](mailto:hi@delonshen.com).  
+All this code and the `paper_code` folder itself is truly quite messy so if you have any questions about anything in this folder please don't hesitate to reach out at [delon@stanford.edu](mailto:delon@stanford.edu).  
